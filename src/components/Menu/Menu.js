@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
+import { goToAnchor } from 'react-scrollable-anchor'
 class Menu extends Component {
     constructor(props) {
         super(props);
@@ -19,34 +19,37 @@ class Menu extends Component {
     }
 
     render() {
-        const {} = this.props;
+        const { } = this.props;
 
         return (
             <ul
                 className={'am-menu'}
             >
                 <li>
-                    <Link
-                        to={'/'}
+                    <a
+                        href="javascript:{}"
+                        onClick={() => { goToAnchor('theme') }}
                     >
-                        menu1
-                    </Link>
+                        انتخاب قالب
+                    </a>
                 </li>
                 <li>
-                    <Link
-                        to={'/'}
+                    <a
+                        href="javascript:{}"
+                        onClick={() => { goToAnchor('about') }}
                     >
-                        menu1
-                    </Link>
+                        درباره ما
+                    </a>
                 </li>
                 <li>
-                    <Link
-                        to={'/'}
+                    <a
+                        href="javascript:{}"
+                        onClick={() => { goToAnchor('contact') }}
                     >
-                        menu1
-                    </Link>
+                        تماس با ما
+                    </a>
                 </li>
-                <li
+                {/* <li
                     className={'subMenuWrapper'}
                 >
                     <span
@@ -79,7 +82,7 @@ class Menu extends Component {
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> */}
             </ul>
         );
     }
