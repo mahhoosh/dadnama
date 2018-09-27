@@ -159,7 +159,6 @@ class SeSkills extends Component {
                                                                             id={item.id}
                                                                             closeModal={this.state.closeModalEdit}
                                                                             onOpenModal={() => this.onOpenModalEdit(item)}
-                                                                            icon
                                                                         />
                                                                     </div>
 

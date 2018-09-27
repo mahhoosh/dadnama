@@ -9,9 +9,7 @@ import {CHANGE_SOCIAL} from 'Graphql/ChangeNetworkMutation';
 import {
     Skills,
     SeSelected,
-    SelectedEdit,
-    SeProfile,
-    SeAboutMe,
+    SelectedEdit
 } from 'templates/trimatrixlab';
 import {
     Edit

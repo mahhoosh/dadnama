@@ -8,8 +8,25 @@
     //background-size: cover;
     //background-position: center;
     //background-repeat: no-repeat;
-    background-color: #fafafe;
+    background-color: transparent;
     overflow: hidden;
+  }
+  .SeProfile-wrapper {
+    max-width: 1000px;
+    padding: 0 40px;
+    @include themify($themes) {
+      background-color: themed('backgroundColor');
+    }
+  }
+  .slant {
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    border-style: solid;
+    border-width: 500px 100px 0 0;
+    @include themify($themes) {
+      border-color: rgba(223, 50, 50, 0) themed('border') transparent transparent;
+    }
   }
   .imgProfile {
     width: 100%;
@@ -26,26 +43,30 @@
       justify-content: center;
       flex-direction: column;
       height: 100%;
+      @include themify($themes) {
+        background-color: themed('backgroundColor');
+      }
+      color: $white-color;
       .intro-title {
         text-transform: capitalize;
         font-size: 40px;
         letter-spacing: 1px;
         margin-bottom: 10px;
-        color: #000000;
         font-weight: 700;
         margin-top: 0;
         line-height: 1.1;
+        color: $white-color;
       }
       .intro-subtitle {
         font-size: 21px;
         margin-bottom: 10px;
         text-transform: capitalize;
-        color: #000000;
         font-family: 'Raleway', sans-serif;
         font-weight: 700;
         margin-top: 0;
         letter-spacing: 1.5px;
         line-height: 1.1;
+        color: $white-color;
       }
       a.link.animated {
         position: relative;

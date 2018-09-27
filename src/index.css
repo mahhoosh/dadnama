@@ -37,8 +37,8 @@ label {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -2238,8 +2238,8 @@ ul {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -2269,14 +2269,14 @@ ul {
     .theme-primary .am-themePoster .iframeWrapper .editThemeBtn {
       background: #00ACC1 !important; }
     .theme-secondary .am-themePoster .iframeWrapper .editThemeBtn {
-      background: #f00 !important; }
+      background: #06A763 !important; }
   .am-themePoster .iframeWrapper .iconWrapper {
     background-color: #ffffff;
     height: 40px; }
     .theme-primary .am-themePoster .iframeWrapper .iconWrapper {
       border-bottom: 2px solid #00ACC1; }
     .theme-secondary .am-themePoster .iframeWrapper .iconWrapper {
-      border-bottom: 2px solid #f00; }
+      border-bottom: 2px solid #06A763; }
     .am-themePoster .iframeWrapper .iconWrapper .icon {
       width: 32px;
       height: 32px;
@@ -2293,7 +2293,7 @@ ul {
         .theme-primary .am-themePoster .iframeWrapper .iconWrapper .icon svg path {
           fill: #00ACC1 !important; }
         .theme-secondary .am-themePoster .iframeWrapper .iconWrapper .icon svg path {
-          fill: #f00 !important; }
+          fill: #06A763 !important; }
   .am-themePoster .iframeWrapper .vertical-theme-preview {
     position: absolute;
     top: 40px;
@@ -2946,8 +2946,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -2978,8 +2978,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -3068,7 +3068,7 @@ body {
           .theme-primary .hoverthemesPage .header .headerContent .menu a:hover {
             color: #00ACC1; }
           .theme-secondary .hoverthemesPage .header .headerContent .menu a:hover {
-            color: #f00; }
+            color: #06A763; }
   .hoverthemesPage .portfolio-filter ._modalBody {
     padding: 0 30px 30px !important; }
     .hoverthemesPage .portfolio-filter ._modalBody ._close {
@@ -3086,8 +3086,8 @@ body {
         color: #00ACC1;
         border-bottom-color: #00ACC1; }
       .theme-secondary .hoverthemesPage .portfolio-filter .tab .tabTitle.active {
-        color: #f00;
-        border-bottom-color: #f00; }
+        color: #06A763;
+        border-bottom-color: #06A763; }
   .hoverthemesPage .portfolio-filter .am-thumb {
     margin-bottom: 30px !important; }
   .hoverthemesPage .border-bottom {
@@ -3138,7 +3138,7 @@ body {
     .theme-primary .hoverthemesPage .btn-default:hover, .theme-primary .hoverthemesPage .btn-default:active, .theme-primary .hoverthemesPage .btn-default:active:hover {
       background-color: #00ACC1; }
     .theme-secondary .hoverthemesPage .btn-default:hover, .theme-secondary .hoverthemesPage .btn-default:active, .theme-secondary .hoverthemesPage .btn-default:active:hover {
-      background-color: #f00; }
+      background-color: #06A763; }
   .hoverthemesPage .text-center {
     text-align: center; }
   .hoverthemesPage .border-top {
@@ -3181,7 +3181,7 @@ body {
       .theme-primary .hoverthemesPage .page-footer .footer-brand span {
         color: #00ACC1; }
       .theme-secondary .hoverthemesPage .page-footer .footer-brand span {
-        color: #f00; }
+        color: #06A763; }
     .hoverthemesPage .page-footer .footer-social {
       text-align: right; }
     .hoverthemesPage .page-footer .footer-social li:first-child {
@@ -3214,7 +3214,7 @@ body {
     .theme-primary .footer-brand span {
       color: #00ACC1; }
     .theme-secondary .footer-brand span {
-      color: #f00; }
+      color: #06A763; }
 
 /*
  * Theme definitions
@@ -3238,8 +3238,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -3261,7 +3261,7 @@ body {
     .theme-primary .am-thumb .thumb .overlayThumb {
       background-color: #00ACC1; }
     .theme-secondary .am-thumb .thumb .overlayThumb {
-      background-color: #f00; }
+      background-color: #06A763; }
   .am-thumb .thumb .meta {
     display: block;
     position: absolute;
@@ -3345,8 +3345,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -3397,7 +3397,7 @@ body {
         .theme-primary .timeline .timeline-wrapper:nth-child(2n):before {
           background-color: #00ACC1; }
         .theme-secondary .timeline .timeline-wrapper:nth-child(2n):before {
-          background-color: #f00; }
+          background-color: #06A763; }
     .timeline .timeline-wrapper:nth-child(2n-1) {
       float: left;
       position: relative;
@@ -3416,7 +3416,7 @@ body {
         .theme-primary .timeline .timeline-wrapper:nth-child(2n-1):before {
           background-color: #00ACC1; }
         .theme-secondary .timeline .timeline-wrapper:nth-child(2n-1):before {
-          background-color: #f00; }
+          background-color: #06A763; }
     .timeline .timeline-wrapper .timeline-content {
       width: 95%;
       padding: 0 15px;
@@ -3428,7 +3428,7 @@ body {
         .theme-primary .timeline .timeline-wrapper .timeline-content h3 {
           color: #00ACC1; }
         .theme-secondary .timeline .timeline-wrapper .timeline-content h3 {
-          color: #f00; }
+          color: #06A763; }
       .timeline .timeline-wrapper .timeline-content .timeline-content h5 {
         margin-bottom: 10px;
         text-transform: capitalize; }
@@ -3480,8 +3480,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -3544,7 +3544,7 @@ body {
         .theme-primary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
           color: #00ACC1; }
         .theme-secondary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
-          color: #f00; }
+          color: #06A763; }
 
 .seAboutMe .about {
   padding-left: 20%; }
@@ -3629,7 +3629,7 @@ body {
       .theme-primary .skill .skillbar .react-sweet-progress-line-inner {
         background-color: #00ACC1 !important; }
       .theme-secondary .skill .skillbar .react-sweet-progress-line-inner {
-        background-color: #f00 !important; }
+        background-color: #06A763 !important; }
     .skill .skillbar .react-sweet-progress-symbol {
       position: relative;
       bottom: 20px;
@@ -3715,8 +3715,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -3793,8 +3793,8 @@ body {
         color: #00ACC1;
         border-bottom-color: #00ACC1; }
       .theme-secondary .trimatrixlabPage .portfolio-filter .tab .tabTitle.active {
-        color: #f00;
-        border-bottom-color: #f00; }
+        color: #06A763;
+        border-bottom-color: #06A763; }
   .trimatrixlabPage .portfolio-filter .am-thumb {
     margin-bottom: 30px !important; }
   .trimatrixlabPage .border-bottom {
@@ -3845,15 +3845,29 @@ body {
     .theme-primary .trimatrixlabPage .btn-default:hover, .theme-primary .trimatrixlabPage .btn-default:active, .theme-primary .trimatrixlabPage .btn-default:active:hover {
       background-color: #00ACC1; }
     .theme-secondary .trimatrixlabPage .btn-default:hover, .theme-secondary .trimatrixlabPage .btn-default:active, .theme-secondary .trimatrixlabPage .btn-default:active:hover {
-      background-color: #f00; }
+      background-color: #06A763; }
   .trimatrixlabPage .text-center {
     text-align: center; }
   .trimatrixlabPage .border-top {
     border-top: 1px solid #ECEFF1; }
   .trimatrixlabPage .contact {
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff; }
     .trimatrixlabPage .contact input {
       margin-bottom: 15px; }
+    .trimatrixlabPage .contact .waves-effect {
+      width: 115px;
+      color: #fff;
+      border-radius: 2px;
+      margin-top: 7px;
+      transition: all .3s ease-out; }
+      .theme-primary .trimatrixlabPage .contact .waves-effect {
+        background-color: #00ACC1; }
+      .theme-secondary .trimatrixlabPage .contact .waves-effect {
+        background-color: #06A763; }
+      .trimatrixlabPage .contact .waves-effect:hover {
+        box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
   .trimatrixlabPage .page-footer {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -3888,7 +3902,7 @@ body {
       .theme-primary .trimatrixlabPage .page-footer .footer-brand span {
         color: #00ACC1; }
       .theme-secondary .trimatrixlabPage .page-footer .footer-brand span {
-        color: #f00; }
+        color: #06A763; }
     .trimatrixlabPage .page-footer .footer-social {
       text-align: right; }
     .trimatrixlabPage .page-footer .footer-social li:first-child {
@@ -3911,7 +3925,7 @@ body {
     padding: 30px; }
     .trimatrixlabPage .btnWrapper button {
       width: 170px; }
-  .trimatrixlabPage .about {
+  .trimatrixlabPage .aboutBox {
     overflow: visible;
     width: 100%;
     height: auto;
@@ -3926,7 +3940,7 @@ body {
     .theme-primary .footer-brand span {
       color: #00ACC1; }
     .theme-secondary .footer-brand span {
-      color: #f00; }
+      color: #06A763; }
 
 /*
  * Theme definitions
@@ -3950,8 +3964,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -3973,7 +3987,7 @@ body {
     .theme-primary .am-thumb .thumb .overlayThumb {
       background-color: #00ACC1; }
     .theme-secondary .am-thumb .thumb .overlayThumb {
-      background-color: #f00; }
+      background-color: #06A763; }
   .am-thumb .thumb .meta {
     display: block;
     position: absolute;
@@ -4057,8 +4071,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -4090,7 +4104,7 @@ body {
     .theme-primary .timeline-trimatrixlab:before {
       background-color: #00ACC1; }
     .theme-secondary .timeline-trimatrixlab:before {
-      background-color: #f00; }
+      background-color: #06A763; }
   .timeline-trimatrixlab .timeline-wrapper {
     width: 50%;
     clear: both;
@@ -4127,7 +4141,7 @@ body {
         .theme-primary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n) .timeline-dot {
           background-color: #00ACC1; }
         .theme-secondary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n) .timeline-dot {
-          background-color: #f00; }
+          background-color: #06A763; }
         .timeline-trimatrixlab .timeline-wrapper:nth-child(2n) .timeline-dot:before {
           content: '';
           width: 58px;
@@ -4141,7 +4155,7 @@ body {
           .theme-primary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n) .timeline-dot:before {
             background-color: #00ACC1; }
           .theme-secondary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n) .timeline-dot:before {
-            background-color: #f00; }
+            background-color: #06A763; }
     .timeline-trimatrixlab .timeline-wrapper:nth-child(2n-1) {
       float: left;
       position: relative;
@@ -4174,7 +4188,7 @@ body {
         .theme-primary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n-1) .timeline-dot {
           background-color: #00ACC1; }
         .theme-secondary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n-1) .timeline-dot {
-          background-color: #f00; }
+          background-color: #06A763; }
         .timeline-trimatrixlab .timeline-wrapper:nth-child(2n-1) .timeline-dot:before {
           content: '';
           width: 58px;
@@ -4187,7 +4201,7 @@ body {
           .theme-primary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n-1) .timeline-dot:before {
             background-color: #00ACC1; }
           .theme-secondary .timeline-trimatrixlab .timeline-wrapper:nth-child(2n-1) .timeline-dot:before {
-            background-color: #f00; }
+            background-color: #06A763; }
     .timeline-trimatrixlab .timeline-wrapper .timeline-content {
       width: 95%;
       padding: 0 15px;
@@ -4199,7 +4213,7 @@ body {
         .theme-primary .timeline-trimatrixlab .timeline-wrapper .timeline-content h3 {
           color: #00ACC1; }
         .theme-secondary .timeline-trimatrixlab .timeline-wrapper .timeline-content h3 {
-          color: #f00; }
+          color: #06A763; }
       .timeline-trimatrixlab .timeline-wrapper .timeline-content .timeline-content h5 {
         margin-bottom: 10px;
         text-transform: capitalize; }
@@ -4251,8 +4265,8 @@ body {
     color: #00ACC1;
     background-color: #00ACC1; }
   .theme-secondary .app-container {
-    color: #f00;
-    background-color: #f00; }
+    color: #06A763;
+    background-color: #06A763; }
   .app-container .button {
     max-width: 20em;
     cursor: pointer;
@@ -4264,8 +4278,27 @@ body {
 .bg-paper.intro {
   width: 100%;
   height: 85vh;
-  background-color: #fafafe;
+  background-color: transparent;
   overflow: hidden; }
+
+.bg-paper .SeProfile-wrapper {
+  max-width: 1000px;
+  padding: 30px; }
+  .theme-primary .bg-paper .SeProfile-wrapper {
+    background-color: #00ACC1; }
+  .theme-secondary .bg-paper .SeProfile-wrapper {
+    background-color: #06A763; }
+
+.bg-paper .slant {
+  top: 0;
+  z-index: 1;
+  position: absolute;
+  border-style: solid;
+  border-width: 500px 100px 0 0; }
+  .theme-primary .bg-paper .slant {
+    border-color: rgba(223, 50, 50, 0) #00ACC1 transparent transparent; }
+  .theme-secondary .bg-paper .slant {
+    border-color: rgba(223, 50, 50, 0) #06A763 transparent transparent; }
 
 .bg-paper .imgProfile {
   width: 100%;
@@ -4281,26 +4314,31 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 100%; }
+    height: 100%;
+    color: #ffffff; }
+    .theme-primary .bg-paper .intro-content .intro-title-wrapper {
+      background-color: #00ACC1; }
+    .theme-secondary .bg-paper .intro-content .intro-title-wrapper {
+      background-color: #06A763; }
     .bg-paper .intro-content .intro-title-wrapper .intro-title {
       text-transform: capitalize;
       font-size: 40px;
       letter-spacing: 1px;
       margin-bottom: 10px;
-      color: #000000;
       font-weight: 700;
       margin-top: 0;
-      line-height: 1.1; }
+      line-height: 1.1;
+      color: #ffffff; }
     .bg-paper .intro-content .intro-title-wrapper .intro-subtitle {
       font-size: 21px;
       margin-bottom: 10px;
       text-transform: capitalize;
-      color: #000000;
       font-family: 'Raleway', sans-serif;
       font-weight: 700;
       margin-top: 0;
       letter-spacing: 1.5px;
-      line-height: 1.1; }
+      line-height: 1.1;
+      color: #ffffff; }
     .bg-paper .intro-content .intro-title-wrapper a.link.animated {
       position: relative; }
       .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
@@ -4315,7 +4353,7 @@ body {
         .theme-primary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
           color: #00ACC1; }
         .theme-secondary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
-          color: #f00; }
+          color: #06A763; }
 
 .seAboutMe .about {
   padding-left: 20%; }
@@ -4376,6 +4414,8 @@ body {
     align-items: center; }
     .skill .skill-title .iconFont {
       margin-left: 10px; }
+    .skill .skill-title h4 {
+      color: #ffffff; }
   .skill .countWrapper {
     display: flex;
     align-items: center;
@@ -4393,18 +4433,20 @@ body {
   .skill .skillbar {
     margin-bottom: 10px;
     width: 80%; }
-    .skill .skillbar .react-sweet-progress-line-inner {
+    .theme-primary .skill .skillbar .react-sweet-progress-line {
+      background-color: #00ACC1 !important; }
+    .theme-secondary .skill .skillbar .react-sweet-progress-line {
+      background-color: #05985a !important; }
+    .skill .skillbar .react-sweet-progress-line .react-sweet-progress-line-inner {
       height: 3px !important;
       min-height: 3px;
-      color: #616161; }
-      .theme-primary .skill .skillbar .react-sweet-progress-line-inner {
-        background-color: #00ACC1 !important; }
-      .theme-secondary .skill .skillbar .react-sweet-progress-line-inner {
-        background-color: #f00 !important; }
+      color: #616161;
+      background-color: #ffffff !important; }
     .skill .skillbar .react-sweet-progress-symbol {
       position: relative;
       bottom: 20px;
-      left: 35px; }
+      left: 35px;
+      color: #ffffff !important; }
 
 .am-seSelected {
   position: relative;
@@ -4452,23 +4494,26 @@ body {
     width: 100%;
     display: block; }
 
-.seDocument .am-selected {
+.seDocument-trimatrixlab .am-selected {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
-  .seDocument .am-selected > div {
+  .seDocument-trimatrixlab .am-selected > div {
     display: flex;
     justify-content: center; }
-  .seDocument .am-selected .skill-title h4 {
+  .seDocument-trimatrixlab .am-selected .skill-title h4 {
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    color: #777777; }
 
-.theme-primary .seSkills {
-  background-color: #00ACC1; }
-
-.theme-secondary .seSkills {
-  background-color: #f00; }
+.seSkills {
+  padding: 40px;
+  color: #ffffff; }
+  .theme-primary .seSkills {
+    background-color: #00ACC1; }
+  .theme-secondary .seSkills {
+    background-color: #06A763; }
 
 @font-face {
   font-family: 'yekan';

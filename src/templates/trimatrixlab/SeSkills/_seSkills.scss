@@ -1,4 +1,6 @@
 .seSkills {
+  padding: 40px;
+  color: $white-color;
   @include themify($themes) {
     background-color: themed('backgroundColor');
   }

@@ -5,15 +5,17 @@
 $themes: (
         primary: (
                 backgroundColor: #00ACC1,
+                backgroundDarkColor: #00ACC1,
                 textColor: #00ACC1,
                 hoverColor: #00ACC1,
                 border:#00ACC1
         ),
         secondary: (
-                backgroundColor: #f00,
-                textColor: #f00,
-                hoverColor: #f00,
-                border:#f00
+                backgroundColor: #06A763,
+                backgroundDarkColor: #05985a,
+                textColor: #06A763,
+                hoverColor: #06A763,
+                border:#06A763
         ),
 );
 

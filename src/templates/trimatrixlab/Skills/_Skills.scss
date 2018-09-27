@@ -8,7 +8,7 @@
       margin-left: 10px;
     }
     h4 {
-
+      color: $white-color;
     }
   }
   .countWrapper {
@@ -29,18 +29,22 @@
   .skillbar {
     margin-bottom: 10px;
     width: 80%;
-    .react-sweet-progress-line-inner {
-      height: 3px !important;
-      min-height: 3px;
-      color: $black-11;
+    .react-sweet-progress-line {
       @include themify($themes) {
-        background-color: themed('backgroundColor') !important;
+        background-color: themed('backgroundDarkColor') !important;
+      }
+      .react-sweet-progress-line-inner {
+        height: 3px !important;
+        min-height: 3px;
+        color: $black-11;
+        background-color: $white-color !important;
       }
     }
     .react-sweet-progress-symbol {
       position: relative;
       bottom: 20px;
       left: 35px;
+      color: $white-color !important;
     }
   }
   .skill-content {

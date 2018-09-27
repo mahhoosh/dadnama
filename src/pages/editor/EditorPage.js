@@ -94,8 +94,8 @@ class EditorPage extends React.Component {
                 <div
                     className={'view-container'}
                 >
-                     <HoverthemesPage/>
-                    {/*<TrimatrixlabPage/>*/}
+                    {/*<HoverthemesPage/>*/}
+                    <TrimatrixlabPage/>
                 </div>
                 {/* <footer
                     className={'editorFooter'}

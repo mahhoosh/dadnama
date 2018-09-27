@@ -207,7 +207,7 @@ class TrimatrixlabPage extends React.Component {
                         </div>
                     </div>*/}
                 </header>
-                <section id="about" className="about section-padding border-bottom">
+                <section id="about" className="aboutBox section-padding border-bottom">
                     <SeAbout/>
                 </section>
 
@@ -236,48 +236,40 @@ class TrimatrixlabPage extends React.Component {
                 <section className=" contactMe section-padding">
 
                     <div className="container">
-
-
                         <h2 className="title">تماس با ما</h2>
-
-
                         <div className="row">
+                            <div className="col-md-6 contact">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <input type="text" id="name" className="form-control" placeholder="نام"/>
+                                    </div>
+                                    <div className="col-md-6">
 
-                            <div className="col-md-8 contact">
-
-
-                                <form id="contact-form" noValidate="novalidate">
-
-                                    <div className="row">
-
-                                        <div className="col-md-6">
-                                            <input type="text" id="name" className="form-control" placeholder="نام"/>
-                                        </div>
-                                        <div className="col-md-6">
-
-                                            <input type="text" id="subject" className="form-control" placeholder=""/>
-                                        </div>
-                                        <div className="col-md-12">
-                                            <input type="email" id="email" className="form-control"
-                                                   placeholder="ایمیل"/>
-                                        </div>
-                                        <div className="col-md-12">
+                                        <input type="text" id="subject" className="form-control" placeholder=""/>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <input type="email" id="email" className="form-control"
+                                               placeholder="ایمیل"/>
+                                    </div>
+                                    <div className="col-md-12">
                                             <textarea className="form-control" cols="30" rows="8"
                                                       placeholder="پیام"/>
-                                        </div>
-                                        <div className="col-md-12">
-                                            {/*<h6 className="success-content">
+                                    </div>
+                                    <div className="col-md-12">
+                                        {/*<h6 className="success-content">
                                                 <i
                                                     className="ion-android-checkbox-outline"/>Your message has been sent
                                                 successfully.</h6>
                                             <h6 className="error-content"><i className="ion-alert-circled"/>Opps!
                                                 Please fix the error.</h6>*/}
-                                        </div>
-                                        <div className="col-md-12 text-center btnWrapper">
-                                            <button id="submit" className="btn btn-default">ارسال</button>
-                                        </div>
                                     </div>
-                                </form>
+                                    <div className="col-md-12 text-center btnWrapper">
+                                        <button id="submit" className="btn waves-effect">ارسال</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                google map
                             </div>
                         </div>
 
@@ -286,7 +278,7 @@ class TrimatrixlabPage extends React.Component {
 
 
                 </section>
-                <footer className="page-footer border-top">
+                {/*<footer className="page-footer border-top">
                     <div className="container">
                         <div className="row">
 
@@ -339,7 +331,7 @@ class TrimatrixlabPage extends React.Component {
 
                     </div>
 
-                </footer>
+                </footer>*/}
             </div>
         );
     }

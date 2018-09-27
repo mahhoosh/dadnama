@@ -7,7 +7,9 @@ import {USER_PHOTO} from 'Graphql/UserPhotoQuery';
 
 import {
     Selected,
-    SeSelected
+    SeSelected,
+    SeAboutMe,
+    SeNetworks
 } from 'templates/trimatrixlab';
 import {
     Edit
@@ -33,19 +35,19 @@ class SeProfile extends Component {
     }
 
     showCroppedImage(croppedAreaPixels) {
-       /* let dataFile = new FormData();
-        dataFile.append('file', croppedAreaPixels);*/
-       /* this.dataFile = dataFile;*/
-        console.log('croppedArea=====999 profile',croppedAreaPixels)
-          this.setState({
-              dataFile: this.croppedAreaPixels
-          });
+        /* let dataFile = new FormData();
+         dataFile.append('file', croppedAreaPixels);*/
+        /* this.dataFile = dataFile;*/
+        console.log('croppedArea=====999 profile', croppedAreaPixels)
+        this.setState({
+            dataFile: this.croppedAreaPixels
+        });
     }
 
     onClickEdit() {
 
         //e.preventDefault();
-        axios.post(`http://api.dadnama.sajadweb.ir/api/upload/image/${this.props.photo}`, this.state.dataFile
+        axios.post(`http://api.dadnama.ir/api/upload/image/${this.props.photo}`, this.state.dataFile
             , {
                 headers: {
                     Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -61,7 +63,13 @@ class SeProfile extends Component {
 
     render() {
         const {
-            direction, photo, description, name, linkTo, lastName
+            direction, photo,
+            description,
+            name,
+            linkTo,
+            lastName,
+            descriptionAboutMe,
+            text
         } = this.props;
 
         return (
@@ -71,65 +79,74 @@ class SeProfile extends Component {
                    }}
             >
                 {({data, fetchMore}) => (
+                    <div
+                        className={' SeProfile-wrapper'}
+                    >
+                        <div className={`row bg-paper ${direction}`}>
 
-                    <div className={`row SeProfile-wrapper bg-paper ${direction}`}>
-                        {console.log('data===== profile 888888', data)}
-                        <div className="col-md-6 col-sm-6 col-xs-6">
-                            <div
-                                className={'intro-title-wrapper'}
-                            >
-                                <h3 className="intro-title">{name}{lastName}</h3>
-                                <h4 className="intro-subtitle">{description}</h4>
-                                <Link
+                            <div className="col-md-6 col-sm-6 col-xs-6">
+                                <div
+                                    className={'intro-title-wrapper'}
+                                >
+                                    <h3 className="intro-title">{name}{lastName}</h3>
+                                    <h4 className="intro-subtitle">{description}</h4>
+                                    {/* <Link
                                     className="link animated easing"
                                     to={linkTo}
                                 >
                                     درباره من
-                                </Link>
-                            </div>
-                        </div>
-                        <user_photo
-                            entries={data.user_photo || {}}
-                            onLoadMore={() =>
-                                fetchMore({
-                                    variables: {
-                                        photo: data.user_photo.photo_type.label
-                                    },
-                                    updateQuery: (prev, {fetchMoreResult}) => {
-                                        debugger
-                                        if (!fetchMoreResult) return prev;
-                                        return Object.assign({}, prev, {
-                                            user_photo: [...prev.user_photo, ...fetchMoreResult.user_photo]
-                                        });
-                                    }
-                                })
-                            }
-                        />
-
-                        <div className="col-md-6 col-sm-6 col-xs-6">
-                            <SeSelected
-                                editIcon
-                                modalChildren={
-                                    <Edit
-                                        srcImgCrp={data.user_photo ? window.base_image + data.user_photo.path : ''}
-                                        title={'ویرایش'}
-                                        labelBtn={'ویرایش'}
-                                        cropper
-                                        fileUpload
-                                        showCroppedImage={this.showCroppedImage}
-                                        onClickEdit={this.onClickEdit}
+                                </Link>*/}
+                                    <SeAboutMe
+                                        descriptionMission={text}
+                                        name={name}
+                                        lastName={lastName}
+                                        descriptionMe={descriptionAboutMe}
                                     />
+                                    <SeNetworks/>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-sm-6 col-xs-6">
+                                <SeSelected
+                                    editIcon
+                                    modalChildren={
+                                        <Edit
+                                            srcImgCrp={data.user_photo ? window.base_image + data.user_photo.path : ''}
+                                            title={'ویرایش'}
+                                            labelBtn={'ویرایش'}
+                                            cropper
+                                            fileUpload
+                                            showCroppedImage={this.showCroppedImage}
+                                            onClickEdit={this.onClickEdit}
+                                        />
+                                    }
+                                    closeModal={this.state.closeModal}
+                                    onOpenModal={this.onOpenModal}
+                                >
+                                    {console.log('SeProfile===== 2', data.user_photo)}
+                                    <img className={'imgProfile'}
+                                         src={data.user_photo ? window.base_image + data.user_photo.path : ''}
+                                         alt={''}/>
+                                    <div className="slant"/>
+                                </SeSelected>
+                            </div>
+                            <user_photo
+                                entries={data.user_photo || {}}
+                                onLoadMore={() =>
+                                    fetchMore({
+                                        variables: {
+                                            photo: data.user_photo.photo_type.label
+                                        },
+                                        updateQuery: (prev, {fetchMoreResult}) => {
+                                            debugger
+                                            if (!fetchMoreResult) return prev;
+                                            return Object.assign({}, prev, {
+                                                user_photo: [...prev.user_photo, ...fetchMoreResult.user_photo]
+                                            });
+                                        }
+                                    })
                                 }
-                                closeModal={this.state.closeModal}
-                                onOpenModal={this.onOpenModal}
-                            >
-                                {console.log('SeProfile===== 2', data.user_photo)}
-                                <img className={'imgProfile'}
-                                     src={data.user_photo ? window.base_image + data.user_photo.path : ''} alt={''}/>
-                            </SeSelected>
+                            />
                         </div>
-
-
                     </div>
                 )}
 
@@ -141,6 +158,8 @@ class SeProfile extends Component {
 SeProfile.propTypes = {
     direction: PropTypes.string,
     description: PropTypes.string,
+    descriptionAboutMe: PropTypes.string,
+    text: PropTypes.string,
     name: PropTypes.string,
     lastName: PropTypes.string,
     linkTo: PropTypes.string,

@@ -172,7 +172,7 @@ class SeEducationales extends Component {
                                                         className={'container'}
                                                     >
                                                         <h2 className="title">سوابق تحصیلی</h2>
-                                                        <div className='timeline'>
+                                                        <div className='timeline-trimatrixlab'>
                                                             {
                                                                 user_educationales.map((item, index) => {
                                                                     return <Timeline

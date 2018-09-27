@@ -18,7 +18,7 @@ class FileUpload extends Component {
         const data = new FormData();
         data.append('photo', this.uploadInput.files[0]);
         const instance = axios.create({
-            baseURL: 'http://api.dadnama.sajadweb.ir',
+            baseURL: 'http://api.dadnama.ir',
             headers: {'Apikey': 'از لوکال استورج میخونی'}
         });
         instance.post('upload/image/actor', data)

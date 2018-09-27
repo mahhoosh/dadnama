@@ -6,7 +6,7 @@ import {NETWORKS} from 'Graphql/NetworksQuery';
 import {
     SelectedEdit,
     SeNetworks
-} from 'templates/hoverthemes';
+} from 'templates/trimatrixlab';
 
 class SeAboutMe extends Component {
     constructor(props) {
@@ -33,40 +33,36 @@ class SeAboutMe extends Component {
                             </div>)
                         } else if (data) {
                             console.log('========seAboutMe', data)
-                            return <div className={`row seAboutMe ${direction}`}>
-                                <div className="col-md-7">
-
-                                    <div
-                                        className={'about'}
-                                    >
-                                        <h3 className="mb-20">درباره من</h3>
+                            return <div className={` seAboutMe ${direction}`}>
+                                <div
+                                    className={'about'}
+                                >
+                                    {/* <h3 className="mb-20">درباره من</h3>
                                         <p className="lead mb-35">
                                             {descriptionMe}
-                                        </p>
-                                        <ul className="about-list">
+                                        </p>*/}
+                                    <ul className="about-list">
 
-                                            <li>
-                                                <div className="right">نام:</div>
-                                                <div className="left">{`${name} ${lastName}`}</div>
-                                            </li>
-                                            {
-                                                data.networks.map((net, index) => {
-                                                    return <li
-                                                        key={index}
-                                                    >
-                                                        <div className="right">{net.network_type.title}</div>
-                                                        <div className="left">{net.name}</div>
-                                                    </li>
+                                        <li>
+                                            <div className="right">نام:</div>
+                                            <div className="left">{`${name} ${lastName}`}</div>
+                                        </li>
+                                        {
+                                            data.networks.map((net, index) => {
+                                                return <li
+                                                    key={index}
+                                                >
+                                                    <div className="right">{net.network_type.title}</div>
+                                                    <div className="left">{net.name}</div>
+                                                </li>
 
-                                                })
-                                            }
+                                            })
+                                        }
 
-                                        </ul>
-                                    </div>
-
+                                    </ul>
                                 </div>
 
-                                <div className="col-md-5">
+                              {/*  <div className="col-md-5">
 
                                     <div className="row">
 
@@ -100,10 +96,8 @@ class SeAboutMe extends Component {
 
                                     </div>
 
-                                </div>
-                                <div className="col-md-12">
-                                    <SeNetworks/>
-                                </div>
+                                </div>*/}
+                              {/*  <SeNetworks/>*/}
                             </div>
                         }
                         else {

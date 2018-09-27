@@ -45,7 +45,7 @@ class SeProfile extends Component {
     onClickEdit() {
 
         //e.preventDefault();
-        axios.post(`http://api.dadnama.sajadweb.ir/api/upload/image/${this.props.photo}`, this.state.dataFile
+        axios.post(`http://api.dadnama.ir/api/upload/image/${this.props.photo}`, this.state.dataFile
             , {
                 headers: {
                     Authorization: 'Bearer ' + localStorage.getItem('token')

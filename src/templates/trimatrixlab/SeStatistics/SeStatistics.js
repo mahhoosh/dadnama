@@ -122,7 +122,7 @@ class SeStatistics extends Component {
                                             onOpenModal={this.onOpenModal}
                                         >
                                             <div
-                                                className={'container seDocument'}
+                                                className={'container seDocument-trimatrixlab'}
                                             >
                                                 <h2 className="title">پرونده ها</h2>
                                                 <div className='Skills row'>

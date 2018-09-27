@@ -161,21 +161,31 @@ class SeAbout extends Component {
                                                             description={data.user_about.title}
                                                             src={profileImg}
                                                             linkTo={'/'}
+                                                            descriptionMe={data.user_about.description}
+                                                            descriptionAboutMe={data.user_about.text}
                                                         />
+                                                        <div
+                                                            className={'col-lg-12'}
+                                                        >
+                                                            <h3 className="mb-20">درباره من</h3>
+                                                            <p className="lead mb-35">
+                                                                {data.user_about.description}
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </article>
 
-                                            <article id="about" className="section-padding">
+                                           {/* <article id="about" className="section-padding">
                                                 <div className="container">
-                                                    <SeAboutMe
+                                                     <SeAboutMe
                                                         descriptionMission={data.user_about.text}
                                                         name={data.user_about.first_name}
                                                         lastName={data.user_about.last_name}
                                                         descriptionMe={data.user_about.description}
                                                     />
                                                 </div>
-                                            </article>
+                                            </article>*/}
                                         </SeSelected>
                                         {
                                             this.state.isAlert && <Alert
