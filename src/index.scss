@@ -1,0 +1,46 @@
+//@import './sass/_theme.sass'
+@import "components/themes/theme";
+@import "components/themes/reset";
+@import '_theme';
+// Component
+@import 'components/index';
+@import 'dadComponents/index';
+@import 'app';
+//common
+@import 'common/index';
+//pages
+@import "pages/index";
+//-----hoverthemesPage---------
+@import "theme";
+@import "templates/hoverthemes/hoverthemesPage";
+@import "templates/hoverthemes/Thumb/thumb";
+@import "templates/hoverthemes/Timeline/timeline";
+@import "templates/hoverthemes/SelectedEdit/selectedEdit";
+@import "templates/hoverthemes/SeProfile/SeProfile";
+@import "templates/hoverthemes/SeAboutMe/SeAboutMe";
+@import "templates/hoverthemes/Skills/Skills";
+@import "templates/hoverthemes/SeSelected/seSelected";
+@import "templates/hoverthemes/SeResume/seResume";
+@import "templates/hoverthemes/SeEducationales/seEducationales";
+@import "templates/hoverthemes/SeStatistics/seStatistics";
+//-----trimatrixlab----
+@import "templates/trimatrixlab/trimatrixlabPage";
+@import "templates/trimatrixlab/Thumb/thumb";
+@import "templates/trimatrixlab/Timeline/timeline";
+@import "templates/trimatrixlab/SelectedEdit/selectedEdit";
+@import "templates/trimatrixlab/SeProfile/SeProfile";
+@import "templates/trimatrixlab/SeAboutMe/SeAboutMe";
+@import "templates/trimatrixlab/Skills/Skills";
+@import "templates/trimatrixlab/SeSelected/seSelected";
+@import "templates/trimatrixlab/SeResume/seResume";
+@import "templates/trimatrixlab/SeEducationales/seEducationales";
+@import "templates/trimatrixlab/SeStatistics/seStatistics";
+@import "templates/trimatrixlab/SeSkills/seSkills";
+//----font--
+@import "assets/fonts/fontcss";
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+.LoadingOverlay {
+  display: none;
+  position: fixed;
+  background-color: rgba($black, .22);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  img {
+    // -webkit-animation: spin 4s linear infinite
+    // -moz-animation: spin 4s linear infinite
+    // animation: spin 4s linear infinite
+    width: 36px;
+  }
+  &.-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+}
+
+

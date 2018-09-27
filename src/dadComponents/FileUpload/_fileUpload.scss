@@ -1,0 +1,14 @@
+.am-edit {
+  padding: 30px;
+  direction: rtl;
+  width: 400px;
+  @media (max-width: 320px) {
+    width: 320px;
+  }
+  .inputWrapper {
+    label {
+      width: 100%;
+      display: block;
+    }
+  }
+}

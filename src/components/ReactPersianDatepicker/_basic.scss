@@ -1,0 +1,141 @@
+.calendarContainer {
+  border-radius: 3px;
+  box-shadow: 0 3px 10px #dbdbdb;
+  border: 1px solid #cccccc;
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+* {
+  box-sizing: border-box;
+}
+.dayPickerContainer:after, .monthsList:after, .daysOfWeek:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.heading {
+  height: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+> {
+button {
+  border-radius: 3px;
+  background: none;
+  margin: 5px 0;
+  border: 1px solid #F7F7F7;
+  text-align: center;
+  line-height: 30px;
+  width: 36px;
+  height: 32px;
+  cursor: pointer;
+&:hover {
+   background-color: #f2f2f2;
+ }
+}
+span {
+  line-height: 35px;
+}
+}
+svg {
+  width: 10px;
+}
+.prev {
+  float: right;
+}
+.next {
+  float: left;
+}
+.title {
+  line-height: 32px;
+  width: 120px;
+  height: 32px;
+  font-size: 1em;
+  margin: 5px 0;
+  border: 1px solid #F7F7F7;
+  text-align: center;
+  display: inline-block;
+  font-weight: normal;
+}
+}
+.dayWrapper {
+  padding: 5;
+  float: right;
+  width: 14.28571429%;
+button {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  height: 36px;
+  border-radius: 3px;
+  cursor: pointer;
+&:hover {
+   background-color: #eeeeff;
+ }
+&[disabled] {
+   color: #aaa;
+   cursor: not-allowed;
+   background-color: #ebebeb;
+ }
+&.selected {
+   background-color: #337ab7;
+   color: #ffffff;
+ }
+}
+&:not(.currentMonth) button {
+   opacity: .5;
+ }
+}
+.daysOfWeek {
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  width: 100%;
+> div {
+  flex-grow: 1;
+  justify-content: space-between;
+}
+}
+.monthsList {
+  clear: both;
+  width: 100%;
+button {
+  width: 33.33333332%;
+  height: 25%;
+  float: right;
+  border: 1px solid #F9F9F9;
+  outline: none;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 0;
+  cursor: pointer;
+&:hover {
+   background: #eeeeee;
+   cursor: pointer;
+ }
+}
+}
+.selected button {
+  background-color: #337ab7;
+  color: #ffffff;
+&:hover, &:active, &:focus {
+                      background-color: #337ab7;
+                      color: #ffffff;
+                    }
+}
+}
+
+/* Heading */
+
+/* Day wrapper styles */
+
+/* Day wrapper button styles */
+
+/* Days of week row */
+
+/* Month selector portion */
+
+/* Selected state of buttons */

@@ -1,0 +1,48 @@
+.RH-accordion {
+  display: flex;
+  flex-direction: column;
+  &.open {
+    .sectionHead {
+      background-color: $white-color;
+      i {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .sectionHead {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 3px 15px;
+    margin: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $border-color;
+    z-index: 1;
+    transition: all 0.4s ease-in;
+    label {
+      flex: 1;
+    }
+    i {
+      align-self: flex-end;
+      transition: all 200ms ease-in;
+    }
+  }
+  .bodyWrap {
+    position: relative;
+    margin-top: -3px;
+    z-index: 0;
+    transition: all 0.4s ease-in-out;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent $border-color transparent $border-color;
+  }
+  .openBody {
+    transition: all 0.4s ease-in-out;
+    opacity: 1;
+    height: auto;
+  }
+}

@@ -1,0 +1,27 @@
+.footer {
+  background: $white-color;
+  width: 100%;
+  .seContent {
+    padding-top: 80px;
+    padding-bottom: 30px;
+    .socialNetworksWrapper {
+      direction: ltr;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      > div {
+        flex: 1;
+      }
+      .copyright {
+        color: $gray;
+      }
+    }
+    .lp-logo--small {
+      margin-top: 20px;
+      svg {
+        width: 34px;
+        height: 25px;
+      }
+    }
+  }
+}

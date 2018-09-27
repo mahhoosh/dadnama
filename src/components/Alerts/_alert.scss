@@ -1,0 +1,48 @@
+.alert {
+  position: fixed;
+  bottom: 10px;
+  left: calc(50% - 100px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: $primary-light-color;
+  border: 1px solid $border-color;
+  font-size: 12px;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -6px;
+    right: 40px;
+    box-sizing: border-box;
+    border: 6px solid $primary-light-color;
+    border-color: transparent transparent $primary-light-color $primary-light-color;
+    transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+    transform: rotate(-45deg);
+    box-shadow: -1px 1px 0 0 $border-color;
+  }
+  .titleAlert {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .imgWrapper {
+    img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    overflow: hidden;
+    margin-left: 10px;
+  }
+  .icon {
+    //fonts-size: 16px;
+    padding: 5px;
+    color: $primary;
+  }
+}

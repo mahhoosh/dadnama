@@ -1,0 +1,66 @@
+
+.editorPage {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+  .w-editor-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 14;
+    font-size: 16px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    height: 50px;
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #fff;
+    user-select: none;
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    .w-logo-top {
+      width: 234px;
+      position: relative;
+      box-sizing: border-box;
+      transition: 0.2s ease-in-out width;
+    }
+  }
+  .view-container {
+    position: absolute;
+    top: 50px;
+    right: 234px;
+    left: 0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    bottom: 0 !important;
+    overflow: auto;
+  }
+  .w-editor-left {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    width: 234px;
+    height: 97%;
+    background: #E5E5E5;
+    font-size: 13px;
+    color: #fff;
+  }
+  .editorFooter {
+    display: block;
+    z-index: 2;
+    position: fixed;
+    height: 70px;
+    bottom: 0;
+    right: 232px;
+    left: 0;
+    background-color: #363B40;
+    padding: 6px 10px 10px;
+    color: white;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+}

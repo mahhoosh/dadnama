@@ -1,0 +1,25 @@
+.footerItem {
+  li {
+    list-style: none;
+    margin: 15px 0;
+    &:hover a {
+      color: $gray-1;
+    }
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1em;
+      text-decoration: none;
+      cursor: pointer;
+      color: $gray;
+    }
+  }
+  .title {
+    color: $gray-1;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    margin-bottom: 15px;
+    cursor: auto;
+  }
+}

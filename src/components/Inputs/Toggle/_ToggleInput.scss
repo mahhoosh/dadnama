@@ -1,0 +1,99 @@
+.ToggleBox {
+  height: 60px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #ffffff;
+  text-align: left;
+  padding: 10px 15px;
+  position: relative;
+  ::placeholder {
+    color: #eaebeb;
+    opacity: 1;
+  }
+  ._label {
+    font-size: 13px;
+    color: #666666;
+  }
+  ._textContainer {
+    display: flex;
+  }
+  ._prefix {
+    color: #00b9e6;
+    font-size: 14px;
+  }
+  ._text_input {
+    flex: 1;
+    max-width: 100%;
+    border: none;
+    outline: none;
+    color: #111111;
+    font-size: 14px;
+  }
+  ._important {
+    margin-left: 3px;
+    color: #ff4063;
+  }
+  ._icon {
+    position: absolute;
+    right: 0;
+    top: 32px;
+    height: 20px;
+    width: 20px;
+  }
+  .react-toggle {
+    padding-top: 2px;
+    width: 30px;
+    height: 16px;
+    .react-toggle-track {
+      background-color: #b9babb;
+      width: 30px;
+      height: 16px;
+    }
+    .react-toggle-thumb {
+      margin-top: 2px;
+      width: 16px;
+      height: 16px;
+      top: 0;
+    }
+  }
+  .react-toggle--checked {
+    .react-toggle-track {
+      background-color: #00b9e6;
+    }
+    .react-toggle-thumb {
+      border-color: #00b9e6;
+      margin-top: 2px;
+      left: 13px;
+    }
+    &:hover {
+      .react-toggle-track {
+        background-color: #00b9e6;
+        border-color: #00b9e6;
+      }
+      &:not(.react-toggle--disabled) .react-toggle-track {
+        background-color: #00b9e6;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .ToggleBox ._label {
+    font-size: 11px;
+  }
+}
+
+.ToggleBoxShadowBox {
+  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.03);
+  ._text_input {
+    padding: 2px 6px 10px 0;
+  }
+}
+
+.ToggleBoxUnderlined ._text_input {
+  border-bottom: solid 1px #eaebeb;
+}
+
+.ToggleBoxPrimary ._text_input {
+  color: #00b9e6;
+}

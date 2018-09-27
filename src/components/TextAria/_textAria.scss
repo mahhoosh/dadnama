@@ -1,0 +1,44 @@
+.RH-textAria {
+  box-sizing: border-box;
+  position: relative;
+  .textAria {
+    box-sizing: border-box;
+    padding: 6px 12px;
+    font-size: 14px;
+    outline: none;
+    line-height: 1.42857143;
+    color: $text-gray-color;
+    border-radius: 4px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.05);
+    height: auto;
+    transition: all .15s ease-out;
+    border: 1px solid $border-light-color;
+    &::placeholder {
+      color: $light-text-color;
+      opacity: 1;
+      font-size: 11px;
+    }
+    &:focus {
+      outline: 0;
+    }
+  ;
+  }
+  .label {
+    box-sizing: border-box;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: $text-gray-color;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+  }
+  i {
+    color: $text-gray-color;
+    position: absolute;
+    top: 5px;
+    box-sizing: border-box;
+    right: 10px;
+  }
+}

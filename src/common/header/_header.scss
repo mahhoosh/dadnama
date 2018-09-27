@@ -1,0 +1,27 @@
+.mainHeader {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  transition: background .75s cubic-bezier(0.19, 1, 0.22, 1), box-shadow .75s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  z-index: 999;
+  background-image: linear-gradient($primary 0%, rgba(6, 67, 228, 0) 100%);
+  background-color: transparent;
+  .content {
+    display: flex;
+    > div {
+      flex: 1;
+    }
+    .logo {
+      flex-basis: 100px;
+      max-width: 100px;
+      display: flex;
+      align-items: center;
+    }
+    .logIn {
+      display: flex;
+      flex-basis: 300px;
+      max-width: 300px;
+    }
+  }
+}

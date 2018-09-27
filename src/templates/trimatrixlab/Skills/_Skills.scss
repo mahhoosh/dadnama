@@ -1,0 +1,49 @@
+.skill {
+  width: 100%;
+  margin-bottom: 50px;
+  .skill-title {
+    display: flex;
+    align-items: center;
+    .iconFont {
+      margin-left: 10px;
+    }
+    h4 {
+
+    }
+  }
+  .countWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(119, 119, 119);
+    border: 1px solid rgb(119, 119, 119);
+    background-color: $white-color;
+    padding: 3px 7px;
+    border-radius: 50%
+  }
+  .skillbar {
+    margin-bottom: 10px;
+    width: 80%;
+    .react-sweet-progress-line-inner {
+      height: 3px !important;
+      min-height: 3px;
+      color: $black-11;
+      @include themify($themes) {
+        background-color: themed('backgroundColor') !important;
+      }
+    }
+    .react-sweet-progress-symbol {
+      position: relative;
+      bottom: 20px;
+      left: 35px;
+    }
+  }
+  .skill-content {
+
+  }
+}

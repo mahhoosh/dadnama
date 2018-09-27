@@ -1,0 +1,56 @@
+.seAboutMe {
+  .about {
+    padding-left: 20%;
+  }
+  .about-list {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .about-list li:first-child {
+    padding-top: 0;
+  }
+  .about-list li {
+    display: flex;
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #ededed;
+    overflow: hidden;
+  }
+
+  .about-list li .left {
+    font-weight: 700;
+    width: 70%;
+    text-align: left;
+  }
+  .about-list li .right {
+    text-align: right;
+    width: 30%;
+  }
+  .about-list li:last-child {
+    border-bottom: none;
+  }
+  .about-list li {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #ededed;
+    overflow: hidden;
+  }
+
+  .follow-me {
+    text-align: center;
+    margin-top: 35px;
+    ._modalBody {
+      text-align: right;
+    }
+  }
+  .follow-me li {
+    display: inline-block;
+  }
+  .follow-me li a {
+    color: #626262;
+    padding: 5px;
+    font-size: 20px;
+    display: inline-block;
+    margin-left: 10px;
+  }
+}

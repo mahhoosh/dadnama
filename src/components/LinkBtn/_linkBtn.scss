@@ -1,0 +1,58 @@
+.am-link {
+  color: $white-color;
+  background: $bg-gray-color;
+  display: inline-block;
+  padding: 10px 5px;
+  min-width: 150px;
+  border-radius: 3px;
+  font-weight: 500;
+  border: none;
+  transition: .75s cubic-bezier(0.19, 1, 0.22, 1);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  &.primary {
+    color: $white-color;
+    background: $primary;
+  }
+  &.secondary {
+    color: $primary;
+    background: $white-color;
+  }
+  &.outlinePrimary {
+    color: $primary;
+    border: 1px solid $primary;
+    background: transparent;
+  }
+  &.outlineSecondary {
+    color: $white-color;
+    border: 2px solid $white-color;
+    background: transparent;
+    &:hover {
+      border: 2px solid $white-color;
+      background: $white-color;
+      color: $primary;
+    }
+  }
+  &.linkPrimary {
+    color: $primary;
+    border: none;
+    background: transparent;
+    &:hover {
+      color: rgba($white-color, 0.6);
+    }
+  }
+  &.linkSecondary {
+    color: $white-color;
+    border: none;
+    background: transparent;
+    &:hover {
+      color: rgba($white-color, 0.6);
+    }
+  }
+  &.rounded {
+    padding: 0 40px;
+    line-height: 44px;
+    border-radius: 44px;
+  }
+}

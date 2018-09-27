@@ -1,0 +1,56 @@
+.am-menu {
+  background-color: transparent;
+  display: flex;
+  padding: 10px;
+  list-style: none;
+  * {
+    cursor: pointer;
+  }
+  > li {
+    margin-left: 30px;
+  }
+  > li > a {
+    padding: 5px 10px;
+    color: $white-color;
+  }
+
+  .subMenuWrapper {
+    position: relative;
+    color: $white-color;
+    .title {
+      .icon {
+        padding-right: 5px;
+        display: inline-block;
+      }
+    }
+    .dropDown {
+      list-style: none;
+      display: none;
+      position: absolute;
+      right: -30px;
+      top: 30px;
+      background: $white-color;
+      border-radius: 2px;
+      box-shadow: 0 2px 20px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+      .subMenuIcon {
+        right: 40px;
+        position: absolute;
+        top: -10px;
+      }
+      &.open {
+        display: block;
+      }
+      li {
+        list-style: none;
+        position: relative;
+        padding: 7px 20px;
+        margin-bottom: 0;
+        color: $gray;
+        transition: background .2s ease-in-out, opacity .2s ease-in-out;
+        a {
+          color: $gray;
+        }
+      }
+    }
+  }
+}

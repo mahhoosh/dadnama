@@ -1,0 +1,24 @@
+.RH-tab {
+  margin: 0 auto 60px auto;
+  .tab {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 1px;
+    z-index: 1;
+    font-size: 20px;
+    box-sizing: border-box;
+    .tabTitle {
+      padding: 5px 15px;
+      cursor: pointer;
+      display: inline-block;
+      color: rgba($white-color, 0.4);
+      &.active {
+        color: #ffff;
+      }
+    }
+  }
+  > div {
+    color: $white-color;
+  }
+}

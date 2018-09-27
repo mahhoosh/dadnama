@@ -1,0 +1,19 @@
+
+.seDocument {
+  .am-selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    > div {
+      display: flex;
+      justify-content: center;
+    }
+    .skill-title {
+      h4 {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.homepage {
+  .homeThemes {
+    padding: 150px 0 50px 0;
+    background: $gray-1;
+    .landing-page-title {
+      max-width: 840px;
+      margin: auto;
+      text-align: center;
+      color: $white-color;
+      h1 {
+        font-size: 55px;
+      }
+      h2 {
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        color: rgba($white-color, 0.75);
+        line-height: 1.75em;
+      }
+    }
+    .tab {
+      height: 55px;
+    }
+    .more {
+      text-align: center;
+      .rounded {
+        margin: 0 auto;
+      }
+    }
+  }
+  .masthead_content-dual {
+    max-height: 520px;
+    position: relative;
+    overflow: hidden;
+    .brand-message-text {
+      color: $white-color;
+      font-size: 22px;
+      margin: 25px auto;
+      max-width: 360px;
+    }
+    .commerce-brand-message {
+      padding: 1.2em;
+      background: rgba($black, 0.5);
+      display: inline-block;
+      margin: 0 auto;
+      border-radius: 3px;
+
+      .masthead-dual-cta_button {
+        color: $white-color;
+        background: $primary;
+        display: inline-block;
+        padding: 10px 5px;
+        min-width: 150px;
+        border-radius: 3px;
+        font-weight: 500;
+        border: none;
+      }
+      .website {
+        background: $white-color;
+        color: $primary;
+        margin-right: 20px;
+        margin-top: inherit;
+      }
+    }
+  }
+
+  /*new*/
+  .masthead_video-container {
+    min-height: 635px;
+    background-image: none;
+    height: calc(100vh - 135px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    background-color: #2990ea;
+    background-size: cover;
+    background-position: 50% 0%;
+  }
+
+  .masthead__video {
+    display: block;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .home-masthead_overlay {
+    background-image: linear-gradient(rgba(41, 144, 234, 0) 0%, #2990ea 100%);
+    background-color: transparent;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .masthead_container {
+    display: flex;
+    width: calc(100% - 80px);
+    min-height: 550px;
+    align-items: start;
+    padding: 0;
+    flex-wrap: wrap;
+    height: inherit;
+    margin: auto;
+    position: relative;
+    z-index: 100;
+  }
+
+  .masthead_center {
+    flex: 1;
+    margin-top: 1em;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .masthead-dual-cta_header-text {
+    color: #fff;
+    margin: 30px auto;
+    max-width: 820px;
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: 900;
+  }
+
+}

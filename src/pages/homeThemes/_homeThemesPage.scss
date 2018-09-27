@@ -1,0 +1,16 @@
+.homeThemesPage {
+  height: 100%;
+  .title {
+    text-align: center;
+    background-color: $black-10;
+    color: $white-color;
+    margin: 0;
+    padding: 20px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+  }
+  .homeThemes {
+    padding: 50px 0 100px 0;
+    background: $gray-1;
+  }
+}
+

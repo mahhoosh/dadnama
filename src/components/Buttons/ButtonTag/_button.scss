@@ -1,0 +1,73 @@
+.RH-button {
+  //border-radius: 5px;
+  padding: 5px 10px !important;
+  text-align: center;
+  outline: none;
+  width: auto;
+  color: $white-color;
+  * {
+    cursor: pointer;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    label {
+      display: inline-block;
+    }
+    i {
+      font-size: 16px;
+      padding: 0 5px;
+    }
+  }
+
+  &.xSmallClass {
+    * {
+      font-size: 24px;
+    }
+  }
+
+  &._cancel {
+    background-color: #b9babb;
+  }
+  &._delete {
+    background-color: #d20000;
+  }
+  &._primary {
+    background-color: $primary;
+    border: 1px solid $border-color;
+  }
+  &._secondary {
+    background-color: #686a6e;
+  }
+  &._gray {
+    background-color: $bg-gray-color;
+    border: 1px solid $border-color;
+  }
+
+  &.iconLeft {
+    span {
+      flex-direction: row-reverse !important;
+    }
+  }
+
+  &.primaryLink {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: $primary;
+  }
+
+  &.btn-outline-primary {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .spinner{
+    font-size: 18px;
+  }
+
+}

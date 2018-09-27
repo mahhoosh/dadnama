@@ -1,0 +1,66 @@
+
+.file-container {
+  position: relative;
+}
+
+.imgUpload {
+  //width: 100%;
+}
+
+.file-input {
+  border: 4px dashed rgba(black, 0);
+  height: 2em;
+  transition: all 0.5s;
+  width: 50%;
+  background-image: url("components/FileUpload/asset/img/upload.png");
+}
+
+.file-preview {
+  margin: 2em 0;
+}
+
+.target {
+  border-color: rgba(black, 0.5);
+  height: 5em;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    background: white;
+    content: "Drop That Heavy File Here.";
+    font-size: 1.5em;
+    font-weight: 500;
+    height: 100%;
+    left: 0;
+    line-height: 1.5;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+
+  &.hover {
+    border-color: black;
+  }
+}
+
+.dropzone {
+  border: 1px dashed rgba(0, 0, 0, .3);
+  border-radius: 5px;
+  background: #fff;
+  padding: 20px;
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, .03) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .03) 50%, rgba(0, 0, 0, .03) 75%, transparent 75%, transparent);
+  background-size: 16px 16px;
+}
+
+.dropzone, .dropzone * {
+  box-sizing: border-box;
+}
+
+.dropzone .dz-message {
+  background-size: 100%;
+  width: 200px;
+  height: 43px;
+  margin-left: -112px;
+  margin-top: -23.5px
+}

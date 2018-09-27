@@ -1,0 +1,108 @@
+@import '_theme.scss';
+
+.themeContent:hover {
+  .theme-poster {
+    opacity: 0.5;
+  }
+}
+
+.am-themePoster {
+  .iframeWrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    z-index: 9;
+    .editThemeBtn {
+      position: relative;
+      top: 4px;
+      right: 20px;
+      border: none;
+      @include themify($themes) {
+        background: themed('backgroundColor') !important;
+      }
+    }
+    .iconWrapper {
+      background-color: $white-color;
+      @include themify($themes) {
+        border-bottom: 2px solid themed('border');
+      }
+      height: 40px;
+      .icon {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 5px;
+        left: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 20px;
+          height: 15px;
+          path {
+            @include themify($themes) {
+              fill: themed('border') !important;
+            }
+          ;
+          }
+        }
+      }
+    }
+
+    .vertical-theme-preview {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      z-index: 9;
+    }
+  }
+
+  .home-themes_theme-container {
+    .theme-poster {
+      margin: auto;
+      padding: 25px;
+      transform: scale(1) translateZ(0);
+      position: relative;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      max-width: 525px;
+      height: auto;
+      cursor: pointer;
+      transition: opacity .75s cubic-bezier(0.19, 1, 0.22, 1), transform .75s cubic-bezier(0.19, 1, 0.22, 1);
+      &:hover {
+        transform: scale(1.02) translateZ(0);
+        opacity: 1;
+        .theme-poster_screenShot-img {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      .theme-poster_screenShot {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.2%;
+        border-radius: 2px;
+        .theme-poster_screenShot-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+          transition: opacity 1.25s cubic-bezier(0.19, 1, 0.22, 1), box-shadow .75s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+      }
+    }
+  }
+}

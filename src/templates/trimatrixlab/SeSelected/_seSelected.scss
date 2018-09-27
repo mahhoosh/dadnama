@@ -1,0 +1,47 @@
+.am-seSelected {
+  position: relative;
+  padding: 5px;
+  &:hover {
+    box-shadow: 0 0 0 1px #88ceff;
+  }
+  &.active {
+    box-shadow: 0 0 0 1px #88ceff;
+    .icon {
+      display: block;
+    }
+    .switch {
+      display: block;
+    }
+  }
+  &.hover {
+    .icon {
+      display: block;
+    }
+  }
+  &.hover {
+    .switch {
+      display: block;
+    }
+  }
+  .switch {
+    direction: ltr;
+    position: absolute;
+    right: 55px;
+    top: -14px;
+    display: none;
+    .react-switch-bg {
+      //background-color: #88ceff !important;
+    }
+  }
+  .icon {
+    font-size: 32px;
+    position: absolute;
+    right: 15px;
+    top: -15px;
+    cursor: pointer;
+    background-color: $white-color;
+    z-index: 99;
+    display: none;
+    color: #88ceff;
+  }
+}

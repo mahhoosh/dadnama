@@ -1,0 +1,268 @@
+@import '_theme.scss';
+
+.trimatrixlabPage {
+  color: #626262;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'yekan';
+  background-color: #f5f5f5;
+  section {
+    clear: both;
+  }
+  .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: rgb(85, 85, 85);
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px inset;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  }
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-right-style: initial;
+    border-bottom-style: initial;
+    border-left-style: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-width: 1px 0px 0px;
+    border-image: initial;
+    border-top: 1px solid rgb(238, 238, 238);
+  }
+  .seTimeline {
+    overflow: hidden;
+  }
+  .seResume {
+    overflow: hidden;
+  }
+  // header
+  .header {
+    .header-background {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 370px;
+      background: url('assets/images/background.jpg') no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+  }
+
+  // section portfolio-filter
+  .portfolio-filter {
+    ._modalBody {
+      padding: 0 30px 30px !important;
+      ._close {
+        right: -20px !important;
+      }
+    }
+    .tab {
+      text-align: center;
+      margin-bottom: 50px;
+      .tabTitle {
+        padding-bottom: 7px;
+        color: #263238;
+        border-bottom: 1px solid #263238;
+        display: inline-block;
+        margin: 0 8px;
+        &.active {
+          @include themify($themes) {
+            color: themed('textColor');
+            border-bottom-color: themed('border');
+          }
+        }
+      }
+    }
+    .am-thumb {
+      margin-bottom: 30px !important;
+    }
+  }
+
+  // section
+  .border-bottom {
+    border-bottom: 1px solid #ECEFF1;
+  }
+  .section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .mb-20 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .mb-35 {
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
+  .lead {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
+  .btn-default {
+    background-color: #ededed;
+    color: #626262;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+  }
+  .easing {
+    margin-left: 10px;
+  }
+  .btn {
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    white-space: normal;
+    touch-action: manipulation;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: 600;
+    height: 48px;
+    padding: 0 22px;
+    line-height: 45px;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    background-color: #ededed;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    outline: none;
+  }
+  .btn-default:hover, .btn-default:active, .btn-default:active:hover {
+    color: #fafafe;
+    @include themify($themes) {
+      background-color: themed('backgroundColor');
+    }
+  }
+  .text-center {
+    text-align: center;
+  }
+  .border-top {
+    border-top: 1px solid #ECEFF1;
+  }
+  //contact
+  .contact {
+    margin: 0 auto;
+    input {
+      margin-bottom: 15px;
+    }
+  }
+
+  // footer
+  .page-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f9f9f9;
+    color: #626262;
+    h3 {
+      margin-top: 0;
+    }
+
+    .footer-brand {
+      padding-top: 4px;
+    }
+
+    .footer-social {
+      text-align: right;
+    }
+    .footer-social li:first-child {
+      padding-left: 0;
+    }
+    .footer-social li {
+      display: inline-block;
+      padding: 0 8px;
+    }
+    .footer-social li a {
+      color: #626262;
+      font-size: 22px;
+    }
+    .mtb-30 {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .text-lg {
+      font-size: 20px;
+    }
+    .text-sm {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .footer-brand span {
+      position: relative;
+      left: -1px;
+      text-transform: uppercase;
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+    }
+    .footer-social {
+      text-align: right;
+    }
+    .footer-social li:first-child {
+      padding-left: 0;
+    }
+    .footer-social li {
+      display: inline-block;
+      padding: 0 8px;
+    }
+    .footer-social li a {
+      color: #626262;
+      font-size: 22px;
+    }
+    .copyright {
+      direction: ltr;
+      text-align: center;
+    }
+  }
+  .title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+  }
+  .btnWrapper {
+    padding: 30px;
+    button {
+      width: 170px;
+    }
+  }
+
+  //----
+  .about {
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    margin-top: -194px;
+  }
+}
+
+.footer-brand {
+  margin: 0;
+  span {
+    position: relative;
+    left: -1px;
+    text-transform: uppercase;
+    @include themify($themes) {
+      color: themed('textColor');
+    }
+  }
+}
