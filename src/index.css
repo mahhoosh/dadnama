@@ -3929,7 +3929,7 @@ body {
     overflow: visible;
     width: 100%;
     height: auto;
-    margin-top: -194px; }
+    margin-top: -300px; }
 
 .footer-brand {
   margin: 0; }
@@ -4283,18 +4283,46 @@ body {
 
 .bg-paper .SeProfile-wrapper {
   max-width: 1000px;
-  padding: 30px; }
+  height: 400px; }
   .theme-primary .bg-paper .SeProfile-wrapper {
     background-color: #00ACC1; }
   .theme-secondary .bg-paper .SeProfile-wrapper {
     background-color: #06A763; }
+  .bg-paper .SeProfile-wrapper .infoProfileWrapper {
+    width: calc(100% - 400px); }
+  .bg-paper .SeProfile-wrapper .imgProfileWrapper {
+    width: 400px; }
+  .bg-paper .SeProfile-wrapper .am-seSelected {
+    padding: 0 !important; }
+  .bg-paper .SeProfile-wrapper .follow-me {
+    list-style: none; }
+    .bg-paper .SeProfile-wrapper .follow-me li {
+      display: inline-block; }
+    .bg-paper .SeProfile-wrapper .follow-me a {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      width: 37px;
+      height: 37px;
+      padding: 0;
+      border-radius: 50%;
+      transition: .3s;
+      cursor: pointer;
+      background-color: #ffffff !important;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .theme-primary .bg-paper .SeProfile-wrapper .follow-me a i {
+        color: #00ACC1; }
+      .theme-secondary .bg-paper .SeProfile-wrapper .follow-me a i {
+        color: #06A763; }
 
 .bg-paper .slant {
   top: 0;
   z-index: 1;
   position: absolute;
   border-style: solid;
-  border-width: 500px 100px 0 0; }
+  border-width: 400px 100px 0 0; }
   .theme-primary .bg-paper .slant {
     border-color: rgba(223, 50, 50, 0) #00ACC1 transparent transparent; }
   .theme-secondary .bg-paper .slant {
@@ -4303,7 +4331,8 @@ body {
 .bg-paper .imgProfile {
   width: 100%;
   max-width: 400px;
-  margin-top: 55px; }
+  height: 400px;
+  margin-top: 0 !important; }
 
 .bg-paper .intro-content {
   display: flex;
@@ -4315,6 +4344,7 @@ body {
     justify-content: center;
     flex-direction: column;
     height: 100%;
+    padding: 0 40px;
     color: #ffffff; }
     .theme-primary .bg-paper .intro-content .intro-title-wrapper {
       background-color: #00ACC1; }
@@ -4405,6 +4435,15 @@ body {
   font-size: 20px;
   display: inline-block;
   margin-left: 10px; }
+
+.about-trimatrixlab .comment {
+  position: relative;
+  background-color: #fff;
+  transition: box-shadow .25s;
+  border-radius: 0 !important;
+  margin: 50px 0 0;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  text-align: center; }
 
 .skill {
   width: 100%;

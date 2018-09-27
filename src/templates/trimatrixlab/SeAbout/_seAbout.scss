@@ -1,10 +1,11 @@
-.am-edit {
-  padding: 30px;
-  direction: rtl;
-  .inputWrapper {
-    label {
-      width: 100%;
-      display: block;
-    }
+.about-trimatrixlab {
+  .comment {
+    position: relative;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 0 !important;
+    margin: 50px 0 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    text-align: center;
   }
 }

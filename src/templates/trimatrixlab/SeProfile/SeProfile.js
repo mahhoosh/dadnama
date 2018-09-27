@@ -84,7 +84,7 @@ class SeProfile extends Component {
                     >
                         <div className={`row bg-paper ${direction}`}>
 
-                            <div className="col-md-6 col-sm-6 col-xs-6">
+                            <div className="infoProfileWrapper">
                                 <div
                                     className={'intro-title-wrapper'}
                                 >
@@ -105,7 +105,7 @@ class SeProfile extends Component {
                                     <SeNetworks/>
                                 </div>
                             </div>
-                            <div className="col-md-6 col-sm-6 col-xs-6">
+                            <div className="imgProfileWrapper">
                                 <SeSelected
                                     editIcon
                                     modalChildren={

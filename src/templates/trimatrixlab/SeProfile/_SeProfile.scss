@@ -13,9 +13,44 @@
   }
   .SeProfile-wrapper {
     max-width: 1000px;
-    padding: 0 40px;
+    height: 400px;
     @include themify($themes) {
       background-color: themed('backgroundColor');
+    }
+    .infoProfileWrapper {
+      width: calc(100% - 400px);
+    }
+    .imgProfileWrapper {
+      width: 400px;
+    }
+    .am-seSelected {
+      padding: 0 !important;
+    }
+    .follow-me {
+      list-style: none;
+      li {
+        display: inline-block;
+      }
+      a {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        width: 37px;
+        height: 37px;
+        padding: 0;
+        border-radius: 50%;
+        transition: .3s;
+        cursor: pointer;
+        background-color: $white-color !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+          @include themify($themes) {
+            color: themed('textColor');
+          }
+        }
+      }
     }
   }
   .slant {
@@ -23,15 +58,17 @@
     z-index: 1;
     position: absolute;
     border-style: solid;
-    border-width: 500px 100px 0 0;
+    border-width: 400px 100px 0 0;
     @include themify($themes) {
       border-color: rgba(223, 50, 50, 0) themed('border') transparent transparent;
     }
   }
+
   .imgProfile {
     width: 100%;
     max-width: 400px;
-    margin-top: 55px;
+    height: 400px;
+    margin-top: 0 !important;
   }
   .intro-content {
     display: flex;
@@ -43,6 +80,7 @@
       justify-content: center;
       flex-direction: column;
       height: 100%;
+      padding: 0 40px;
       @include themify($themes) {
         background-color: themed('backgroundColor');
       }

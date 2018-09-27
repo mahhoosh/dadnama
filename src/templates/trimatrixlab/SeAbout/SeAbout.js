@@ -19,6 +19,7 @@ import {
     Alert
 } from 'components';
 import profileImg from 'assets/images/hero.png';
+import TrimatrixlabPage from "../TrimatrixlabPage";
 
 class SeAbout extends Component {
     constructor(props) {
@@ -150,7 +151,7 @@ class SeAbout extends Component {
                                             onOpenModal={() => this.onOpenModal(data)}
                                         >
                                             <article
-                                                className={'intro bg-paper'}
+                                                className={'intro bg-paper about-trimatrixlab'}
                                             >
                                                 <div className="intro-content">
                                                     <div className="container">
@@ -165,7 +166,7 @@ class SeAbout extends Component {
                                                             descriptionAboutMe={data.user_about.text}
                                                         />
                                                         <div
-                                                            className={'col-lg-12'}
+                                                            className={'col-lg-12 comment'}
                                                         >
                                                             <h3 className="mb-20">درباره من</h3>
                                                             <p className="lead mb-35">
