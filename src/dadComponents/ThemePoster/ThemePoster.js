@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Mutation} from "react-apollo";
 import {
-    Button
+    Button,
+    LoadingOverlay
 } from 'components';
-import * as routes from "routes/const";
 
+import {
+    LoadingBox
+} from 'dadComponents';
+
+import * as routes from "routes/const";
 import {CHOICE_TEMPLATE} from 'Graphql/ChoiceTemplateMutation';
 
 class ThemePoster extends Component {
@@ -96,10 +101,19 @@ class ThemePoster extends Component {
                                             onClick={(e) => this.onClickEditTheme(e, data, ChoiceTemplate, id)}
                                         />
                                     </div>
-                                    <iframe className={'vertical-theme-preview'}
-                                            src={srcIframe}
-                                            width="100%"
-                                    />
+                                    <div>
+                                        {
+                                            !this.state.showIframe ? <LoadingOverlay
+                                                    loading
+                                                    children={<LoadingBox/>}
+                                                />
+                                                :
+                                                <iframe className={'vertical-theme-preview'}
+                                                        src={srcIframe}
+                                                        width="100%"
+                                                />
+                                        }
+                                    </div>
                                 </div>
                             }
                             <div className="home-themes_theme-container"

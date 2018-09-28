@@ -6,8 +6,10 @@ import * as routes from "routes/const";
 import {
     LoadingOverlay
 } from 'components';
+import {
+    LoadingBox
+} from 'dadComponents';
 import {SPLASH} from 'Graphql/SplashQuery';
-import loadingImg from 'assets/images/loading-after-signup.png';
 
 class OnboardingPage extends React.Component {
     constructor(props) {
@@ -29,14 +31,7 @@ class OnboardingPage extends React.Component {
                             >
                                 <LoadingOverlay
                                     loading
-                                    children={<div
-                                        className={'loadingWrapper'}
-                                    >
-                                        <h2
-                                            className={'title'}
-                                        >ایجاد سایت <span>.</span><span>.</span><span>.</span></h2>
-                                        <img src={loadingImg}/>
-                                    </div>}
+                                    children={<LoadingBox/>}
                                 />;
                             </div>)
                         } else if (data) {
