@@ -8,5 +8,30 @@
     margin: 50px 0 0;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
     text-align: center;
+    .card-content {
+      padding: 40px 40px 0;
+      border-radius: 0 0 2px 2px;
+    }
+    .btnWrapper {
+      border-top: 1px solid rgba(160, 160, 160, .2);
+      padding: 20px;
+      a {
+        margin: 7px 7px;
+        @include themify($themes) {
+          background-color: themed('backgroundColor');
+        }
+        color: #fff;
+        width: 180px;
+        border-radius: 2px;
+        transition: all .3s ease-out;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+        &:hover {
+          @include themify($themes) {
+            background-color: themed('backgroundDarkColor');
+          }
+          box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+        }
+      }
+    }
   }
 }

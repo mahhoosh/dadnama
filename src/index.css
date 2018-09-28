@@ -3851,11 +3851,28 @@ body {
   .trimatrixlabPage .border-top {
     border-top: 1px solid #ECEFF1; }
   .trimatrixlabPage .contact {
-    margin: 0 auto;
-    padding: 20px;
-    background: #ffffff; }
-    .trimatrixlabPage .contact input {
-      margin-bottom: 15px; }
+    margin: 0 auto; }
+    .trimatrixlabPage .contact > div {
+      padding: 40px;
+      background: #ffffff; }
+    .trimatrixlabPage .contact textarea {
+      height: 76px !important; }
+    .trimatrixlabPage .contact input, .trimatrixlabPage .contact textarea {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid gainsboro;
+      border-radius: 0;
+      outline: none;
+      width: 100%;
+      font-size: 1rem;
+      margin: 16px 0 16px 0;
+      padding: 0;
+      box-shadow: none;
+      box-sizing: content-box;
+      transition: all .5s; }
+      .trimatrixlabPage .contact input:focus, .trimatrixlabPage .contact textarea:focus {
+        border-bottom: 1px solid #1976D2;
+        box-shadow: 0 1px 0 0 #1976D2; }
     .trimatrixlabPage .contact .waves-effect {
       width: 115px;
       color: #fff;
@@ -4120,7 +4137,7 @@ body {
         z-index: 1;
         margin-bottom: 5px;
         border-left: 5px solid #1976D2;
-        margin-left: 70px;
+        margin-left: 55px;
         padding: 20px;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
       .timeline-trimatrixlab .timeline-wrapper:nth-child(2n) .timeline-dot {
@@ -4167,7 +4184,7 @@ body {
         z-index: 1;
         margin-bottom: 5px;
         border-left: 5px solid #1976D2;
-        margin-right: 70px;
+        margin-right: 55px;
         padding: 20px;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
       .timeline-trimatrixlab .timeline-wrapper:nth-child(2n-1) .timeline-dot {
@@ -4466,6 +4483,29 @@ body {
     margin: 50px 0 0;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     text-align: center; }
+    .about-trimatrixlab .comment .card-content {
+      padding: 40px 40px 0;
+      border-radius: 0 0 2px 2px; }
+    .about-trimatrixlab .comment .btnWrapper {
+      border-top: 1px solid rgba(160, 160, 160, 0.2);
+      padding: 20px; }
+      .about-trimatrixlab .comment .btnWrapper a {
+        margin: 7px 7px;
+        color: #fff;
+        width: 180px;
+        border-radius: 2px;
+        transition: all .3s ease-out;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+        .theme-primary .about-trimatrixlab .comment .btnWrapper a {
+          background-color: #00ACC1; }
+        .theme-secondary .about-trimatrixlab .comment .btnWrapper a {
+          background-color: #06A763; }
+        .about-trimatrixlab .comment .btnWrapper a:hover {
+          box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
+          .theme-primary .about-trimatrixlab .comment .btnWrapper a:hover {
+            background-color: #00ACC1; }
+          .theme-secondary .about-trimatrixlab .comment .btnWrapper a:hover {
+            background-color: #05985a; }
 
 .skill {
   width: 100%;

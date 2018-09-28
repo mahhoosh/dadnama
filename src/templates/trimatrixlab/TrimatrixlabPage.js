@@ -239,22 +239,12 @@ class TrimatrixlabPage extends React.Component {
                         <h2 className="title">تماس با ما</h2>
                         <div className="row">
                             <div className="col-md-6 contact">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <input type="text" id="name" className="form-control" placeholder="نام"/>
-                                    </div>
-                                    <div className="col-md-6">
-
-                                        <input type="text" id="subject" className="form-control" placeholder=""/>
-                                    </div>
-                                    <div className="col-md-12">
-                                        <input type="email" id="email" className="form-control"
-                                               placeholder="ایمیل"/>
-                                    </div>
-                                    <div className="col-md-12">
-                                            <textarea className="form-control" cols="30" rows="8"
-                                                      placeholder="پیام"/>
-                                    </div>
+                                <div>
+                                    <input type="text" id="name" className="form-control" placeholder="نام"/>
+                                    <input type="text" id="subject" className="form-control" placeholder="موضوع"/>
+                                    <input type="email" id="email" className="form-control" placeholder="ایمیل"/>
+                                    <textarea className="form-control" cols="30" rows="8" placeholder="پیام"/>
+                                    <button id="submit" className="btn waves-effect">ارسال</button>
                                     <div className="col-md-12">
                                         {/*<h6 className="success-content">
                                                 <i
@@ -262,9 +252,6 @@ class TrimatrixlabPage extends React.Component {
                                                 successfully.</h6>
                                             <h6 className="error-content"><i className="ion-alert-circled"/>Opps!
                                                 Please fix the error.</h6>*/}
-                                    </div>
-                                    <div className="col-md-12 text-center btnWrapper">
-                                        <button id="submit" className="btn waves-effect">ارسال</button>
                                     </div>
                                 </div>
                             </div>

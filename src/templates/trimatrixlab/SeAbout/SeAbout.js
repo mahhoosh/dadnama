@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_ABOUT} from 'Graphql/UserAboutQuery';
@@ -166,15 +167,29 @@ class SeAbout extends Component {
                                                             descriptionAboutMe={data.user_about.text}
                                                         />
                                                         <div
-                                                            className={'row'}
+                                                            className={'row comment'}
                                                         >
                                                             <div
-                                                                className={'col-lg-12 comment'}
+                                                                className={'col-lg-12 card-content'}
                                                             >
                                                                 <h3 className="mb-20">درباره من</h3>
                                                                 <p className="lead mb-35">
                                                                     {data.user_about.description}
                                                                 </p>
+                                                            </div>
+                                                            <div className="col-xs-12 center-sm center-xs btnWrapper">
+                                                                <Link
+                                                                    className="btn btn-default easing"
+                                                                    to={'/'}
+                                                                >
+                                                                    Hire me
+                                                                </Link>
+                                                                <Link
+                                                                    className="btn btn-default"
+                                                                    to={'/'}
+                                                                >
+                                                                    Download CV
+                                                                </Link>
                                                             </div>
                                                         </div>
                                                     </div>
