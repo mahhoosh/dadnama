@@ -1,4 +1,3 @@
-
 .editorPage {
   width: 100%;
   height: 100%;
@@ -6,8 +5,24 @@
   padding: 0;
   overflow: hidden;
   background-color: #000;
+  .navMenu {
+    flex: 1;
+  }
+  .signOut {
+    cursor: auto;
+    width: 48px;
+    i {
+      cursor: pointer;
+      font-size: 20px;
+      @include themify($themes) {
+        color: themed('textColor');
+      }
+    }
+  }
   .w-editor-top {
     position: absolute;
+    display: flex;
+    align-items: center;
     top: 0;
     right: 0;
     z-index: 14;
@@ -17,7 +32,6 @@
     color: rgba(255, 255, 255, 0.6);
     background-color: #fff;
     user-select: none;
-    display: table;
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%;

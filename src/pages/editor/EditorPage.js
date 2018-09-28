@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as routes from "routes/const";
 
 import {
     ThemePoster,
@@ -17,6 +18,7 @@ import {
 import {
     TrimatrixlabPage
 } from 'templates/trimatrixlab';
+import LoginPage from "../login/LoginPage";
 
 class EditorPage extends React.Component {
     constructor(props) {
@@ -25,6 +27,13 @@ class EditorPage extends React.Component {
             onClose: true
         }
         this.onClose = this.onClose.bind(this);
+        this.onClickSignOut = this.onClickSignOut.bind(this);
+    }
+
+    onClickSignOut() {
+        const {router} = this.context;
+        router.history.push(routes.APP_ROOT)
+        localStorage.removeItem('token')
     }
 
     onClose() {
@@ -78,9 +87,17 @@ class EditorPage extends React.Component {
                     >
                         logo
                     </div>
-                    <nav>
+                    <nav
+                        className={'navMenu'}
+                    >
                         build
                     </nav>
+                    <div
+                        className={'signOut'}
+                        onClick={this.onClickSignOut}
+                    >
+                        <i className="fa fa-sign-out"/>
+                    </div>
                 </div>
 
                 <aside
@@ -107,6 +124,9 @@ class EditorPage extends React.Component {
     }
 }
 
+EditorPage.contextTypes = {
+    router: PropTypes.object
+};
 EditorPage.propTypes = {};
 
 export default EditorPage;

@@ -36,8 +36,7 @@ class SeProfile extends Component {
 
     onCropComplete(croppedAreaPixels) {
         let dataFile = new FormData();
-        dataFile.append('file', croppedAreaPixels);
-        this.dataFile = dataFile;
+        dataFile.append('photo', croppedAreaPixels);
         console.log('croppedArea=====999 profile', croppedAreaPixels)
         this.setState({
             dataFile: dataFile
@@ -46,16 +45,19 @@ class SeProfile extends Component {
 
     onClickEdit(e) {
         e.preventDefault();
-        console.log('========SeProfile=00000000000000000===', this.state.dataFile)
-        axios.post(`${window.base_image}${this.props.photo}`, this.state.dataFile
+        axios.post(`${window.base_axios}upload/image/${this.props.photo}`, this.state.dataFile
             , {
                 headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem('token')
+                    Apigkey: localStorage.getItem('token')
                 }
             }).then(res => {
+            this.setState({
+                closeModal: false
+            })
             console.log(res.data);
         })
             .catch((error) => {
+
                 console.log('error', error);
             });
 

@@ -2876,8 +2876,22 @@ body {
   padding: 0;
   overflow: hidden;
   background-color: #000; }
+  .editorPage .navMenu {
+    flex: 1; }
+  .editorPage .signOut {
+    cursor: auto;
+    width: 48px; }
+    .editorPage .signOut i {
+      cursor: pointer;
+      font-size: 20px; }
+      .theme-primary .editorPage .signOut i {
+        color: #00ACC1; }
+      .theme-secondary .editorPage .signOut i {
+        color: #06A763; }
   .editorPage .w-editor-top {
     position: absolute;
+    display: flex;
+    align-items: center;
     top: 0;
     right: 0;
     z-index: 14;
@@ -2887,7 +2901,6 @@ body {
     color: rgba(255, 255, 255, 0.6);
     background-color: #fff;
     user-select: none;
-    display: table;
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%; }

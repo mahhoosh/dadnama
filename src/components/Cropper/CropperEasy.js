@@ -38,10 +38,11 @@ class CropperEasy extends React.Component {
         this.setState({crop})
     }
 
-    onCropComplete = (croppedArea, croppedAreaPixels) => {
+    onCropComplete = async (croppedArea, croppedAreaPixels) => {
         console.log('croppedArea, croppedAreaPixels', croppedArea, croppedAreaPixels)
         this.setState({croppedAreaPixels});
-        this.props.onCropComplete && this.props.onCropComplete(this.state.imageSrc)
+        const croppedImage = await getCroppedImg(this.state.imageSrc, this.state.croppedAreaPixels)
+        this.props.onCropComplete && this.props.onCropComplete(croppedImage)
     }
 
     onZoomChange = zoom => {

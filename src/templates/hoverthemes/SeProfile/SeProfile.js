@@ -96,7 +96,7 @@ class SeProfile extends Component {
                                         photo: data.user_photo.photo_type.label
                                     },
                                     updateQuery: (prev, {fetchMoreResult}) => {
-                                        debugger
+
                                         if (!fetchMoreResult) return prev;
                                         return Object.assign({}, prev, {
                                             user_photo: [...prev.user_photo, ...fetchMoreResult.user_photo]
