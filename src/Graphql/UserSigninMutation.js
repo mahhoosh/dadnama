@@ -6,8 +6,16 @@ export const USER_SIGNIN = gql`
             username: $username,
             password: $password
         ) {
-            error
-            description
+            api
+            success
+            errors
+            user {
+                id
+                name
+                username
+                email
+                mobile
+            }
         }
     }
 `

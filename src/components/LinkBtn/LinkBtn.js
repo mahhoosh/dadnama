@@ -22,7 +22,8 @@ class LinkBtn extends Component {
             linkPrimary,
             linkSecondary,
             rounded,
-            onClick
+            onClick,
+            spinner
         } = this.props;
         let classNameBtn = '';
         if (primary) {
@@ -50,6 +51,9 @@ class LinkBtn extends Component {
                 className={`am-link ${className} ${classNameBtn}  ${classNameRounded}`}
                 onClick={onClick}
             >
+                {
+                    spinner && <i className="fa fa-refresh fa-spin spinner" aria-hidden="true"/>
+                }
                 {title}
             </Link>
         );
@@ -68,6 +72,7 @@ LinkBtn.propTypes = {
     linkSecondary: PropTypes.bool,
     secondary: PropTypes.bool,
     link: PropTypes.bool,
+    spinner: PropTypes.bool,
     onClick: PropTypes.func
 };
 export default LinkBtn;

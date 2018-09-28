@@ -5,7 +5,8 @@ import {Mutation} from "react-apollo";
 import {
     Tab,
     LinkBtn,
-    Input
+    Input,
+    Alert
 } from 'components';
 import {
     ThemePoster
@@ -21,7 +22,10 @@ class LoginPage extends React.Component {
         super(props);
         this.state = {
             userName: '',
-            password: ''
+            password: '',
+            isAlert: false,
+            errorText: '',
+            spinner: false
         };
         this.onClose = this.onClose.bind(this);
         this.onClickLogin = this.onClickLogin.bind(this);
@@ -48,6 +52,9 @@ class LoginPage extends React.Component {
 
     onClickLogin(e, data, UserSigninMutation) {
         e.preventDefault();
+        this.setState({
+            spinner: true
+        })
         UserSigninMutation({
             //TODO
             variables: {
@@ -56,12 +63,28 @@ class LoginPage extends React.Component {
             }
 
         }).then((data) => {
+            this.setState({
+                isAlert: true,
+                spinner: false
+            })
             localStorage.setItem('token', data.data.UserSigninMutation.api)
             const {router} = this.context;
             router.history.push(routes.ON_BOARDING)
         }).catch((res) => {
-
+            console.log('res login5555555555555555', res)
+            this.setState({
+                isAlertError: true,
+                errorText: res.errors
+            })
         });
+
+        let _this = this
+        setTimeout(function () {
+            _this.setState({
+                isAlert: false,
+                isAlertError: false
+            });
+        }, 3000);
     }
 
     render() {
@@ -142,12 +165,12 @@ class LoginPage extends React.Component {
                                             <div
                                                 onClick={(e) => this.onClickLogin(e, data, UserSigninMutation)}
                                             >
-
                                                 <LinkBtn
                                                     title={'ورود'}
                                                     rounded
                                                     src={'#'}
                                                     primary
+                                                    spinner={this.state.spinner}
                                                 />
                                             </div>
 
@@ -155,6 +178,17 @@ class LoginPage extends React.Component {
                                     </div>
                                 </div>
                             </div>
+                            {
+                                this.state.isAlert && <Alert
+
+                                    alertText={'تغییرات شما با موفقیت اعمال شد'}
+                                />
+                            }
+                            {
+                                this.state.isAlertError && <Alert
+                                    alertText={this.state.errorText ? this.state.errorText : 'خطا'}
+                                />
+                            }
                         </form>
                     </div>
                 )}

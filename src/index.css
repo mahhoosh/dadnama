@@ -107,6 +107,8 @@ label {
   outline: none;
   cursor: pointer;
   text-align: center; }
+  .am-link .spinner {
+    margin-left: 10px; }
   .am-link.primary {
     color: #ffffff;
     background: #2990EA; }

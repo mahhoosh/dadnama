@@ -11,6 +11,9 @@
   outline: none;
   cursor: pointer;
   text-align: center;
+  .spinner {
+    margin-left: 10px;
+  }
   &.primary {
     color: $white-color;
     background: $primary;
