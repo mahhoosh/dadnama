@@ -4,6 +4,7 @@ import SelectDomain from 'dadComponents/SelectDomain/SelectDomain';
 import Edit from 'dadComponents/Edit/Edit';
 import Signup from 'dadComponents/Signup/Signup';
 import FileUpload from 'dadComponents/FileUpload/FileUpload';
+import LoadingBox from 'dadComponents/LoadingBox/LoadingBox';
 
 export {
     FooterItem,
@@ -11,7 +12,8 @@ export {
     SelectDomain,
     Edit,
     Signup,
-    FileUpload
+    FileUpload,
+    LoadingBox
 };
 
 
