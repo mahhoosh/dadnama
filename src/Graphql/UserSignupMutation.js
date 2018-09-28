@@ -15,16 +15,8 @@ export const USER_SIGNUP = gql`
             email: $email,
             password: $password
         )  {
-            api
-            success
-            errors
-            user {
-                id
-                name
-                username
-                email
-                mobile
-            }
+            error
+            description
         }
     }
 `
