@@ -23,7 +23,7 @@ class SeProfile extends Component {
             dataFile: {}
         };
         this.onOpenModal = this.onOpenModal.bind(this);
-        this.showCroppedImage = this.showCroppedImage.bind(this);
+        this.onCropComplete = this.onCropComplete.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
         this.dataFile = '';
     }
@@ -34,20 +34,20 @@ class SeProfile extends Component {
         });
     }
 
-    showCroppedImage(croppedAreaPixels) {
-        /* let dataFile = new FormData();
-         dataFile.append('file', croppedAreaPixels);*/
-        /* this.dataFile = dataFile;*/
+    onCropComplete(croppedAreaPixels) {
+        let dataFile = new FormData();
+        dataFile.append('file', croppedAreaPixels);
+        this.dataFile = dataFile;
         console.log('croppedArea=====999 profile', croppedAreaPixels)
         this.setState({
-            dataFile: this.croppedAreaPixels
+            dataFile: dataFile
         });
     }
 
-    onClickEdit() {
-
-        //e.preventDefault();
-        axios.post(`http://api.dadnama.ir/api/upload/image/${this.props.photo}`, this.state.dataFile
+    onClickEdit(e) {
+        e.preventDefault();
+        console.log('========SeProfile=00000000000000000===', this.state.dataFile)
+        axios.post(`${window.base_image}${this.props.photo}`, this.state.dataFile
             , {
                 headers: {
                     Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -115,8 +115,8 @@ class SeProfile extends Component {
                                             labelBtn={'ویرایش'}
                                             cropper
                                             fileUpload
-                                            showCroppedImage={this.showCroppedImage}
-                                            onClickEdit={this.onClickEdit}
+                                            onCropComplete={this.onCropComplete}
+                                            onClickEdit={(e) => this.onClickEdit(e)}
                                         />
                                     }
                                     closeModal={this.state.closeModal}
@@ -130,7 +130,7 @@ class SeProfile extends Component {
 
                                     <div className="addBtn">
                                         {/* <i className="fa fa-plus-circle"/>*/}
-                                        <i className="fa fa-plus"></i>
+                                        <i className="fa fa-plus"/>
                                     </div>
 
                                 </SeSelected>
