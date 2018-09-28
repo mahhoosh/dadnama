@@ -98,6 +98,8 @@
         .theme-poster_screenShot-img {
           position: absolute;
           top: 0;
+          width: 100%;
+          max-width: 525px;
           left: 0;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
           transition: opacity 1.25s cubic-bezier(0.19, 1, 0.22, 1), box-shadow .75s cubic-bezier(0.19, 1, 0.22, 1);

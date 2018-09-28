@@ -10,6 +10,8 @@ import {
 } from 'dadComponents';
 
 import ThemePosterImg from 'assets/images/img.jpg'
+import ScrollableAnchor from 'react-scrollable-anchor'
+import HomeThemesPage from './../homeThemes/HomeThemesPage'
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -124,37 +126,40 @@ class HomePage extends React.Component {
                             <div className="masthead_center">
                                 <div className="homepage-commerce-brand-message">
                                     <h1 className="masthead-dual-cta_header-text">
-                                        Made for creative entrepreneurs, by creative entrepreneurs.
+                                        با سایت ساز   دادنما در کمتر از ۲۰ دقیقه سایت بسازید !
                                     </h1>
                                     <div className="brand-message-text">
-                                        Create your:
+                                        همین حالا شروع کنید:
                                     </div>
                                     <div
                                         className="commerce-brand-message">
                                         <button className="masthead-dual-cta_button">
-                                            Online Store
+                                            <span className={'span'}>ساخت وب سایت</span>
                                         </button>
-                                        <button className="masthead-dual-cta_button website">
+                                        {/* <button className="masthead-dual-cta_button website">
                                             Website
-                                        </button>
+                                        </button> */}
                                     </div>
                                     <div className="brand-message-text">
-                                        Launch and grow your business. We'll help you each step of the way.
+                                        تـجربـه‌ای متفـاوت و خـاص با سـایت دادنما.
+
+                                            سایت تخصصی  وکیل ها
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="home-masthead_overlay"/>
+                        <div className="home-masthead_overlay" />
                         <div className="js-masthead-overlay home-masthead_darken-overlay"
                         />
-                        <div className="home-masthead__video-overlay"/>
+                        <div className="home-masthead__video-overlay" />
                     </div>
 
                     <div className="masthead_video-container">
                         <video className="js-unveil js-masthead-video masthead__video" src={src} autoPlay loop
-                               playsinline muted/>
+                            playsinline muted />
                     </div>
                 </section>
+
                 <section
                     className={'homeThemes'}
                 >
@@ -163,21 +168,22 @@ class HomePage extends React.Component {
                     >
                         <div className="landing-page-title">
                             <h1>
-                                A beautiful website starts&nbsp;here
+                                دادنما می‌تونه یه شروع تازه و یا نقطه پیشرفت شما باشه
                             </h1>
-                            <h2>Weebly's powerful drag and drop
-                                website builder and guided set up get you to the finish line faster, no coding
-                                needed.</h2>
+                            <ScrollableAnchor id={'theme'}>
+                                <h2>
+
+                                    اگر  وکیل هستید همین حالا شروع به ساخت وب سایت خود بکنید و برند شخصی یا شرکت خود را معرفی کنید.
+                                      و از بین غالب های زیر تم خود رو انتخاب کنید و سروع به ساخت وب سایت کنید
+                            </h2>
+                            </ScrollableAnchor>
                         </div>
-                        <Tab
-                            tabs={tabsData}
-                            currentTab={0}
-                        />
+                        <HomeThemesPage header  />
                         <div
                             className={'more'}
                         >
                             <LinkBtn
-                                title={'More Featured Themes'}
+                                title={'به زودی تم بیشتر'}
                                 rounded
                                 src={'/'}
                                 outlineSecondary
@@ -185,6 +191,7 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </section>
+
             </div>
         );
     }

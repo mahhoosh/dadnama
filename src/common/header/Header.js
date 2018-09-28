@@ -59,8 +59,8 @@ class Header extends React.Component {
                             <Link
                                 to={'/'}
                             >
-                                <img src={''} alt={'لوگو'}/>
-                                لوگو
+                                {/* <img src={''} alt={'لوگو'}/> */}
+                                دادنما
                             </Link>
                         </div>
                         <div>
