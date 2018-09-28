@@ -166,18 +166,22 @@ class SeAbout extends Component {
                                                             descriptionAboutMe={data.user_about.text}
                                                         />
                                                         <div
-                                                            className={'col-lg-12 comment'}
+                                                            className={'row'}
                                                         >
-                                                            <h3 className="mb-20">درباره من</h3>
-                                                            <p className="lead mb-35">
-                                                                {data.user_about.description}
-                                                            </p>
+                                                            <div
+                                                                className={'col-lg-12 comment'}
+                                                            >
+                                                                <h3 className="mb-20">درباره من</h3>
+                                                                <p className="lead mb-35">
+                                                                    {data.user_about.description}
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </article>
 
-                                           {/* <article id="about" className="section-padding">
+                                            {/* <article id="about" className="section-padding">
                                                 <div className="container">
                                                      <SeAboutMe
                                                         descriptionMission={data.user_about.text}

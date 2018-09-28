@@ -82,7 +82,7 @@ class SeProfile extends Component {
                     <div
                         className={' SeProfile-wrapper'}
                     >
-                        <div className={`row bg-paper ${direction}`}>
+                        <div className={`bg-paper ${direction}`}>
 
                             <div className="infoProfileWrapper">
                                 <div
@@ -127,6 +127,12 @@ class SeProfile extends Component {
                                          src={data.user_photo ? window.base_image + data.user_photo.path : ''}
                                          alt={''}/>
                                     <div className="slant"/>
+
+                                    <div className="addBtn">
+                                        {/* <i className="fa fa-plus-circle"/>*/}
+                                        <i className="fa fa-plus"></i>
+                                    </div>
+
                                 </SeSelected>
                             </div>
                             <user_photo
