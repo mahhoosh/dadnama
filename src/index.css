@@ -107,6 +107,8 @@ label {
   outline: none;
   cursor: pointer;
   text-align: center; }
+  .am-link .spinner {
+    margin-left: 10px; }
   .am-link.primary {
     color: #ffffff;
     background: #2990EA; }
@@ -2603,21 +2605,17 @@ ul {
     opacity: 1; }
   100% {
     opacity: .2; } }
-  .loadingWrapper .title {
-    color: #2e2f33 !important;
-    background-color: #ffffff !important;
-    font-size: 18px !important; }
-    .loadingWrapper .title span {
-      animation-name: blink;
-      animation-duration: 1.4s;
-      animation-iteration-count: infinite;
-      animation-fill-mode: both;
-      position: relative;
-      top: -5px; }
-      .loadingWrapper .title span:nth-child(2) {
-        animation-delay: .2s; }
-      .loadingWrapper .title span:nth-child(3) {
-        animation-delay: .4s; }
+  .loadingWrapper .titleCreateSite span {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    position: relative;
+    top: -5px; }
+    .loadingWrapper .titleCreateSite span:nth-child(2) {
+      animation-delay: .2s; }
+    .loadingWrapper .titleCreateSite span:nth-child(3) {
+      animation-delay: .4s; }
 
 body {
   direction: rtl;
