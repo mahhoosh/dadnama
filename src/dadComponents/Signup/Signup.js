@@ -12,8 +12,36 @@ import {
 } from 'dadComponents';
 
 import { USER_SIGNUP } from 'Graphql/UserSignupMutation';
+import { VrifyUserMutation } from 'Graphql/VrifyUserMutation';
 
 class Signup extends React.Component {
+
+    gqlHandelError = (err) => {
+        // debugger
+        const errors = err.graphQLErrors[0];
+        if (errors) {
+            const type = errors.message;
+            if (type == "validation") {
+                // debugger
+                const validation = errors.validation
+                debugger
+                const keys = Object.keys(validation);
+                let param = [];
+                keys.map(key => {
+                    if (validation[key]) {
+                        param.push(`${validation[key].join(',')}`)
+                    }
+
+                })
+                // debugger
+                // alert(param.join(','));
+                return param.join(',')
+            }
+        }
+        // debugger
+        // alert(type);
+        return "اطلاعات وارد شده صحیح نمی  باشد";
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +51,7 @@ class Signup extends React.Component {
             em_mb: '',
             email: '',
             mobile: '09332369461',
-            level: 2
+            level: 1
         };
         this.onClose = this.onClose.bind(this);
         this.onClickSignUp = this.onClickSignUp.bind(this);
@@ -40,10 +68,13 @@ class Signup extends React.Component {
         e.preventDefault();
         let mobile;
         let email;
+        let level = 1;
         var mailFormat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (mailFormat.test(this.state.em_mb)) {
+            level = 3;
             email = this.state.em_mb
         } else {
+            level = 2;
             mobile = this.state.em_mb
         }
         UserSigninMutation({
@@ -56,12 +87,48 @@ class Signup extends React.Component {
             }
 
         }).then((data) => {
-            localStorage.setItem('token', data.UserSigninMutation.api);
-            console.log('data', data)
-            //const {router} = this.context;
-            //router.history.push(routes.ON_BOARDING)
+            debugger
+            let param = data.data.UserSignupMutation;
+            if (param.error) {
+                alert(param.description);
+            } else {
+                this.setState({
+                    mobile: level === 2 ? mobile : email,
+                    level: level
+                })
+            }
         }).catch((err) => {
-            console.log('res', err)
+            let er = this.gqlHandelError(err);
+            alert(er);
+        });
+    }
+
+
+    onClickVerify(e, data, VrifyUserMutation) {
+        e.preventDefault();
+
+        VrifyUserMutation({
+            variables: {
+                mobile: this.state.mobile,
+                code: this.state.code,
+            }
+
+        }).then((data) => {
+            debugger
+            let param = data.data.VrifyUserMutation;
+            debugger
+            if (param.errors) {
+                alert("کد ارسالی صحیح نمی باشد");
+            } else {
+                localStorage.setItem('token', param.api);
+                window.location.reload();
+                // const { router } = this.context;
+                // router.history.push(routes.ON_BOARDING)
+            }
+
+        }).catch((err) => {
+            let er = this.gqlHandelError(err);
+            alert(er);
         });
     }
 
@@ -121,56 +188,10 @@ class Signup extends React.Component {
         } = this.state;
 
 
-        if (level === 1) {
-
-            return (
-                <Mutation mutation={USER_SIGNUP}>
-                    {(UserSigninMutation, { data }) => (
-                        <div className={'signUp'}>
-                            <form>
-                                <div className={'loginContainer'}  >
-                                    <h5 className="login-overlay-title">ثبت نام</h5>
-                                    <span className="quick-switch">اطلاعات خود رو به صورت کامل وارد کنید</span>
-
-                                    <div className={'row'} >
-                                        <div className={'col-lg-12'} >
-                                            <div className={'leftCol'}  >
-                                                {
-                                                    inputData && inputData.map((data, index) => {
-                                                        return <Input
-                                                            label={data.label}
-                                                            name={data.name}
-                                                            onChange={(e) => this.onChangeInput(e)}
-                                                        />
-                                                    })
-                                                }
-
-                                                <div   >
-
-                                                    <LinkBtn
-                                                        title={'ثبت نام'}
-                                                        rounded
-                                                        src={'#'}
-                                                        primary
-                                                        onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
-                                                    />
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    )}
-                </Mutation>
-            );
-        }
-
         if (level === 2) {
             return (
-                <Mutation mutation={USER_SIGNUP}>
-                    {(UserSigninMutation, { data }) => (
+                <Mutation mutation={VrifyUserMutation}>
+                    {(VrifyUserMutation, { data }) => (
                         <div className={'signUp'}>
                             <form>
                                 <div className={'loginContainer'}  >
@@ -187,13 +208,13 @@ class Signup extends React.Component {
                                                         name={'mobile'}
                                                         onChange={(e) => this.onChangeInput(e)}
                                                     />
-                                                    <LinkBtn
+                                                    {/* <LinkBtn
                                                         title={'تغییر موبایل'}
                                                         rounded
                                                         src={'#'}
                                                         primary
-                                                        onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
-                                                    />
+                                                        onClick={(e) => this.onClickChangeMobile(e, data, UserSigninMutation)}
+                                                    /> */}
 
                                                 </div>
                                                 <Input
@@ -209,7 +230,7 @@ class Signup extends React.Component {
                                                         rounded
                                                         src={'#'}
                                                         primary
-                                                        onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
+                                                        onClick={(e) => this.onClickVerify(e, data, VrifyUserMutation)}
                                                     />
 
                                                 </div>
@@ -249,6 +270,51 @@ class Signup extends React.Component {
                 </div>
             );
         }
+
+
+        return (
+            <Mutation mutation={USER_SIGNUP}>
+                {(UserSigninMutation, { data }) => (
+                    <div className={'signUp'}>
+                        <form>
+                            <div className={'loginContainer'}  >
+                                <h5 className="login-overlay-title">ثبت نام</h5>
+                                <span className="quick-switch">اطلاعات خود رو به صورت کامل وارد کنید</span>
+
+                                <div className={'row'} >
+                                    <div className={'col-lg-12'} >
+                                        <div className={'leftCol'}  >
+                                            {
+                                                inputData && inputData.map((data, index) => {
+                                                    return <Input
+                                                        label={data.label}
+                                                        name={data.name}
+                                                        onChange={(e) => this.onChangeInput(e)}
+                                                    />
+                                                })
+                                            }
+
+                                            <div   >
+
+                                                <LinkBtn
+                                                    title={'ثبت نام'}
+                                                    rounded
+                                                    src={'#'}
+                                                    primary
+                                                    onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
+                                                />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                )}
+            </Mutation>
+        );
+
     }
 }
 
