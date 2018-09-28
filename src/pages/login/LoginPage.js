@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as routes from "routes/const";
-import {Mutation} from "react-apollo";
+import { Mutation } from "react-apollo";
 import {
     Tab,
     LinkBtn,
@@ -15,9 +15,37 @@ import {
 //import ThemePosterImg from 'assets/images/img.jpg'
 //import Header from "../../common/header/Header";
 
-import {USER_SIGNIN} from 'Graphql/UserSigninMutation';
+import { USER_SIGNIN } from 'Graphql/UserSigninMutation';
 
 class LoginPage extends React.Component {
+
+    gqlHandelError = (err) => {
+        // debugger
+        const errors = err.graphQLErrors[0];
+        if (errors) {
+            const type = errors.message;
+            if (type == "validation") {
+                // debugger
+                const validation = errors.validation
+                debugger
+                const keys = Object.keys(validation);
+                let param = [];
+                keys.map(key => {
+                    if (validation[key]) {
+                        param.push(`${validation[key].join(',')}`)
+                    }
+
+                })
+                // debugger
+                // alert(param.join(','));
+                return param.join(',')
+            }
+        }
+        // debugger
+        // alert(type);
+        return "اطلاعات وارد شده صحیح نمی  باشد";
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -46,7 +74,7 @@ class LoginPage extends React.Component {
     }
 
     onClose() {
-        const {router} = this.context;
+        const { router } = this.context;
         router.history.push(routes.APP_ROOT)
     }
 
@@ -64,34 +92,46 @@ class LoginPage extends React.Component {
 
         }).then((data) => {
             this.setState({
-                isAlert: true,
+                // isAlert: true,
                 spinner: false
             })
-            localStorage.setItem('token', data.data.UserSigninMutation.api)
-            const {router} = this.context;
-            router.history.push(routes.ON_BOARDING)
-        }).catch((res) => {
-            console.log('res login5555555555555555', res)
+            debugger
+            if (data.data.UserSigninMutation.api) {
+                localStorage.setItem('token', data.data.UserSigninMutation.api)
+                debugger
+                window.location = window.site + '/onboarding'
+            } else {
+                alert("نام کاربری یا رمز عبور اشتباه می باشد");
+            }
+
+            debugger
+            //  const { router } = this.context;
+            // router.history.push(routes.ON_BOARDING)
+        }).catch((err) => {
+            debugger
+            let text = this.gqlHandelError(err);
+            alert(text);
             this.setState({
-                isAlertError: true,
-                errorText: res.errors
+                // isAlertError: true,
+                spinner: false,
+                // errorText: res.errors
             })
         });
 
-        let _this = this
-        setTimeout(function () {
-            _this.setState({
-                isAlert: false,
-                isAlertError: false
-            });
-        }, 3000);
+        // let _this = this
+        // setTimeout(function () {
+        //     _this.setState({
+        //         isAlert: false,
+        //         isAlertError: false
+        //     });
+        // }, 3000);
     }
 
     render() {
 
         return (
             <Mutation mutation={USER_SIGNIN}>
-                {(UserSigninMutation, {data}) => (
+                {(UserSigninMutation, { data }) => (
                     <div className={'loginPage'}>
                         <form>
                             <div
@@ -102,8 +142,8 @@ class LoginPage extends React.Component {
                                     onClick={this.onClose}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                                         viewBox="0 0 212.982 212.982" width="512px" height="512px"
-                                         aria-labelledby="title">
+                                        viewBox="0 0 212.982 212.982" width="512px" height="512px"
+                                        aria-labelledby="title">
                                         <path
                                             d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"
                                             id="path-1"
@@ -115,9 +155,9 @@ class LoginPage extends React.Component {
                                 <div
                                     className={'logo'}
                                 >
-                                    logo
+                                    {/* logo */}
                                 </div>
-                                <h2 className="login-overlay-title">Log in </h2>
+                                <h2 className="login-overlay-title">ورودبه دادنما </h2>
                                 <div
                                     className={'row'}
                                 >
@@ -127,47 +167,57 @@ class LoginPage extends React.Component {
                                         <div
                                             className={'leftRight'}
                                         >
-                                            <LinkBtn
-                                                title={'Log In'}
-                                                rounded
-                                                src={''}
-                                                primary
-                                            />
-
-                                            <LinkBtn
-                                                className={'googleLogin'}
-                                                title={'Log In'}
-                                                rounded
-                                                src={''}
-                                                primary
-                                            />
+                                            <div className={'leftCol'}  >
+                                                <span
+                                                    className="quick-switch">ورود با ایمیل و موبایل</span>
+                                                <Input
+                                                    value={this.state.username}
+                                                    //TODO
+                                                    onChange={this.onChangeValueUsername}
+                                                    placeholder={'ایمیل یا موبایل'}
+                                                />
+                                                <Input
+                                                    value={this.state.password}
+                                                    onChange={this.onChangeValuePassword}
+                                                    placeholder={'رمز عبور'}
+                                                />
+                                                {/* <span
+                                                className="quick-switch">Don't have an account? Click here to sign up.</span> */}
+                                                <div  >
+                                                    <LinkBtn
+                                                        title={'ورود'}
+                                                        rounded
+                                                        onClick={(e) => this.onClickLogin(e, data, UserSigninMutation)}
+                                                        src={'#'}
+                                                        primary
+                                                        spinner={this.state.spinner}
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div
-                                        className={'col-lg-6'}
-                                    >
-                                        <div
-                                            className={'leftCol'}
-                                        >
+                                    <div className={'col-lg-6'}  >
+                                        <div className={'leftCol'}  >
+                                            <span
+                                                className="quick-switch"> ورود با نام کاربری </span>
                                             <Input
                                                 value={this.state.username}
                                                 //TODO
                                                 onChange={this.onChangeValueUsername}
-                                                placeholder={'username'}
+                                                placeholder={'نام کاربری'}
                                             />
                                             <Input
                                                 value={this.state.password}
                                                 onChange={this.onChangeValuePassword}
-                                                placeholder={'password'}
+                                                placeholder={'رمز عبور'}
                                             />
-                                            <span
-                                                className="quick-switch">Don't have an account? Click here to sign up.</span>
-                                            <div
-                                                onClick={(e) => this.onClickLogin(e, data, UserSigninMutation)}
-                                            >
+                                            {/* <span
+                                                className="quick-switch">Don't have an account? Click here to sign up.</span> */}
+                                            <div  >
                                                 <LinkBtn
                                                     title={'ورود'}
                                                     rounded
+                                                    onClick={(e) => this.onClickLogin(e, data, UserSigninMutation)}
                                                     src={'#'}
                                                     primary
                                                     spinner={this.state.spinner}

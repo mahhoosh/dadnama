@@ -31,7 +31,7 @@ class EditorPage extends React.Component {
     }
 
     onClickSignOut() {
-        const {router} = this.context;
+        const { router } = this.context;
         router.history.push(routes.APP_ROOT)
         localStorage.removeItem('token')
     }
@@ -47,37 +47,38 @@ class EditorPage extends React.Component {
             {
                 id: '1',
                 title: 'داشبورد',
-                icon: <i className="fa fa-dashboard"/>
+                icon: <i className="fa fa-dashboard" />
             },
             {
                 id: '2',
                 title: 'فاکتورها',
-                icon: <i className="fa fa-align-left"/>
+                icon: <i className="fa fa-align-left" />
             },
             {
                 id: '3',
                 title: 'پروفایل',
-                icon: <i className="fa fa-user"/>
+                icon: <i className="fa fa-user" />
             }
             ,
             {
                 id: '4',
                 title: 'پیامها',
-                icon: <i className="fa fa-comments"/>
+                icon: <i className="fa fa-comments" />
             },
             {
                 id: '5',
                 title: 'تنظیمات',
-                icon: <i className="fa fa-cog"/>
+                icon: <i className="fa fa-cog" />
             }
         ];
+
         return (
             <section className={'editorPage'}>
                 <Overlay
                     //open={this.state.onClose}
                     onClose={this.onClose}
                 >
-                    <SelectDomain/>
+                    <SelectDomain />
                 </Overlay>
                 <div
                     className={'w-editor-top'}
@@ -96,7 +97,7 @@ class EditorPage extends React.Component {
                         className={'signOut'}
                         onClick={this.onClickSignOut}
                     >
-                        <i className="fa fa-sign-out"/>
+                        <i className="fa fa-sign-out" />
                     </div>
                 </div>
 
@@ -111,8 +112,10 @@ class EditorPage extends React.Component {
                 <div
                     className={'view-container'}
                 >
-                    {/*<HoverthemesPage/>*/}
-                    <TrimatrixlabPage/>
+                    {window.theme === "trimatrixlab" && <TrimatrixlabPage />}
+                    {window.theme != "trimatrixlab" && <HoverthemesPage />}
+                    {/* <HoverthemesPage/> */}
+                    {/* <TrimatrixlabPage/> */}
                 </div>
                 {/* <footer
                     className={'editorFooter'}

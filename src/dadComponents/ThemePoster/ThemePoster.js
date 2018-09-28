@@ -49,6 +49,7 @@ class ThemePoster extends Component {
             }
         }).then((data) => {
             debugger
+            window.theme=data.data.choice_template.template.name
             const {router} = this.context;
             router.history.push(routes.EDITOR);
         }).catch((res) => {
@@ -97,7 +98,7 @@ class ThemePoster extends Component {
                                         </div>
                                         <Button
                                             className={'editThemeBtn'}
-                                            label={'ویرایش تم'}
+                                            label={'انتخاب قالب وب سایت'}
                                             onClick={(e) => this.onClickEditTheme(e, data, ChoiceTemplate, id)}
                                         />
                                     </div>

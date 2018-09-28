@@ -121,7 +121,8 @@ class Signup extends React.Component {
                 alert("کد ارسالی صحیح نمی باشد");
             } else {
                 localStorage.setItem('token', param.api);
-                window.location.reload();
+                // window.location.reload();
+                window.location = window.site + '/onboarding'
                 // const { router } = this.context;
                 // router.history.push(routes.ON_BOARDING)
             }

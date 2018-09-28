@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Query} from "react-apollo";
+import { Query } from "react-apollo";
 import * as routes from "routes/const";
 //import {SPLASH} from 'Graphql';
 import {
@@ -9,7 +9,7 @@ import {
 import {
     LoadingBox
 } from 'dadComponents';
-import {SPLASH} from 'Graphql/SplashQuery';
+import { SPLASH } from 'Graphql/SplashQuery';
 
 class OnboardingPage extends React.Component {
     constructor(props) {
@@ -20,28 +20,34 @@ class OnboardingPage extends React.Component {
     }
 
     render() {
-        const {router} = this.context;
+        const { router } = this.context;
         return (
             <Query query={SPLASH}>
                 {
-                    ({loading, error, data}) => {
+                    ({ loading, error, data }) => {
                         if (loading) {
                             return (<div
                                 className={'onboardingPage'}
                             >
                                 <LoadingOverlay
                                     loading
-                                    children={<LoadingBox/>}
+                                    children={<LoadingBox />}
                                 />;
                             </div>)
                         } else if (data) {
-                            console.log('data splash', data.splash.user_template.template);
-                            (!data.splash.user_template.template) ?
-                                router.history.push(routes.EDITOR) :
-                                router.history.push(routes.HOME_tHEME)
+                            if (data.splash.user_template) {
+                                debugger
+                                window.theme=data.splash.user_template.template.name
+                                window.location = window.site + routes.EDITOR
+                                // router.history.push(routes.EDITOR)
+                            } else {
+                                debugger
+                                // router.history.push(routes.HOME_tHEME)
+                                window.location = window.site + routes.HOME_tHEME
+                            }
                         }
                         else {
-                            console.log('error', error);
+                            window.location = window.site + '/onboarding'
                         }
                     }}
             </Query>
