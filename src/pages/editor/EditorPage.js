@@ -112,9 +112,9 @@ class EditorPage extends React.Component {
                 <div
                     className={'view-container'}
                 >
-                    {window.theme === "trimatrixlab" && <TrimatrixlabPage />}
-                    {window.theme != "trimatrixlab" && <HoverthemesPage />}
-                   {/*  <HoverthemesPage/>*/}
+                   {/* {window.theme === "trimatrixlab" && <TrimatrixlabPage />}
+                    {window.theme != "trimatrixlab" && <HoverthemesPage />}*/}
+                     <HoverthemesPage/>
                    {/*  <TrimatrixlabPage/>*/}
                 </div>
                 {/* <footer

@@ -2017,6 +2017,47 @@ ul {
     justify-content: center;
     align-content: center; }
 
+.LoadingOverlay {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.22);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  /*
+body {
+  font-family: sans-serif;
+  color: #ccc;
+  line-height: 1.5;
+  font-size: 1em;
+  background: #181818;
+}
+.talign-center {
+  text-align: center;
+}
+a, a:visited {
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 2px rgba(0,0,0, .3);
+  transition: color .3s;
+}
+a:hover, a:active {
+  color: #ccc;
+}
+footer {
+  margin-top: 2em;
+}*/ }
+  .LoadingOverlay .spinnerRapper i {
+    font-size: 64px;
+    color: #ffffff; }
+  .LoadingOverlay.-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center; }
+
 .outside {
   list-style: none;
   padding-top: 20px;
@@ -2420,10 +2461,6 @@ ul {
     .am-SelectDomain .domain-results .no-results p {
       margin: 0 0 .75em; }
 
-._modalBody {
-  max-width: 600px !important;
-  width: 100%; }
-
 .am-edit {
   padding: 0 30px 30px;
   direction: rtl !important;
@@ -2517,13 +2554,36 @@ ul {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
   background-color: #ffffff;
   z-index: 1150;
   font-size: 20px;
   line-height: 40px;
-  padding: 20px;
+  padding: 0 20px;
   overflow-y: auto; }
+  .signUp .usernameWrapper ._label {
+    font-size: 13px;
+    color: #858585;
+    line-height: 24px;
+    min-height: 24px;
+    display: block;
+    padding: 1px 6px;
+    opacity: 1;
+    transition: all .4s ease; }
+  .signUp .usernameWrapper ._labelWWW {
+    width: 73px;
+    display: inline-block; }
+  .signUp .usernameWrapper ._labelDadnama {
+    width: 95px;
+    display: inline-block;
+    margin-left: 7px; }
+  .signUp .usernameWrapper .RH-input-wrapper {
+    width: calc(100% - 170px) !important; }
+    .signUp .usernameWrapper .RH-input-wrapper input {
+      direction: ltr !important; }
+  .signUp .usernameWrapper .username {
+    display: flex;
+    align-items: center;
+    direction: ltr; }
   .signUp ._close {
     position: absolute;
     right: 0;
@@ -2548,7 +2608,8 @@ ul {
   .signUp .login-overlay-title {
     text-align: center;
     font-size: 25px;
-    padding-bottom: 0px; }
+    padding-bottom: 0;
+    margin: 0; }
   .signUp .loginContainer {
     width: 500px; }
   .signUp .leftRight {
@@ -2559,29 +2620,32 @@ ul {
       display: block; }
     .signUp .leftRight .googleLogin {
       background-color: #dd4b39; }
-  .signUp .leftCol .RH-input-wrapper {
+  .signUp .RH-input-wrapper {
     width: 100%;
     display: block;
     margin: 0 auto 15px; }
-    .signUp .leftCol .RH-input-wrapper ._textContainer {
+    .signUp .RH-input-wrapper ._textContainer {
       margin: 0; }
-    .signUp .leftCol .RH-input-wrapper input {
+    .signUp .RH-input-wrapper input {
       border: 2px solid #E3E4E4; }
-      .signUp .leftCol .RH-input-wrapper input:hover {
+      .signUp .RH-input-wrapper input:hover {
         border: 2px solid #2990EA; }
-      .signUp .leftCol .RH-input-wrapper input:focus {
+      .signUp .RH-input-wrapper input:focus {
         border: 2px solid #2990EA; }
-  .signUp .leftCol .quick-switch {
+  .signUp .quick-switch {
     color: #2990EA;
-    font-size: 14px;
+    font-size: 15px;
     margin: 10px;
     display: block;
     line-height: 20px;
     cursor: pointer; }
-  .signUp .leftCol .am-link {
+  .signUp .am-link {
     width: 200px;
     margin: 20px auto;
     display: block; }
+
+.signupModal ._modalBody {
+  border-top: 5px solid #2990EA; }
 
 .loadingWrapper {
   width: 400px;
@@ -2822,14 +2886,15 @@ body {
   .loginPage .loginContainer {
     width: 500px;
     height: 340px; }
-  .loginPage .leftRight {
-    border-left: 2px solid #E3E4E4;
-    height: 205px; }
-    .loginPage .leftRight .am-link {
-      width: 200px;
-      margin-bottom: 15px; }
-    .loginPage .leftRight .googleLogin {
-      background-color: #dd4b39; }
+  .loginPage .leftWrapper {
+    border-left: 2px solid #E3E4E4; }
+    .loginPage .leftWrapper .leftRight {
+      height: 205px; }
+      .loginPage .leftWrapper .leftRight .am-link {
+        width: 200px;
+        margin-bottom: 15px; }
+      .loginPage .leftWrapper .leftRight .googleLogin {
+        background-color: #dd4b39; }
   .loginPage .leftCol .RH-input-wrapper {
     width: 230px;
     display: block;
@@ -3013,6 +3078,9 @@ body {
   font-size: 16px;
   line-height: 24px;
   font-family: 'yekan'; }
+  .hoverthemesPage ._modalBody {
+    max-width: 600px !important;
+    width: 100%; }
   .hoverthemesPage section {
     clear: both; }
   .hoverthemesPage .form-control {
@@ -3607,6 +3675,7 @@ body {
     text-align: right; }
 
 .seAboutMe .follow-me li {
+  width: 80px;
   display: inline-block; }
 
 .seAboutMe .follow-me li a {
@@ -3751,6 +3820,9 @@ body {
   line-height: 24px;
   font-family: 'yekan';
   background-color: #f5f5f5; }
+  .trimatrixlabPage ._modalBody {
+    max-width: 600px !important;
+    width: 100%; }
   .trimatrixlabPage section {
     clear: both; }
   .trimatrixlabPage .form-control {
@@ -4319,6 +4391,9 @@ body {
   .SeProfile-wrapper-trimatrixlab .infoProfileWrapper {
     width: calc(100% - 400px);
     height: 400px; }
+  .SeProfile-wrapper-trimatrixlab .networks .switch {
+    right: auto;
+    left: 50px !important; }
   .SeProfile-wrapper-trimatrixlab .imgProfileWrapper {
     width: 400px;
     position: relative; }
@@ -4347,6 +4422,7 @@ body {
   .SeProfile-wrapper-trimatrixlab .follow-me {
     list-style: none; }
     .SeProfile-wrapper-trimatrixlab .follow-me li {
+      width: 80px;
       display: inline-block; }
     .SeProfile-wrapper-trimatrixlab .follow-me a {
       position: relative;

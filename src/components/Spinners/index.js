@@ -1,7 +1,7 @@
-import Spinner from 'components/Spinner/Spinner';
+import Spinners from 'components/Spinners/Spinners';
 
 
-export {Spinner};
+export {Spinners};
 
 
 

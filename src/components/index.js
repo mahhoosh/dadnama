@@ -6,6 +6,7 @@ import DropDownList from 'components/DropDownList/DropDownList';
 import FileUpload from 'components/FileUpload/FileUpload';
 import Crop from 'components/Cropper/Crop';
 import CropperEasy from 'components/Cropper/CropperEasy';
+import Spinners from "./Spinners/Spinners";
 
 export {
     Overlay,
@@ -39,6 +40,7 @@ export {Close} from 'components/Svg';
 export {SocialNetworks} from 'components/SocialNetworks';
 export {DashCard} from 'components/DashCard';
 export {Spinner} from 'components/Spinner';
+export {Spinners} from 'components/Spinners';
 
 
 

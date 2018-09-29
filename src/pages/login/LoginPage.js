@@ -162,7 +162,7 @@ class LoginPage extends React.Component {
                                     className={'row'}
                                 >
                                     <div
-                                        className={'col-lg-6'}
+                                        className={'col-lg-6 leftWrapper'}
                                     >
                                         <div
                                             className={'leftRight'}

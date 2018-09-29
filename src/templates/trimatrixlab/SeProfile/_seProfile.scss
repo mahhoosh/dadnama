@@ -10,6 +10,13 @@
     width: calc(100% - 400px);
     height: 400px;
   }
+  .networks {
+    .switch {
+      right: auto;
+      left: 50px !important;
+    }
+  }
+
   .imgProfileWrapper {
     width: 400px;
     position: relative;
@@ -42,6 +49,7 @@
   .follow-me {
     list-style: none;
     li {
+      width: 80px;
       display: inline-block;
     }
     a {

@@ -47,17 +47,20 @@
     width: 500px;
     height: 340px;
   }
-  .leftRight {
+  .leftWrapper {
     border-left: 2px solid $gray-3;
-    height: 205px;
-    .am-link {
-      width: 200px;
-      margin-bottom: 15px;
-    }
-    .googleLogin {
-      background-color: $red;
+    .leftRight {
+      height: 205px;
+      .am-link {
+        width: 200px;
+        margin-bottom: 15px;
+      }
+      .googleLogin {
+        background-color: $red;
+      }
     }
   }
+
   .leftCol {
     .RH-input-wrapper {
       width: 230px;

@@ -92,6 +92,7 @@ class Header extends React.Component {
                 <Modal
                     open={this.state.isModalOpen}
                     onClose={this.onCloseModal}
+                    className={'signupModal'}
                 >
                     <Signup
                         onClose={this.onCloseModal}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as routes from "routes/const";
-import { Mutation } from "react-apollo";
+import {Mutation} from "react-apollo";
 import {
     Tab,
     LinkBtn,
@@ -11,8 +11,8 @@ import {
     ThemePoster
 } from 'dadComponents';
 
-import { USER_SIGNUP } from 'Graphql/UserSignupMutation';
-import { VrifyUserMutation } from 'Graphql/VrifyUserMutation';
+import {USER_SIGNUP} from 'Graphql/UserSignupMutation';
+import {VrifyUserMutation} from 'Graphql/VrifyUserMutation';
 
 class Signup extends React.Component {
 
@@ -42,6 +42,7 @@ class Signup extends React.Component {
         // alert(type);
         return "اطلاعات وارد شده صحیح نمی  باشد";
     }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -59,7 +60,7 @@ class Signup extends React.Component {
     }
 
     onClose() {
-        const { router } = this.context;
+        const {router} = this.context;
         router.history.push(routes.APP_ROOT);
         this.props.onClose && this.props.onClose();
     }
@@ -192,17 +193,17 @@ class Signup extends React.Component {
         if (level === 2) {
             return (
                 <Mutation mutation={VrifyUserMutation}>
-                    {(VrifyUserMutation, { data }) => (
+                    {(VrifyUserMutation, {data}) => (
                         <div className={'signUp'}>
                             <form>
-                                <div className={'loginContainer'}  >
+                                <div className={'loginContainer'}>
                                     <h5 className="login-overlay-title">تایید موبایل</h5>
                                     <span className="quick-switch">یک کد به شماره موبایل شما ارسال شد</span>
 
-                                    <div className={'row'} >
-                                        <div className={'col-lg-12'} >
-                                            <div className={'leftCol'}  >
-                                                <div   >
+                                    <div className={'row'}>
+                                        <div className={'col-lg-12'}>
+                                            <div className={'leftCol'}>
+                                                <div>
                                                     <Input
                                                         value={this.state['mobile']}
                                                         label={'موبایل'}
@@ -224,7 +225,7 @@ class Signup extends React.Component {
                                                     name={'code'}
                                                     onChange={(e) => this.onChangeInput(e)}
                                                 />
-                                                <div   >
+                                                <div>
 
                                                     <LinkBtn
                                                         title={'ارسال کد'}
@@ -251,11 +252,11 @@ class Signup extends React.Component {
             return (
                 <div className={'signUp'}>
                     <form>
-                        <div className={'loginContainer'}  >
+                        <div className={'loginContainer'}>
                             <h5 className="login-overlay-title">تایید ایمیل</h5>
                             <span className="quick-switch">ثبت نام شما با موفقیت انجام شد </span>
                             <span className="quick-switch">یک ایمیل حاوی لینک تاید به ایمیل شما ارسال شد لطفا ایمیل خود را چک کنید </span>
-                            <div   >
+                            <div>
 
                                 <LinkBtn
                                     title={'متوجه شدم '}
@@ -275,54 +276,87 @@ class Signup extends React.Component {
 
         return (
             <Mutation mutation={USER_SIGNUP}>
-                {(UserSigninMutation, { data }) => (
+                {(UserSigninMutation, {data}) => (
                     <div className={'signUp'}>
                         <form>
-                            <div className={'loginContainer'}  >
+                            <div className={'loginContainer'}>
                                 <h5 className="login-overlay-title">ثبت نام</h5>
                                 <span className="quick-switch">اطلاعات خود رو به صورت کامل وارد کنید</span>
 
-                                <div className={'row'} >
-                                    <div className={'col-lg-12'} >
-                                        <div className={'leftCol'}  >
+                                <div className={'row'}>
+                                    <div className={'col-lg-12'}>
+                                        <div className={'leftCol'}>
                                             {
                                                 inputData && inputData.map((data, index) => {
-                                                    return <Input
-                                                        label={data.label}
-                                                        name={data.name}
-                                                        onChange={(e) => this.onChangeInput(e)}
-                                                    />
+                                                    return <div>
+                                                        {
+                                                            (data.name === 'username') ?
+                                                                <div
+                                                                    className={'usernameWrapper'}
+                                                                >
+                                                                    <label
+                                                                        className={'_label'}
+                                                                    >
+                                                                        {data.label}
+                                                                    </label>
+                                                                    <div
+                                                                        className={'username'}
+                                                                    >
+                                                                        <label
+                                                                            className={'_labelWWW'}
+                                                                        >
+                                                                            WWW.
+                                                                        </label>
+                                                                        <Input
+                                                                            name={data.name}
+                                                                            onChange={(e) => this.onChangeInput(e)}
+                                                                        />
+                                                                        <label
+                                                                            className={'_labelDadnama'}
+                                                                        >
+                                                                            dadnama.ir
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                :
+                                                                <Input
+                                                                    label={data.label}
+                                                                    name={data.name}
+                                                                    onChange={(e) => this.onChangeInput(e)}
+                                                                />
+                                                        }
+                                                    </div>
                                                 })
                                             }
 
-                                            <div   >
+                <div>
 
-                                                <LinkBtn
-                                                    title={'ثبت نام'}
-                                                    rounded
-                                                    src={'#'}
-                                                    primary
-                                                    onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
-                                                />
-                                            </div>
+                    <LinkBtn
+                        title={'ثبت نام'}
+                        rounded
+                        src={'#'}
+                        primary
+                        onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
+                    />
+                </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                )}
-            </Mutation>
-        );
+            </div>
+            < /div>
+    </div>
+    </div>
+    </form>
+    </div>
+    )}
+    </Mutation>
+    );
 
     }
-}
+    }
 
-Signup.contextTypes = {
-    router: PropTypes.object,
-    onClose: PropTypes.func,
-};
-Signup.propTypes = {};
+    Signup.contextTypes = {
+        router: PropTypes.object,
+        onClose: PropTypes.func,
+    };
+    Signup.propTypes = {};
 
-export default Signup;
+    export default Signup;

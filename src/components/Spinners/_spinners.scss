@@ -1,0 +1,51 @@
+.LoadingOverlay {
+  display: none;
+  position: fixed;
+  background-color: rgba($black, .22);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  .spinnerRapper {
+    i {
+      font-size: 64px;
+      color: $white-color;
+    }
+  }
+
+  &.-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+
+  /*
+body {
+  font-family: sans-serif;
+  color: #ccc;
+  line-height: 1.5;
+  font-size: 1em;
+  background: #181818;
+}
+.talign-center {
+  text-align: center;
+}
+a, a:visited {
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 2px rgba(0,0,0, .3);
+  transition: color .3s;
+}
+a:hover, a:active {
+  color: #ccc;
+}
+footer {
+  margin-top: 2em;
+}*/
+
+}
+
+
