@@ -31,6 +31,7 @@
     }
     .RH-input-wrapper {
       width: calc(100% - 170px) !important;
+      margin: 0 !important;
       input {
         direction: ltr !important;
       }
@@ -39,6 +40,7 @@
       display: flex;
       align-items: center;
       direction: ltr;
+      margin: 5px auto 25px;
     }
   }
   ._close {

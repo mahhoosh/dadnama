@@ -2577,13 +2577,15 @@ footer {
     display: inline-block;
     margin-left: 7px; }
   .signUp .usernameWrapper .RH-input-wrapper {
-    width: calc(100% - 170px) !important; }
+    width: calc(100% - 170px) !important;
+    margin: 0 !important; }
     .signUp .usernameWrapper .RH-input-wrapper input {
       direction: ltr !important; }
   .signUp .usernameWrapper .username {
     display: flex;
     align-items: center;
-    direction: ltr; }
+    direction: ltr;
+    margin-bottom: 25px; }
   .signUp ._close {
     position: absolute;
     right: 0;
