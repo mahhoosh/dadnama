@@ -31,7 +31,7 @@ class Thumb extends Component {
         } = this.props;
 
         return (
-            <div className='am-thumb'>
+            <div className='am-thumb-trimatrixlab'>
                 <SelectedEdit
                     editIcon
                    /* modalChildren={modalChildren}

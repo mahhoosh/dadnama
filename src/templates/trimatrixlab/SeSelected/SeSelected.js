@@ -88,7 +88,7 @@ class SeSelected extends Component {
                 {(change_user_segment, {data}) => (
                     <form>
                         <div
-                            className={`am-seSelected ${seClass} ${this.state.selected ? 'active' : ''} ${this.state.isHover ? 'hover' : ''}`}
+                            className={`am-seSelected-trimatrixlab ${seClass} ${this.state.selected ? 'active' : ''} ${this.state.isHover ? 'hover' : ''}`}
                             onClick={this.onSelected}
                             onMouseLeave={this.onMouseLeave}
                             onMouseEnter={this.onMouseEnter}

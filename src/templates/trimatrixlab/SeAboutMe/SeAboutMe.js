@@ -33,7 +33,7 @@ class SeAboutMe extends Component {
                             </div>)
                         } else if (data) {
                             console.log('========seAboutMe', data)
-                            return <div className={` seAboutMe ${direction}`}>
+                            return <div className={` seAboutMe-trimatrixlab ${direction}`}>
                                 <div
                                     className={'about'}
                                 >

@@ -84,7 +84,7 @@ class SeProfile extends Component {
                     <div
                         className={' SeProfile-wrapper'}
                     >
-                        <div className={`bg-paper ${direction}`}>
+                        <div className={`bg-paper-trimatrixlab ${direction}`}>
 
                             <div className="infoProfileWrapper">
                                 <div

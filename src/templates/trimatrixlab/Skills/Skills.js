@@ -37,7 +37,7 @@ class Skill extends Component {
 
         return (
 
-            <div className={`skill ${direction} ${className}`}>
+            <div className={`skill-trimatrixlab ${direction} ${className}`}>
                 <SelectedEdit
                     editIcon
                     modalChildren={modalChildren}

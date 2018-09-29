@@ -75,7 +75,7 @@ class SelectedEdit extends Component {
         } = this.props;
 
         return (
-            <div className={`am-selected ${this.state.selected ? 'active' : ''} ${isHover ? 'hover' : ''}`}
+            <div className={`am-selected-trimatrixlab ${this.state.selected ? 'active' : ''} ${isHover ? 'hover' : ''}`}
                  onClick={this.onSelected}
                  onMouseLeave={this.onMouseLeave}
                  onMouseEnter={this.onMouseEnter}

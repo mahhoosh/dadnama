@@ -132,7 +132,7 @@ class SeSkills extends Component {
                                                         className={'container'}
                                                     >
                                                         <h2 className="title">مهارت ها</h2>
-                                                        <div className='Skills seSkills row'>
+                                                        <div className='Skills seSkills-trimatrixlab row'>
                                                             {
                                                                 user_skills.map((item, index) => {
                                                                     return <div

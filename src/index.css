@@ -4310,26 +4310,26 @@ body {
     display: inline-block;
     transition: color 0.1s, border-color 0.1s, background-color 0.1s; }
 
-.bg-paper {
+.bg-paper-trimatrixlab {
   display: flex;
   flex-wrap: wrap; }
-  .bg-paper.intro {
+  .bg-paper-trimatrixlab.intro {
     width: 100%;
     height: 85vh;
     background-color: transparent;
     overflow: hidden; }
-  .bg-paper .SeProfile-wrapper {
+  .bg-paper-trimatrixlab .SeProfile-wrapper {
     height: 400px; }
-    .theme-primary .bg-paper .SeProfile-wrapper {
+    .theme-primary .bg-paper-trimatrixlab .SeProfile-wrapper {
       background-color: #00ACC1; }
-    .theme-secondary .bg-paper .SeProfile-wrapper {
+    .theme-secondary .bg-paper-trimatrixlab .SeProfile-wrapper {
       background-color: #06A763; }
-    .bg-paper .SeProfile-wrapper .infoProfileWrapper {
+    .bg-paper-trimatrixlab .SeProfile-wrapper .infoProfileWrapper {
       width: calc(100% - 400px); }
-    .bg-paper .SeProfile-wrapper .imgProfileWrapper {
+    .bg-paper-trimatrixlab .SeProfile-wrapper .imgProfileWrapper {
       width: 400px;
       position: relative; }
-      .bg-paper .SeProfile-wrapper .imgProfileWrapper .addBtn {
+      .bg-paper-trimatrixlab .SeProfile-wrapper .imgProfileWrapper .addBtn {
         position: absolute;
         background-color: #1976D2;
         top: 20%;
@@ -4346,16 +4346,16 @@ body {
         justify-content: center;
         align-items: center;
         z-index: 1; }
-        .bg-paper .SeProfile-wrapper .imgProfileWrapper .addBtn i {
+        .bg-paper-trimatrixlab .SeProfile-wrapper .imgProfileWrapper .addBtn i {
           color: #ffffff;
           font-size: 18px; }
-    .bg-paper .SeProfile-wrapper .am-seSelected {
+    .bg-paper-trimatrixlab .SeProfile-wrapper .am-seSelected {
       padding: 0 !important; }
-    .bg-paper .SeProfile-wrapper .follow-me {
+    .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me {
       list-style: none; }
-      .bg-paper .SeProfile-wrapper .follow-me li {
+      .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me li {
         display: inline-block; }
-      .bg-paper .SeProfile-wrapper .follow-me a {
+      .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me a {
         position: relative;
         overflow: hidden;
         z-index: 1;
@@ -4370,43 +4370,43 @@ body {
         align-items: center;
         justify-content: center;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
-        .theme-primary .bg-paper .SeProfile-wrapper .follow-me a i {
+        .theme-primary .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me a i {
           color: #00ACC1; }
-        .theme-secondary .bg-paper .SeProfile-wrapper .follow-me a i {
+        .theme-secondary .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me a i {
           color: #06A763; }
-  .bg-paper .slant {
+  .bg-paper-trimatrixlab .slant {
     top: 0;
     z-index: 1;
     position: absolute;
     border-style: solid;
     border-width: 400px 100px 0 0; }
-    .theme-primary .bg-paper .slant {
+    .theme-primary .bg-paper-trimatrixlab .slant {
       border-color: rgba(223, 50, 50, 0) #00ACC1 transparent transparent; }
-    .theme-secondary .bg-paper .slant {
+    .theme-secondary .bg-paper-trimatrixlab .slant {
       border-color: rgba(223, 50, 50, 0) #06A763 transparent transparent; }
-  .bg-paper .imgProfile {
+  .bg-paper-trimatrixlab .imgProfile {
     width: 100%;
     max-width: 400px;
     height: 400px;
     margin-top: 0 !important; }
-  .bg-paper .intro-content {
+  .bg-paper-trimatrixlab .intro-content {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
     height: 100%; }
-    .bg-paper .intro-content .intro-title-wrapper {
+    .bg-paper-trimatrixlab .intro-content .intro-title-wrapper {
       display: flex;
       justify-content: center;
       flex-direction: column;
       height: 100%;
       padding: 0 40px;
       color: #ffffff; }
-      .theme-primary .bg-paper .intro-content .intro-title-wrapper {
+      .theme-primary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper {
         background-color: #00ACC1; }
-      .theme-secondary .bg-paper .intro-content .intro-title-wrapper {
+      .theme-secondary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper {
         background-color: #06A763; }
-      .bg-paper .intro-content .intro-title-wrapper .intro-title {
+      .bg-paper-trimatrixlab .intro-content .intro-title-wrapper .intro-title {
         text-transform: capitalize;
         font-size: 40px;
         letter-spacing: 1px;
@@ -4415,7 +4415,7 @@ body {
         margin-top: 0;
         line-height: 1.1;
         color: #ffffff; }
-      .bg-paper .intro-content .intro-title-wrapper .intro-subtitle {
+      .bg-paper-trimatrixlab .intro-content .intro-title-wrapper .intro-subtitle {
         font-size: 21px;
         margin-bottom: 10px;
         text-transform: capitalize;
@@ -4425,9 +4425,9 @@ body {
         letter-spacing: 1.5px;
         line-height: 1.1;
         color: #ffffff; }
-      .bg-paper .intro-content .intro-title-wrapper a.link.animated {
+      .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated {
         position: relative; }
-        .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
+        .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated:after {
           content: "\f063";
           font: normal normal normal 14px/1 FontAwesome;
           position: absolute;
@@ -4436,9 +4436,9 @@ body {
           transition: all 0.5s;
           margin-left: -5px;
           animation: upDown 1s linear infinite both alternate-reverse; }
-          .theme-primary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
+          .theme-primary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated:after {
             color: #00ACC1; }
-          .theme-secondary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
+          .theme-secondary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated:after {
             color: #06A763; }
 
 .seAboutMe .about {
