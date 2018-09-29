@@ -5,7 +5,8 @@ import {Mutation} from "react-apollo";
 import {
     Tab,
     LinkBtn,
-    Input
+    Input,
+    Spinners
 } from 'components';
 import {
     ThemePoster
@@ -52,7 +53,8 @@ class Signup extends React.Component {
             em_mb: '',
             email: '',
             mobile: '09332369461',
-            level: 1
+            level: 1,
+            spinner: false
         };
         this.onClose = this.onClose.bind(this);
         this.onClickSignUp = this.onClickSignUp.bind(this);
@@ -67,6 +69,11 @@ class Signup extends React.Component {
 
     onClickSignUp(e, data, UserSigninMutation) {
         e.preventDefault();
+
+        this.setState({
+            spinner: true
+        })
+
         let mobile;
         let email;
         let level = 1;
@@ -91,16 +98,25 @@ class Signup extends React.Component {
             debugger
             let param = data.data.UserSignupMutation;
             if (param.error) {
-                alert(param.description);
+                //alert(param.description);
+                this.setState({
+                    isAlertError: true,
+                    spinner: false,
+                    errText: param.description
+                })
             } else {
                 this.setState({
                     mobile: level === 2 ? mobile : email,
-                    level: level
+                    level: level,
+                    spinner: false
                 })
             }
         }).catch((err) => {
             let er = this.gqlHandelError(err);
-            alert(er);
+            this.setState({
+                spinner: false,
+                errorText: er
+            })
         });
     }
 
@@ -329,34 +345,54 @@ class Signup extends React.Component {
                                                 })
                                             }
 
-                <div>
-
-                    <LinkBtn
-                        title={'ثبت نام'}
-                        rounded
-                        src={'#'}
-                        primary
-                        onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
-                    />
-                </div>
-
-            </div>
-            < /div>
-    </div>
-    </div>
-    </form>
-    </div>
-    )}
-    </Mutation>
-    );
+                                            <div>
+                                                <LinkBtn
+                                                    title={'ثبت نام'}
+                                                    rounded
+                                                    src={'#'}
+                                                    primary
+                                                    onClick={(e) => this.onClickSignUp(e, data, UserSigninMutation)}
+                                                />
+                                                <Spinners
+                                                    loading={this.state.spinner}
+                                                />
+                                            </div>
+                                            <div className={'col-lg-12'}>
+                                                <p
+                                                    className={'errorText'}
+                                                >
+                                                    {
+                                                        this.state.errText
+                                                    }
+                                                </p>
+                                                {
+                                                    this.state.errorText && <p
+                                                        className={'errorText'}
+                                                    >
+                                                        *
+                                                        {
+                                                            this.state.errorText
+                                                        }
+                                                    </p>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                )}
+            </Mutation>
+        );
 
     }
-    }
+}
 
-    Signup.contextTypes = {
-        router: PropTypes.object,
-        onClose: PropTypes.func,
-    };
-    Signup.propTypes = {};
+Signup.contextTypes = {
+    router: PropTypes.object,
+    onClose: PropTypes.func,
+};
+Signup.propTypes = {};
 
-    export default Signup;
+export default Signup;
