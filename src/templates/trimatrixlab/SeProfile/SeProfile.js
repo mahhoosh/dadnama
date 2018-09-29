@@ -82,9 +82,9 @@ class SeProfile extends Component {
             >
                 {({data, fetchMore}) => (
                     <div
-                        className={' SeProfile-wrapper'}
+                        className={'SeProfile-wrapper-trimatrixlab'}
                     >
-                        <div className={`bg-paper-trimatrixlab ${direction}`}>
+                        <div className={`bg-paper ${direction}`}>
 
                             <div className="infoProfileWrapper">
                                 <div

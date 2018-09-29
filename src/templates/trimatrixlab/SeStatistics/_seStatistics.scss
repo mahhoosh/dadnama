@@ -1,6 +1,14 @@
 
 .seDocument-trimatrixlab {
-  .am-selected {
+  .skill-title {
+    h4 {
+      width: 100%;
+      text-align: center;
+      color: $black-12 !important;
+    }
+  }
+
+  .am-selected-trimatrixlab   {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +21,7 @@
       h4 {
         width: 100%;
         text-align: center;
-        color: #777777;
+        color: $black-12 !important;
       }
     }
   }

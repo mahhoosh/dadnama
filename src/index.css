@@ -3509,28 +3509,28 @@ body {
     display: inline-block;
     transition: color 0.1s, border-color 0.1s, background-color 0.1s; }
 
-.bg-paper.intro {
+.SeProfile-wrapper-hoverthemes .bg-paper.intro {
   width: 100%;
   height: 85vh;
   background-color: #fafafe;
   overflow: hidden; }
 
-.bg-paper .imgProfile {
+.SeProfile-wrapper-hoverthemes .bg-paper .imgProfile {
   width: 100%;
   max-width: 400px;
   margin-top: 55px; }
 
-.bg-paper .intro-content {
+.SeProfile-wrapper-hoverthemes .bg-paper .intro-content {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%; }
-  .bg-paper .intro-content .intro-title-wrapper {
+  .SeProfile-wrapper-hoverthemes .bg-paper .intro-content .intro-title-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 100%; }
-    .bg-paper .intro-content .intro-title-wrapper .intro-title {
+    .SeProfile-wrapper-hoverthemes .bg-paper .intro-content .intro-title-wrapper .intro-title {
       text-transform: capitalize;
       font-size: 40px;
       letter-spacing: 1px;
@@ -3539,7 +3539,7 @@ body {
       font-weight: 700;
       margin-top: 0;
       line-height: 1.1; }
-    .bg-paper .intro-content .intro-title-wrapper .intro-subtitle {
+    .SeProfile-wrapper-hoverthemes .bg-paper .intro-content .intro-title-wrapper .intro-subtitle {
       font-size: 21px;
       margin-bottom: 10px;
       text-transform: capitalize;
@@ -3549,9 +3549,9 @@ body {
       margin-top: 0;
       letter-spacing: 1.5px;
       line-height: 1.1; }
-    .bg-paper .intro-content .intro-title-wrapper a.link.animated {
+    .SeProfile-wrapper-hoverthemes .bg-paper .intro-content .intro-title-wrapper a.link.animated {
       position: relative; }
-      .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
+      .SeProfile-wrapper-hoverthemes .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
         content: "\f063";
         font: normal normal normal 14px/1 FontAwesome;
         position: absolute;
@@ -3560,9 +3560,9 @@ body {
         transition: all 0.5s;
         margin-left: -5px;
         animation: upDown 1s linear infinite both alternate-reverse; }
-        .theme-primary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
+        .theme-primary .SeProfile-wrapper-hoverthemes .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
           color: #00ACC1; }
-        .theme-secondary .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
+        .theme-secondary .SeProfile-wrapper-hoverthemes .bg-paper .intro-content .intro-title-wrapper a.link.animated:after {
           color: #06A763; }
 
 .seAboutMe .about {
@@ -3616,15 +3616,15 @@ body {
   display: inline-block;
   margin-left: 10px; }
 
-.skill {
+.skill-hoverthemes {
   width: 100%;
   margin-bottom: 50px; }
-  .skill .skill-title {
+  .skill-hoverthemes .skill-title {
     display: flex;
     align-items: center; }
-    .skill .skill-title .iconFont {
+    .skill-hoverthemes .skill-title .iconFont {
       margin-left: 10px; }
-  .skill .countWrapper {
+  .skill-hoverthemes .countWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3638,18 +3638,18 @@ body {
     background-color: #ffffff;
     padding: 3px 7px;
     border-radius: 50%; }
-  .skill .skillbar {
+  .skill-hoverthemes .skillbar {
     margin-bottom: 10px;
     width: 80%; }
-    .skill .skillbar .react-sweet-progress-line-inner {
+    .skill-hoverthemes .skillbar .react-sweet-progress-line-inner {
       height: 3px !important;
       min-height: 3px;
       color: #616161; }
-      .theme-primary .skill .skillbar .react-sweet-progress-line-inner {
+      .theme-primary .skill-hoverthemes .skillbar .react-sweet-progress-line-inner {
         background-color: #00ACC1 !important; }
-      .theme-secondary .skill .skillbar .react-sweet-progress-line-inner {
+      .theme-secondary .skill-hoverthemes .skillbar .react-sweet-progress-line-inner {
         background-color: #06A763 !important; }
-    .skill .skillbar .react-sweet-progress-symbol {
+    .skill-hoverthemes .skillbar .react-sweet-progress-symbol {
       position: relative;
       bottom: 20px;
       left: 35px; }
@@ -4010,21 +4010,21 @@ body {
     display: inline-block;
     transition: color 0.1s, border-color 0.1s, background-color 0.1s; }
 
-.am-thumb .thumb {
+.am-thumb-trimatrixlab .thumb {
   position: relative;
   overflow: hidden; }
-  .am-thumb .thumb .overlayThumb {
+  .am-thumb-trimatrixlab .thumb .overlayThumb {
     position: absolute;
     bottom: 0;
     left: 0;
     border-radius: 100%;
     transform: scale(0);
     transition: all 0.6s linear; }
-    .theme-primary .am-thumb .thumb .overlayThumb {
+    .theme-primary .am-thumb-trimatrixlab .thumb .overlayThumb {
       background-color: #00ACC1; }
-    .theme-secondary .am-thumb .thumb .overlayThumb {
+    .theme-secondary .am-thumb-trimatrixlab .thumb .overlayThumb {
       background-color: #06A763; }
-  .am-thumb .thumb .meta {
+  .am-thumb-trimatrixlab .thumb .meta {
     display: block;
     position: absolute;
     z-index: 1;
@@ -4035,7 +4035,7 @@ body {
     opacity: 0;
     backface-visibility: hidden;
     transition: opacity .3s 0.2s; }
-    .am-thumb .thumb .meta .inner {
+    .am-thumb-trimatrixlab .thumb .meta .inner {
       position: absolute;
       width: 100%;
       height: 120px;
@@ -4045,14 +4045,14 @@ body {
       top: 50%;
       margin-top: -35px;
       padding: 0 15px; }
-      .am-thumb .thumb .meta .inner .btns {
+      .am-thumb-trimatrixlab .thumb .meta .inner .btns {
         position: relative;
         top: 0;
         margin: 0 0 20px 0;
         width: 100%;
         text-align: center;
         left: 0; }
-        .am-thumb .thumb .meta .inner .btns span {
+        .am-thumb-trimatrixlab .thumb .meta .inner .btns span {
           cursor: pointer;
           display: inline-block;
           width: 41px;
@@ -4065,22 +4065,22 @@ body {
           margin: 0 -2px;
           transform: translate(20px, 0);
           transition: all .3s 0.2s; }
-  .am-thumb .thumb:hover .meta {
+  .am-thumb-trimatrixlab .thumb:hover .meta {
     opacity: 1; }
-  .am-thumb .thumb:hover span {
+  .am-thumb-trimatrixlab .thumb:hover span {
     transform: translate(0, 0) !important; }
-  .am-thumb .thumb:hover h4 {
+  .am-thumb-trimatrixlab .thumb:hover h4 {
     color: #fafafe;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 16px; }
-  .am-thumb .thumb:hover .overlayThumb {
+  .am-thumb-trimatrixlab .thumb:hover .overlayThumb {
     opacity: 0.9;
     width: 100px;
     height: 100px;
     transform: scale(12);
     transition: all 0.6s linear; }
-  .am-thumb .thumb img {
+  .am-thumb-trimatrixlab .thumb img {
     display: block;
     width: 100%;
     height: auto; }
@@ -4253,18 +4253,18 @@ body {
         margin-bottom: 10px;
         text-transform: capitalize; }
 
-.am-selected {
+.am-selected-trimatrixlab {
   position: relative;
   padding: 5px; }
-  .am-selected:hover {
+  .am-selected-trimatrixlab:hover {
     box-shadow: 0 0 0 1px #88ceff; }
-  .am-selected:hover .icon {
+  .am-selected-trimatrixlab:hover .icon {
     display: block; }
-  .am-selected.active {
+  .am-selected-trimatrixlab.active {
     box-shadow: 0 0 0 1px #88ceff; }
-    .am-selected.active .icon {
+    .am-selected-trimatrixlab.active .icon {
       display: block; }
-  .am-selected .icon {
+  .am-selected-trimatrixlab .icon {
     font-size: 32px;
     position: absolute;
     right: 10px;
@@ -4274,7 +4274,7 @@ body {
     z-index: 99;
     display: none;
     color: #88ceff; }
-    .am-selected .icon.delete {
+    .am-selected-trimatrixlab .icon.delete {
       right: 50px !important;
       top: -17px !important; }
 
@@ -4310,182 +4310,183 @@ body {
     display: inline-block;
     transition: color 0.1s, border-color 0.1s, background-color 0.1s; }
 
-.bg-paper-trimatrixlab {
-  display: flex;
-  flex-wrap: wrap; }
-  .bg-paper-trimatrixlab.intro {
-    width: 100%;
-    height: 85vh;
-    background-color: transparent;
-    overflow: hidden; }
-  .bg-paper-trimatrixlab .SeProfile-wrapper {
+.SeProfile-wrapper-trimatrixlab {
+  height: 400px; }
+  .theme-primary .SeProfile-wrapper-trimatrixlab {
+    background-color: #00ACC1; }
+  .theme-secondary .SeProfile-wrapper-trimatrixlab {
+    background-color: #06A763; }
+  .SeProfile-wrapper-trimatrixlab .infoProfileWrapper {
+    width: calc(100% - 400px);
     height: 400px; }
-    .theme-primary .bg-paper-trimatrixlab .SeProfile-wrapper {
-      background-color: #00ACC1; }
-    .theme-secondary .bg-paper-trimatrixlab .SeProfile-wrapper {
-      background-color: #06A763; }
-    .bg-paper-trimatrixlab .SeProfile-wrapper .infoProfileWrapper {
-      width: calc(100% - 400px); }
-    .bg-paper-trimatrixlab .SeProfile-wrapper .imgProfileWrapper {
-      width: 400px;
-      position: relative; }
-      .bg-paper-trimatrixlab .SeProfile-wrapper .imgProfileWrapper .addBtn {
-        position: absolute;
-        background-color: #1976D2;
-        top: 20%;
-        left: 86%;
-        overflow: hidden;
-        width: 55.5px;
-        height: 55.5px;
-        padding: 0;
-        border-radius: 50%;
-        transition: .3s;
-        cursor: pointer;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1; }
-        .bg-paper-trimatrixlab .SeProfile-wrapper .imgProfileWrapper .addBtn i {
-          color: #ffffff;
-          font-size: 18px; }
-    .bg-paper-trimatrixlab .SeProfile-wrapper .am-seSelected {
-      padding: 0 !important; }
-    .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me {
-      list-style: none; }
-      .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me li {
-        display: inline-block; }
-      .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me a {
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        width: 37px;
-        height: 37px;
-        padding: 0;
-        border-radius: 50%;
-        transition: .3s;
-        cursor: pointer;
-        background-color: #ffffff !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
-        .theme-primary .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me a i {
-          color: #00ACC1; }
-        .theme-secondary .bg-paper-trimatrixlab .SeProfile-wrapper .follow-me a i {
-          color: #06A763; }
-  .bg-paper-trimatrixlab .slant {
+  .SeProfile-wrapper-trimatrixlab .imgProfileWrapper {
+    width: 400px;
+    position: relative; }
+    .SeProfile-wrapper-trimatrixlab .imgProfileWrapper .addBtn {
+      position: absolute;
+      background-color: #1976D2;
+      top: 20%;
+      left: 86%;
+      overflow: hidden;
+      width: 55.5px;
+      height: 55.5px;
+      padding: 0;
+      border-radius: 50%;
+      transition: .3s;
+      cursor: pointer;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1; }
+      .SeProfile-wrapper-trimatrixlab .imgProfileWrapper .addBtn i {
+        color: #ffffff;
+        font-size: 18px; }
+  .SeProfile-wrapper-trimatrixlab .am-seSelected {
+    padding: 0 !important; }
+  .SeProfile-wrapper-trimatrixlab .follow-me {
+    list-style: none; }
+    .SeProfile-wrapper-trimatrixlab .follow-me li {
+      display: inline-block; }
+    .SeProfile-wrapper-trimatrixlab .follow-me a {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      width: 37px;
+      height: 37px;
+      padding: 0;
+      border-radius: 50%;
+      transition: .3s;
+      cursor: pointer;
+      background-color: #ffffff !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+      .theme-primary .SeProfile-wrapper-trimatrixlab .follow-me a i {
+        color: #00ACC1; }
+      .theme-secondary .SeProfile-wrapper-trimatrixlab .follow-me a i {
+        color: #06A763; }
+  .SeProfile-wrapper-trimatrixlab .slant {
     top: 0;
     z-index: 1;
     position: absolute;
     border-style: solid;
     border-width: 400px 100px 0 0; }
-    .theme-primary .bg-paper-trimatrixlab .slant {
+    .theme-primary .SeProfile-wrapper-trimatrixlab .slant {
       border-color: rgba(223, 50, 50, 0) #00ACC1 transparent transparent; }
-    .theme-secondary .bg-paper-trimatrixlab .slant {
+    .theme-secondary .SeProfile-wrapper-trimatrixlab .slant {
       border-color: rgba(223, 50, 50, 0) #06A763 transparent transparent; }
-  .bg-paper-trimatrixlab .imgProfile {
+  .SeProfile-wrapper-trimatrixlab .bg-paper {
+    display: flex;
+    flex-wrap: wrap; }
+    .SeProfile-wrapper-trimatrixlab .bg-paper.intro {
+      width: 100%;
+      height: 85vh;
+      background-color: transparent;
+      overflow: hidden; }
+  .SeProfile-wrapper-trimatrixlab .imgProfile {
     width: 100%;
     max-width: 400px;
     height: 400px;
     margin-top: 0 !important; }
-  .bg-paper-trimatrixlab .intro-content {
+  .SeProfile-wrapper-trimatrixlab .intro-content {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
     height: 100%; }
-    .bg-paper-trimatrixlab .intro-content .intro-title-wrapper {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      height: 100%;
-      padding: 0 40px;
+  .SeProfile-wrapper-trimatrixlab .intro-title-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 40px;
+    color: #ffffff; }
+    .theme-primary .SeProfile-wrapper-trimatrixlab .intro-title-wrapper {
+      background-color: #00ACC1; }
+    .theme-secondary .SeProfile-wrapper-trimatrixlab .intro-title-wrapper {
+      background-color: #06A763; }
+    .SeProfile-wrapper-trimatrixlab .intro-title-wrapper .intro-title {
+      text-transform: capitalize;
+      font-size: 40px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      margin-top: 0;
+      line-height: 1.1;
       color: #ffffff; }
-      .theme-primary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper {
-        background-color: #00ACC1; }
-      .theme-secondary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper {
-        background-color: #06A763; }
-      .bg-paper-trimatrixlab .intro-content .intro-title-wrapper .intro-title {
-        text-transform: capitalize;
-        font-size: 40px;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-        font-weight: 700;
-        margin-top: 0;
-        line-height: 1.1;
-        color: #ffffff; }
-      .bg-paper-trimatrixlab .intro-content .intro-title-wrapper .intro-subtitle {
-        font-size: 21px;
-        margin-bottom: 10px;
-        text-transform: capitalize;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 700;
-        margin-top: 0;
-        letter-spacing: 1.5px;
-        line-height: 1.1;
-        color: #ffffff; }
-      .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated {
-        position: relative; }
-        .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated:after {
-          content: "\f063";
-          font: normal normal normal 14px/1 FontAwesome;
-          position: absolute;
-          top: 30px;
-          right: 6%;
-          transition: all 0.5s;
-          margin-left: -5px;
-          animation: upDown 1s linear infinite both alternate-reverse; }
-          .theme-primary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated:after {
-            color: #00ACC1; }
-          .theme-secondary .bg-paper-trimatrixlab .intro-content .intro-title-wrapper a.link.animated:after {
-            color: #06A763; }
+    .SeProfile-wrapper-trimatrixlab .intro-title-wrapper .intro-subtitle {
+      font-size: 21px;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      margin-top: 0;
+      letter-spacing: 1.5px;
+      line-height: 1.1;
+      color: #ffffff; }
+    .SeProfile-wrapper-trimatrixlab .intro-title-wrapper a.link.animated {
+      position: relative; }
+      .SeProfile-wrapper-trimatrixlab .intro-title-wrapper a.link.animated:after {
+        content: "\f063";
+        font: normal normal normal 14px/1 FontAwesome;
+        position: absolute;
+        top: 30px;
+        right: 6%;
+        transition: all 0.5s;
+        margin-left: -5px;
+        animation: upDown 1s linear infinite both alternate-reverse; }
+        .theme-primary .SeProfile-wrapper-trimatrixlab .intro-title-wrapper a.link.animated:after {
+          color: #00ACC1; }
+        .theme-secondary .SeProfile-wrapper-trimatrixlab .intro-title-wrapper a.link.animated:after {
+          color: #06A763; }
 
-.seAboutMe .about {
+.seAboutMe-trimatrixlab .about {
   padding-left: 20%; }
 
-.seAboutMe .about-list {
+.seAboutMe-trimatrixlab .about-list {
   display: block;
   margin-bottom: 20px; }
 
-.seAboutMe .about-list li:first-child {
+.seAboutMe-trimatrixlab .about-list li:first-child {
   padding-top: 0; }
 
-.seAboutMe .about-list li {
+.seAboutMe-trimatrixlab .about-list li {
   display: flex;
   position: relative;
   padding: 10px 0;
   border-bottom: 1px solid #ededed;
   overflow: hidden; }
 
-.seAboutMe .about-list li .left {
+.seAboutMe-trimatrixlab .about-list li .left {
   font-weight: 700;
   width: 70%;
   text-align: left; }
 
-.seAboutMe .about-list li .right {
+.seAboutMe-trimatrixlab .about-list li .right {
   text-align: right;
   width: 30%; }
 
-.seAboutMe .about-list li:last-child {
+.seAboutMe-trimatrixlab .about-list li:last-child {
   border-bottom: none; }
 
-.seAboutMe .about-list li {
+.seAboutMe-trimatrixlab .about-list li {
   position: relative;
   padding: 10px 0;
   border-bottom: 1px solid #ededed;
   overflow: hidden; }
 
-.seAboutMe .follow-me {
+.seAboutMe-trimatrixlab .follow-me {
   text-align: center;
   margin-top: 35px; }
-  .seAboutMe .follow-me ._modalBody {
+  .seAboutMe-trimatrixlab .follow-me ._modalBody {
     text-align: right; }
 
-.seAboutMe .follow-me li {
+.seAboutMe-trimatrixlab .follow-me li {
   display: inline-block; }
 
-.seAboutMe .follow-me li a {
+.seAboutMe-trimatrixlab .follow-me li a {
   color: #626262;
   padding: 5px;
   font-size: 20px;
@@ -4494,6 +4495,8 @@ body {
 
 .about-trimatrixlab {
   overflow: visible !important; }
+  .about-trimatrixlab .am-seSelected-trimatrixlab {
+    padding: 0 !important; }
   .about-trimatrixlab .comment {
     position: relative;
     background-color: #fff;
@@ -4506,6 +4509,7 @@ body {
       padding: 40px 40px 0;
       border-radius: 0 0 2px 2px; }
     .about-trimatrixlab .comment .btnWrapper {
+      width: 100%;
       border-top: 1px solid rgba(160, 160, 160, 0.2);
       padding: 20px; }
       .about-trimatrixlab .comment .btnWrapper a {
@@ -4526,17 +4530,17 @@ body {
           .theme-secondary .about-trimatrixlab .comment .btnWrapper a:hover {
             background-color: #05985a; }
 
-.skill {
+.skill-trimatrixlab {
   width: 100%;
   margin-bottom: 50px; }
-  .skill .skill-title {
+  .skill-trimatrixlab .skill-title {
     display: flex;
     align-items: center; }
-    .skill .skill-title .iconFont {
+    .skill-trimatrixlab .skill-title .iconFont {
       margin-left: 10px; }
-    .skill .skill-title h4 {
+    .skill-trimatrixlab .skill-title h4 {
       color: #ffffff; }
-  .skill .countWrapper {
+  .skill-trimatrixlab .countWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4550,46 +4554,46 @@ body {
     background-color: #ffffff;
     padding: 3px 7px;
     border-radius: 50%; }
-  .skill .skillbar {
+  .skill-trimatrixlab .skillbar {
     margin-bottom: 10px;
     width: 80%; }
-    .theme-primary .skill .skillbar .react-sweet-progress-line {
+    .theme-primary .skill-trimatrixlab .skillbar .react-sweet-progress-line {
       background-color: #00ACC1 !important; }
-    .theme-secondary .skill .skillbar .react-sweet-progress-line {
+    .theme-secondary .skill-trimatrixlab .skillbar .react-sweet-progress-line {
       background-color: #05985a !important; }
-    .skill .skillbar .react-sweet-progress-line .react-sweet-progress-line-inner {
+    .skill-trimatrixlab .skillbar .react-sweet-progress-line .react-sweet-progress-line-inner {
       height: 3px !important;
       min-height: 3px;
       color: #616161;
       background-color: #ffffff !important; }
-    .skill .skillbar .react-sweet-progress-symbol {
+    .skill-trimatrixlab .skillbar .react-sweet-progress-symbol {
       position: relative;
       bottom: 20px;
       left: 35px;
       color: #ffffff !important; }
 
-.am-seSelected {
+.am-seSelected-trimatrixlab {
   position: relative;
   padding: 5px; }
-  .am-seSelected:hover {
+  .am-seSelected-trimatrixlab:hover {
     box-shadow: 0 0 0 1px #88ceff; }
-  .am-seSelected.active {
+  .am-seSelected-trimatrixlab.active {
     box-shadow: 0 0 0 1px #88ceff; }
-    .am-seSelected.active .icon {
+    .am-seSelected-trimatrixlab.active .icon {
       display: block; }
-    .am-seSelected.active .switch {
+    .am-seSelected-trimatrixlab.active .switch {
       display: block; }
-  .am-seSelected.hover .icon {
+  .am-seSelected-trimatrixlab.hover .icon {
     display: block; }
-  .am-seSelected.hover .switch {
+  .am-seSelected-trimatrixlab.hover .switch {
     display: block; }
-  .am-seSelected .switch {
+  .am-seSelected-trimatrixlab .switch {
     direction: ltr;
     position: absolute;
     right: 55px;
     top: -14px;
     display: none; }
-  .am-seSelected .icon {
+  .am-seSelected-trimatrixlab .icon {
     font-size: 32px;
     position: absolute;
     right: 15px;
@@ -4614,26 +4618,33 @@ body {
     width: 100%;
     display: block; }
 
-.seDocument-trimatrixlab .am-selected {
+.seDocument-trimatrixlab .skill-title h4 {
+  width: 100%;
+  text-align: center;
+  color: #777777 !important; }
+
+.seDocument-trimatrixlab .am-selected-trimatrixlab {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
-  .seDocument-trimatrixlab .am-selected > div {
+  .seDocument-trimatrixlab .am-selected-trimatrixlab > div {
     display: flex;
     justify-content: center; }
-  .seDocument-trimatrixlab .am-selected .skill-title h4 {
+  .seDocument-trimatrixlab .am-selected-trimatrixlab .skill-title h4 {
     width: 100%;
     text-align: center;
-    color: #777777; }
+    color: #777777 !important; }
 
-.seSkills {
+.seSkills-trimatrixlab {
   padding: 40px;
   color: #ffffff; }
-  .theme-primary .seSkills {
+  .theme-primary .seSkills-trimatrixlab {
     background-color: #00ACC1; }
-  .theme-secondary .seSkills {
+  .theme-secondary .seSkills-trimatrixlab {
     background-color: #06A763; }
+  .seSkills-trimatrixlab .skill-title h4 {
+    color: #ffffff; }
 
 @font-face {
   font-family: 'yekan';

@@ -1,5 +1,8 @@
 .about-trimatrixlab {
   overflow: visible !important;
+  .am-seSelected-trimatrixlab {
+    padding: 0 !important;
+  }
   .comment {
     position: relative;
     background-color: #fff;
@@ -13,6 +16,7 @@
       border-radius: 0 0 2px 2px;
     }
     .btnWrapper {
+      width: 100%;
       border-top: 1px solid rgba(160, 160, 160, .2);
       padding: 20px;
       a {

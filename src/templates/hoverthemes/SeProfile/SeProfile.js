@@ -72,7 +72,7 @@ class SeProfile extends Component {
             >
                 {({data, fetchMore}) => (
 
-                    <div className={`row SeProfile-wrapper bg-paper ${direction}`}>
+                    <div className={`row SeProfile-wrapper-hoverthemes bg-paper ${direction}`}>
                         {console.log('data===== profile 888888', data)}
                         <div className="col-md-6 col-sm-6 col-xs-6">
                             <div

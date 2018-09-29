@@ -1,0 +1,156 @@
+@import '_theme.scss';
+// bg-paper
+.SeProfile-wrapper-trimatrixlab {
+  //max-width: 1000px;
+  height: 400px;
+  @include themify($themes) {
+    background-color: themed('backgroundColor');
+  }
+  .infoProfileWrapper {
+    width: calc(100% - 400px);
+    height: 400px;
+  }
+  .imgProfileWrapper {
+    width: 400px;
+    position: relative;
+    .addBtn {
+      position: absolute;
+      background-color: #1976D2;
+      top: 20%;
+      left: 86%;
+      overflow: hidden;
+      width: 55.5px;
+      height: 55.5px;
+      padding: 0;
+      border-radius: 50%;
+      transition: .3s;
+      cursor: pointer;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      i {
+        color: $white-color;
+        font-size: 18px;
+      }
+    }
+  }
+  .am-seSelected {
+    padding: 0 !important;
+  }
+  .follow-me {
+    list-style: none;
+    li {
+      display: inline-block;
+    }
+    a {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      width: 37px;
+      height: 37px;
+      padding: 0;
+      border-radius: 50%;
+      transition: .3s;
+      cursor: pointer;
+      background-color: $white-color !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+      i {
+        @include themify($themes) {
+          color: themed('textColor');
+        }
+      }
+    }
+  }
+  .slant {
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    border-style: solid;
+    border-width: 400px 100px 0 0;
+    @include themify($themes) {
+      border-color: rgba(223, 50, 50, 0) themed('border') transparent transparent;
+    }
+  }
+
+  .bg-paper {
+    display: flex;
+    flex-wrap: wrap;
+    &.intro {
+      width: 100%;
+      height: 85vh;
+      //background-image: url('assets/images/hero.png');
+      //background-size: cover;
+      //background-position: center;
+      //background-repeat: no-repeat;
+      background-color: transparent;
+      overflow: hidden;
+    }
+  }
+  .imgProfile {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin-top: 0 !important;
+  }
+  .intro-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .intro-title-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 40px;
+    @include themify($themes) {
+      background-color: themed('backgroundColor');
+    }
+    color: $white-color;
+    .intro-title {
+      text-transform: capitalize;
+      font-size: 40px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      margin-top: 0;
+      line-height: 1.1;
+      color: $white-color;
+    }
+    .intro-subtitle {
+      font-size: 21px;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      margin-top: 0;
+      letter-spacing: 1.5px;
+      line-height: 1.1;
+      color: $white-color;
+    }
+    a.link.animated {
+      position: relative;
+      &:after {
+        content: "\f063";
+        font: normal normal normal 14px/1 FontAwesome;
+        position: absolute;
+        top: 30px;
+        right: 6%;
+        transition: all 0.5s;
+        margin-left: -5px;
+        animation: upDown 1s linear infinite both alternate-reverse;
+        @include themify($themes) {
+          color: themed('textColor');
+        }
+      }
+    }
+  }
+}
+
