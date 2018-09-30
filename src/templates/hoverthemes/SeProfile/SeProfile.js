@@ -16,12 +16,17 @@ import {
     Edit
 } from 'dadComponents';
 
+import {
+    Spinners
+} from 'components';
+
 class SeProfile extends Component {
     constructor(props) {
         super(props);
         this.state = {
             closeModal: true,
-            dataFile: {}
+            dataFile: {},
+            spinner: false
         };
         this.onOpenModal = this.onOpenModal.bind(this);
         this.showCroppedImage = this.showCroppedImage.bind(this);
@@ -47,6 +52,10 @@ class SeProfile extends Component {
 
     onClickEdit() {
 
+        this.setState({
+            spinner: true
+        });
+
         //e.preventDefault();
         axios.post(`http://api.dadnama.ir/api/upload/image/${this.props.photo}`, this.state.dataFile
             , {
@@ -54,13 +63,19 @@ class SeProfile extends Component {
                     Authorization: 'Bearer ' + localStorage.getItem('token')
                 }
             }).then(res => {
+            this.setState({
+                closeModal: false,
+                spinner: false
+            });
             toast.success("تغییرات شما با موفقیت اعمال شد");
             console.log(res.data);
-        })
-            .catch((error) => {
-                console.log('error', error);
-                toast.error(Utils.gqlHandelError(error));
+        }).catch((error) => {
+            this.setState({
+                spinner: false
             });
+            console.log('error', error);
+            toast.error(Utils.gqlHandelError(error));
+        });
 
     }
 
@@ -132,10 +147,12 @@ class SeProfile extends Component {
                                 <img className={'imgProfile'}
                                      src={data.user_photo ? window.base_image + data.user_photo.path : ''} alt={''}/>
                             </SeSelected>
+
+                            <Spinners
+                                loading={this.state.spinner}
+                            />
+
                         </div>
-
-                       {/* <ToastContainer/>*/}
-
                     </div>
                 )}
 

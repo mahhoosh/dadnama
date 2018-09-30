@@ -22,7 +22,7 @@ import {
 } from 'dadComponents';
 import {
     Input,
-    Spinner
+    Spinners
 } from 'components';
 
 class SeNetworks extends Component {
@@ -33,7 +33,8 @@ class SeNetworks extends Component {
             closeModalEdit: true,
             name: '',
             index: 0,
-            networkTypeId: 1
+            networkTypeId: 1,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -70,6 +71,11 @@ class SeNetworks extends Component {
 
     onClickEdit(e, errorM, data, change_social, id) {
         e.preventDefault();
+
+        this.setState({
+            spinner: true
+        });
+
         change_social({
             variables: {
                 id: this.state.networkTypeId,
@@ -79,10 +85,14 @@ class SeNetworks extends Component {
             toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
-                closeModalEdit: false
-            })
+                closeModalEdit: false,
+                spinner: false
+            });
             console.log('data alesaadi', data)
         }).catch((err) => {
+            this.setState({
+                spinner: false
+            })
             toast.error(Utils.gqlHandelError(err));
             console.log('err', err)
         });
@@ -178,6 +188,11 @@ class SeNetworks extends Component {
                                                         }
                                                     </ul>
                                                 </SeSelected>
+
+                                                <Spinners
+                                                    loading={this.state.spinner}
+                                                />
+
                                             </form>
                                         )}
                                     </Mutation>

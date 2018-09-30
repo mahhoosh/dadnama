@@ -17,7 +17,8 @@ import {
     Edit
 } from 'dadComponents';
 import {
-    Input
+    Input,
+    Spinners
 } from 'components';
 
 class SeSkills extends Component {
@@ -28,6 +29,7 @@ class SeSkills extends Component {
             percentage: '',
             closeModal: true,
             closeModalEdit: true,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -67,6 +69,10 @@ class SeSkills extends Component {
     onClickEdit(e, data, change_user_skill, id) {
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        });
+
         change_user_skill({
             variables: {
                 id: id,
@@ -78,10 +84,14 @@ class SeSkills extends Component {
             toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
-                closeModalEdit: false
+                closeModalEdit: false,
+                spinner: false
             });
             console.log('data', data)
         }).catch((err) => {
+            this.setState({
+                spinner: false
+            });
             toast.error(Utils.gqlHandelError(err));
             console.log('res', err)
         });
@@ -174,6 +184,11 @@ class SeSkills extends Component {
                                                         </div>
                                                     </div>
                                                 </SeSelected>
+
+                                                <Spinners
+                                                    loading={this.state.spinner}
+                                                />
+
                                             </form>
                                         )}
                                     </Mutation>

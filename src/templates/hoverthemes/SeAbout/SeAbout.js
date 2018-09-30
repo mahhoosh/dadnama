@@ -20,7 +20,8 @@ import {
 import {
     Input,
     Spinner,
-    Alert
+    Alert,
+    Spinners
 } from 'components';
 import profileImg from 'assets/images/hero.png';
 
@@ -33,7 +34,8 @@ class SeAbout extends Component {
             first_name: '',
             last_name: '',
             text: '',
-            description: ''
+            description: '',
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -60,6 +62,10 @@ class SeAbout extends Component {
     onClickEdit(e, data, edit_about_template) {
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        });
+
         edit_about_template({
             variables: {
                 title: this.state.title,
@@ -73,9 +79,13 @@ class SeAbout extends Component {
             console.log('data', data);
             toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
-                closeModal: false
+                closeModal: false,
+                spinner: false
             })
         }).catch((err) => {
+            this.setState({
+                spinner: false
+            })
             console.log('res', err)
             toast.error(Utils.gqlHandelError(err));
         });
@@ -177,7 +187,9 @@ class SeAbout extends Component {
                                             </article>
                                         </SeSelected>
 
-                                     {/*   <ToastContainer/>*/}
+                                        <Spinners
+                                            loading={this.state.spinner}
+                                        />
 
                                     </form>
                                 )}

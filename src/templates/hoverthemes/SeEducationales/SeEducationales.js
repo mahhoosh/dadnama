@@ -17,8 +17,10 @@ import {
 import {
     Edit
 } from 'dadComponents';
+
 import {
-    Input
+    Input,
+    Spinners
 } from 'components';
 
 class SeEducationales extends Component {
@@ -33,6 +35,7 @@ class SeEducationales extends Component {
             stopped_at: moment(),
             closeModal: true,
             closeModalEdit: true,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -89,6 +92,10 @@ class SeEducationales extends Component {
         console.log('========SeEducationales Edit====', data)
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        });
+
         change_educationales({
             variables: {
                 id: id,
@@ -103,9 +110,13 @@ class SeEducationales extends Component {
             this.setState({
                 closeModal: false,
                 closeModalEdit: false,
+                spinner: false
             });
             console.log('data', data)
         }).catch((err) => {
+            this.setState({
+                spinner: false
+            });
             toast.error(Utils.gqlHandelError(err));
             console.log('res', err)
         });
@@ -212,7 +223,9 @@ class SeEducationales extends Component {
                                                     </div>
                                                 </SeSelected>
 
-                                              {/*  <ToastContainer/>*/}
+                                                <Spinners
+                                                    loading={this.state.spinner}
+                                                />
 
                                             </form>
                                         )}

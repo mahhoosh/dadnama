@@ -16,7 +16,8 @@ import {
     Edit
 } from 'dadComponents';
 import {
-    Input
+    Input,
+    Spinners
 } from 'components';
 
 class SeResume extends Component {
@@ -28,7 +29,8 @@ class SeResume extends Component {
             started_at: '',
             stopped_at: '',
             closeModal: true,
-            closeModalEdit: true
+            closeModalEdit: true,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -65,6 +67,10 @@ class SeResume extends Component {
     onClickEdit(e, data, Change_court_cases, id) {
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        })
+
         Change_court_cases({
             variables: {
                 id: id,
@@ -77,11 +83,15 @@ class SeResume extends Component {
         }).then((data) => {
             toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
+                spinner: false,
                 closeModal: false,
                 closeModalEdit: false
             });
             console.log('data', data)
         }).catch((res) => {
+            this.setState({
+                spinner: false
+            });
             toast.error(Utils.gqlHandelError(res));
             console.log('res', res)
         });
@@ -174,6 +184,10 @@ class SeResume extends Component {
                                                 </div>
                                             </div>
                                         </SeSelected>
+
+                                        <Spinners
+                                            loading={this.state.spinner}
+                                        />
 
                                         <ToastContainer/>
 
