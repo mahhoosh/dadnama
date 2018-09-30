@@ -33,13 +33,13 @@ class LoginPage extends React.Component {
                 let param = [];
                 keys.map(key => {
                     if (validation[key]) {
-                        param.push(`${validation[key].join(',')}`)
+                        param.push(`${validation[key].join('<br />')}`)
                     }
 
                 })
                 // debugger
                 // alert(param.join(','));
-                return param.join(',')
+                return param.join('<br />')
             }
         }
         // debugger
@@ -246,14 +246,11 @@ class LoginPage extends React.Component {
                                             }
                                         </p>
                                         {
-                                            this.state.errorText && <p
-                                                className={'errorText'}
-                                            >
-                                                *
-                                                {
-                                                    this.state.errorText
-                                                }
-                                            </p>
+                                            this.state.errorText &&  <p
+                                            className={'errorText'}
+
+                                        >
+                                            <div dangerouslySetInnerHTML={{ __html: this.state.errorText }} /></p>
                                         }
                                     </div>
                                 </div>

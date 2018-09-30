@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as routes from "routes/const";
-import {Mutation} from "react-apollo";
+import { Mutation } from "react-apollo";
 import {
     Tab,
     LinkBtn,
@@ -12,8 +12,8 @@ import {
     ThemePoster
 } from 'dadComponents';
 
-import {USER_SIGNUP} from 'Graphql/UserSignupMutation';
-import {VrifyUserMutation} from 'Graphql/VrifyUserMutation';
+import { USER_SIGNUP } from 'Graphql/UserSignupMutation';
+import { VrifyUserMutation } from 'Graphql/VrifyUserMutation';
 
 class Signup extends React.Component {
 
@@ -30,13 +30,13 @@ class Signup extends React.Component {
                 let param = [];
                 keys.map(key => {
                     if (validation[key]) {
-                        param.push(`${validation[key].join(',')}`)
+                        param.push(`${validation[key].join('<br />')}`)
                     }
 
                 })
                 // debugger
                 // alert(param.join(','));
-                return param.join(',')
+                return param.join('<br />')
             }
         }
         // debugger
@@ -52,7 +52,7 @@ class Signup extends React.Component {
             name: '',
             em_mb: '',
             email: '',
-            mobile: '09332369461',
+            mobile: '',
             level: 1,
             spinner: false
         };
@@ -62,16 +62,17 @@ class Signup extends React.Component {
     }
 
     onClose() {
-        const {router} = this.context;
+        const { router } = this.context;
         router.history.push(routes.APP_ROOT);
         this.props.onClose && this.props.onClose();
     }
 
-    onClickSignUp(e, data, UserSigninMutation) {
+    onClickSignUp = (e, data, UserSigninMutation) => {
         e.preventDefault();
 
         this.setState({
-            spinner: true
+            spinner: true,
+            errorText: ""
         })
 
         let mobile;
@@ -123,7 +124,10 @@ class Signup extends React.Component {
 
     onClickVerify(e, data, VrifyUserMutation) {
         e.preventDefault();
-
+        this.setState({
+            spinner: true,
+            errorText: ""
+        })
         VrifyUserMutation({
             variables: {
                 mobile: this.state.mobile,
@@ -135,7 +139,10 @@ class Signup extends React.Component {
             let param = data.data.VrifyUserMutation;
             debugger
             if (param.errors) {
-                alert("کد ارسالی صحیح نمی باشد");
+                this.setState({
+                    spinner: false,
+                    errorText: "کد ارسالی صحیح نمی باشد"
+                })
             } else {
                 localStorage.setItem('token', param.api);
                 // window.location.reload();
@@ -146,7 +153,10 @@ class Signup extends React.Component {
 
         }).catch((err) => {
             let er = this.gqlHandelError(err);
-            alert(er);
+            this.setState({
+                spinner: false,
+                errorText: er
+            })
         });
     }
 
@@ -209,7 +219,7 @@ class Signup extends React.Component {
         if (level === 2) {
             return (
                 <Mutation mutation={VrifyUserMutation}>
-                    {(VrifyUserMutation, {data}) => (
+                    {(VrifyUserMutation, { data }) => (
                         <div className={'signUp'}>
                             <form>
                                 <div className={'loginContainer'}>
@@ -252,7 +262,19 @@ class Signup extends React.Component {
                                                     />
 
                                                 </div>
+                                                <div className={'col-lg-12'}>
+                                                    {
+                                                        this.state.errorText &&
+                                                        <p
+                                                            className={'errorText'}
 
+                                                        >
+                                                            <div dangerouslySetInnerHTML={{ __html: this.state.errorText }} /></p>
+                                                    }
+                                                </div>
+                                                <Spinners
+                                                    loading={this.state.spinner}
+                                                />
                                             </div>
                                         </div>
                                     </div>
@@ -292,7 +314,7 @@ class Signup extends React.Component {
 
         return (
             <Mutation mutation={USER_SIGNUP}>
-                {(UserSigninMutation, {data}) => (
+                {(UserSigninMutation, { data }) => (
                     <div className={'signUp'}>
                         <form>
                             <div className={'loginContainer'}>
@@ -358,22 +380,13 @@ class Signup extends React.Component {
                                                 />
                                             </div>
                                             <div className={'col-lg-12'}>
-                                                <p
-                                                    className={'errorText'}
-                                                >
-                                                    {
-                                                        this.state.errText
-                                                    }
-                                                </p>
                                                 {
-                                                    this.state.errorText && <p
+                                                    this.state.errorText &&
+                                                    <p
                                                         className={'errorText'}
+
                                                     >
-                                                        *
-                                                        {
-                                                            this.state.errorText
-                                                        }
-                                                    </p>
+                                                        <div dangerouslySetInnerHTML={{ __html: this.state.errorText }} /></p>
                                                 }
                                             </div>
                                         </div>
