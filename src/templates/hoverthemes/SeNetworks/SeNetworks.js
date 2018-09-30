@@ -6,6 +6,10 @@ import {Mutation} from "react-apollo";
 import {NETWORKS} from 'Graphql/NetworksQuery';
 import {NETWORK_TYPES} from 'Graphql/NetworkTypesQuery';
 import {CHANGE_SOCIAL} from 'Graphql/ChangeNetworkMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Skills,
     SeSelected,
@@ -72,13 +76,15 @@ class SeNetworks extends Component {
                 name: this.state.name
             }
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
                 closeModalEdit: false
             })
             console.log('data alesaadi', data)
-        }).catch((errorM) => {
-            console.log('res', errorM)
+        }).catch((err) => {
+            toast.error(Utils.gqlHandelError(err));
+            console.log('err', err)
         });
         console.log('id', id)
     }

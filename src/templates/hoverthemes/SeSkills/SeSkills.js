@@ -5,6 +5,10 @@ import {Mutation} from "react-apollo";
 import {USER_SKILLS} from 'Graphql/UserSkillsQuery';
 import {SKILLS} from 'Graphql/SkillsQuery';
 import {CHANGE_USER_SKILL} from 'Graphql/ChangeUerSkillMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Skills,
     SeSelected
@@ -71,13 +75,15 @@ class SeSkills extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
                 closeModalEdit: false
             });
             console.log('data', data)
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((err) => {
+            toast.error(Utils.gqlHandelError(err));
+            console.log('res', err)
         });
     }
 

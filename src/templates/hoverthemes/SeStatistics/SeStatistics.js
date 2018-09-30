@@ -4,6 +4,10 @@ import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_STATISTIC} from 'Graphql/UserStatisticQuery';
 import {CHANGE_STSTISTIC} from 'Graphql/ChangeStatisticMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Skills,
     SeSelected
@@ -63,13 +67,15 @@ class SeStatistics extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
                 closeModalEdit: false
             });
             console.log('data', data)
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((err) => {
+            toast.error(Utils.gqlHandelError(err));
+            console.log('err', err)
         });
     }
 

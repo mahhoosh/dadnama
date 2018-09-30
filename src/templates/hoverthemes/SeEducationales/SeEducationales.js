@@ -6,6 +6,10 @@ import {USER_EDUCATIONALES} from 'Graphql/EducationalesQuery';
 import {CITY} from 'Graphql/CityQuery';
 import {CHANGE_EDUCATIONALES} from 'Graphql/ChangeEducationalesMutation';
 import moment from 'moment-jalaali';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Timeline,
     SeSelected
@@ -95,13 +99,15 @@ class SeEducationales extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
                 closeModalEdit: false,
             });
             console.log('data', data)
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((err) => {
+            toast.error(Utils.gqlHandelError(err));
+            console.log('res', err)
         });
     }
 
@@ -205,6 +211,9 @@ class SeEducationales extends Component {
                                                         </div>
                                                     </div>
                                                 </SeSelected>
+
+                                              {/*  <ToastContainer/>*/}
+
                                             </form>
                                         )}
                                     </Mutation>

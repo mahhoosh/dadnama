@@ -4,6 +4,10 @@ import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_ABOUT} from 'Graphql/UserAboutQuery';
 import {EDIT_ABOUT_TEMPLATE} from 'Graphql/ChangeAboutMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Skills,
     SeSelected,
@@ -25,7 +29,6 @@ class SeAbout extends Component {
         super(props);
         this.state = {
             closeModal: true,
-            isAlert: false,
             title: '',
             first_name: '',
             last_name: '',
@@ -67,21 +70,15 @@ class SeAbout extends Component {
             }
 
         }).then((data) => {
-            console.log('data', data)
+            console.log('data', data);
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
-                closeModal: false,
-                isAlert: true
+                closeModal: false
             })
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((err) => {
+            console.log('res', err)
+            toast.error(Utils.gqlHandelError(err));
         });
-
-        let _this = this
-        setTimeout(function () {
-            _this.setState({
-                isAlert: false
-            });
-        }, 3000);
     }
 
     render() {
@@ -133,7 +130,9 @@ class SeAbout extends Component {
                         } else if (data) {
                             return <Mutation mutation={EDIT_ABOUT_TEMPLATE}>
                                 {(edit_about_template) => (
-                                    <form>
+                                    <form
+                                        className={'seAbout-hoverthemes'}
+                                    >
                                         <SeSelected
                                             editIcon
                                             modalChildren={
@@ -150,7 +149,7 @@ class SeAbout extends Component {
                                             onOpenModal={() => this.onOpenModal(data)}
                                         >
                                             <article
-                                                className={'intro bg-paper'}
+                                                className={'seProfileWrapper intro bg-paper'}
                                             >
                                                 <div className="intro-content">
                                                     <div className="container">
@@ -166,7 +165,7 @@ class SeAbout extends Component {
                                                 </div>
                                             </article>
 
-                                            <article id="about" className="section-padding">
+                                            <article className="seAboutMeWrapper">
                                                 <div className="container">
                                                     <SeAboutMe
                                                         descriptionMission={data.user_about.text}
@@ -177,12 +176,9 @@ class SeAbout extends Component {
                                                 </div>
                                             </article>
                                         </SeSelected>
-                                        {
-                                            this.state.isAlert && <Alert
 
-                                                alertText={'تغییرات شما با موفقیت اعمال شد'}
-                                            />
-                                        }
+                                     {/*   <ToastContainer/>*/}
+
                                     </form>
                                 )}
                             </Mutation>

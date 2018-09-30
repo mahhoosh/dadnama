@@ -206,7 +206,7 @@ class HoverthemesPage extends React.Component {
                         </div>
                     </div>
                 </header>
-                <section id="about" className="section-padding border-bottom">
+                <section id="about" className="seAboutWrapper section-padding border-bottom">
                     <SeAbout/>
                 </section>
 

@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import {Query} from "react-apollo";
 import {Link} from 'react-router-dom';
 import {USER_PHOTO} from 'Graphql/UserPhotoQuery';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
 
 import {
     Selected,
@@ -33,13 +36,13 @@ class SeProfile extends Component {
     }
 
     showCroppedImage(croppedAreaPixels) {
-       /* let dataFile = new FormData();
-        dataFile.append('file', croppedAreaPixels);*/
-       /* this.dataFile = dataFile;*/
-        console.log('croppedArea=====999 profile',croppedAreaPixels)
-          this.setState({
-              dataFile: this.croppedAreaPixels
-          });
+        /* let dataFile = new FormData();
+         dataFile.append('file', croppedAreaPixels);*/
+        /* this.dataFile = dataFile;*/
+        console.log('croppedArea=====999 profile', croppedAreaPixels)
+        this.setState({
+            dataFile: this.croppedAreaPixels
+        });
     }
 
     onClickEdit() {
@@ -51,10 +54,12 @@ class SeProfile extends Component {
                     Authorization: 'Bearer ' + localStorage.getItem('token')
                 }
             }).then(res => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             console.log(res.data);
         })
             .catch((error) => {
                 console.log('error', error);
+                toast.error(Utils.gqlHandelError(error));
             });
 
     }
@@ -129,6 +134,7 @@ class SeProfile extends Component {
                             </SeSelected>
                         </div>
 
+                       {/* <ToastContainer/>*/}
 
                     </div>
                 )}

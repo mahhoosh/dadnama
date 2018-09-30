@@ -3116,6 +3116,8 @@ body {
   .hoverthemesPage ._modalBody {
     max-width: 600px !important;
     width: 100%; }
+  .hoverthemesPage .seAboutWrapper {
+    padding-bottom: 0 !important; }
   .hoverthemesPage section {
     clear: both; }
   .hoverthemesPage .form-control {
@@ -3719,6 +3721,13 @@ body {
   font-size: 20px;
   display: inline-block;
   margin-left: 10px; }
+
+.seAbout-hoverthemes .seProfileWrapper {
+  background-color: #fafafa;
+  padding-bottom: 100px; }
+
+.seAbout-hoverthemes .seAboutMeWrapper {
+  padding-top: 100px; }
 
 .skill-hoverthemes {
   width: 100%;

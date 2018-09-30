@@ -4,6 +4,10 @@ import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_COURT_CASES} from 'Graphql/UserCourtCasesQuery';
 import {CHANGE_COURT_CASES} from 'Graphql/ChangeCourtCasesMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Timeline,
     SeSelected
@@ -71,12 +75,14 @@ class SeResume extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
                 closeModalEdit: false
             });
             console.log('data', data)
         }).catch((res) => {
+            toast.error(Utils.gqlHandelError(res));
             console.log('res', res)
         });
     }
@@ -168,6 +174,9 @@ class SeResume extends Component {
                                                 </div>
                                             </div>
                                         </SeSelected>
+
+                                        <ToastContainer/>
+
                                     </form>
                                 )}
                             </Mutation>
