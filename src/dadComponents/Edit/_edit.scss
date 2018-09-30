@@ -1,10 +1,18 @@
+._modalBody {
+  border: 2px solid #80b705;
+  border-top: 7px solid #80b705;
+}
 
 .am-edit {
-  padding: 0 30px 30px;
+  padding: 0 30px 30px !important;
   direction: rtl !important;
   text-align: right !important;
   width: 100%;
   position: relative;
+  .topbarTitle {
+    font-size: 22px;
+    margin-top: 0;
+  }
   label {
     font-weight: normal;
   }
@@ -52,56 +60,61 @@
   .btnRapper {
     display: flex;
     align-items: center;
+    padding: 30px;
     button {
-      width: 80%;
+      width: 60%;
       margin: 0 auto;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 20px;
+      font-family: yekan;
+      height: 50px;
+      padding: 0 !important;
+      border: 1px solid $primary;
+      label {
+        position: relative;
+        top: -4px;
+        padding-right: 5px;
+      }
+      /* &:hover {
+         box-shadow: 0 0 2px 1px #dadada;
+       }*/
+    }
+
+    button {
+      box-shadow: inset 0px 1px 0px 0px #a4e271;
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #89c403), color-stop(1, #77a809));
+      background: -moz-linear-gradient(top, #89c403 5%, #77a809 100%);
+      background: -webkit-linear-gradient(top, #89c403 5%, #77a809 100%);
+      background: -o-linear-gradient(top, #89c403 5%, #77a809 100%);
+      background: -ms-linear-gradient(top, #89c403 5%, #77a809 100%);
+      background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#89c403', endColorstr='#77a809', GradientType=0);
+      background-color: #89c403;
+      border-radius: 6px;
+      border: 1px solid #74b807;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #528009;
+    }
+
+    button:hover {
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77a809), color-stop(1, #89c403));
+      background: -moz-linear-gradient(top, #77a809 5%, #89c403 100%);
+      background: -webkit-linear-gradient(top, #77a809 5%, #89c403 100%);
+      background: -o-linear-gradient(top, #77a809 5%, #89c403 100%);
+      background: -ms-linear-gradient(top, #77a809 5%, #89c403 100%);
+      background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403', GradientType=0);
+      background-color: #77a809;
+    }
+
+    button:active {
+      position: relative;
+      top: 1px;
     }
   }
-
-  /////-------crop
-  /* .page {
-     margin: 1em auto;
-     max-width: 768px;
-     display: flex;
-     align-items: flex-start;
-     flex-wrap: wrap;
-     height: 100%;
-   }
-
-   .box {
-     padding: 0.5em;
-     width: 100%;
-     margin: 0.5em;
-   }
-
-   .box-2 {
-     padding: 0.5em;
-     width: calc(100% / 2 - 1em);
-   }
-
-   .options label,
-   .options input {
-     width: 4em;
-     padding: 0.5em 1em;
-   }
-   .btn {
-     background: white;
-     color: black;
-     border: 1px solid black;
-     padding: 0.5em 1em;
-     text-decoration: none;
-     margin: 0.8em 0.3em;
-     display: inline-block;
-     cursor: pointer;
-   }
-
-   .hide {
-     display: none;
-   }
-
-   img {
-     max-width: 100%;
-   }*/
 }
+

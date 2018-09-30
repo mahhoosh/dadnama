@@ -6,6 +6,10 @@ import {USER_EDUCATIONALES} from 'Graphql/EducationalesQuery';
 import {CITY} from 'Graphql/CityQuery';
 import {CHANGE_EDUCATIONALES} from 'Graphql/ChangeEducationalesMutation';
 import moment from 'moment-jalaali';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Timeline,
     SeSelected
@@ -14,7 +18,8 @@ import {
     Edit
 } from 'dadComponents';
 import {
-    Input
+    Input,
+    Spinners
 } from 'components';
 
 class SeEducationales extends Component {
@@ -29,6 +34,7 @@ class SeEducationales extends Component {
             stopped_at: moment(),
             closeModal: true,
             closeModalEdit: true,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -85,6 +91,10 @@ class SeEducationales extends Component {
         console.log('========SeEducationales Edit====', data)
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        });
+
         change_educationales({
             variables: {
                 id: id,
@@ -95,13 +105,19 @@ class SeEducationales extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
                 closeModalEdit: false,
+                spinner: false
             });
             console.log('data', data)
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((err) => {
+            this.setState({
+                spinner: false
+            });
+            toast.error(Utils.gqlHandelError(err));
+            console.log('err', err)
         });
     }
 
@@ -205,6 +221,13 @@ class SeEducationales extends Component {
                                                         </div>
                                                     </div>
                                                 </SeSelected>
+
+                                                <ToastContainer/>
+
+                                                <Spinners
+                                                    loading={this.state.spinner}
+                                                />
+
                                             </form>
                                         )}
                                     </Mutation>

@@ -4,6 +4,10 @@ import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_COURT_CASES} from 'Graphql/UserCourtCasesQuery';
 import {CHANGE_COURT_CASES} from 'Graphql/ChangeCourtCasesMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Timeline,
     SeSelected
@@ -12,7 +16,8 @@ import {
     Edit
 } from 'dadComponents';
 import {
-    Input
+    Input,
+    Spinners
 } from 'components';
 
 class SeResume extends Component {
@@ -24,7 +29,8 @@ class SeResume extends Component {
             started_at: '',
             stopped_at: '',
             closeModal: true,
-            closeModalEdit: true
+            closeModalEdit: true,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -61,6 +67,10 @@ class SeResume extends Component {
     onClickEdit(e, data, Change_court_cases, id) {
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        });
+
         Change_court_cases({
             variables: {
                 id: id,
@@ -71,13 +81,19 @@ class SeResume extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
-                closeModalEdit: false
+                closeModalEdit: false,
+                spinner: false
             });
             console.log('data', data)
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((error) => {
+            this.setState({
+                spinner: false
+            });
+            toast.error(Utils.gqlHandelError(error));
+            console.log('error', error)
         });
     }
 
@@ -168,6 +184,11 @@ class SeResume extends Component {
                                                 </div>
                                             </div>
                                         </SeSelected>
+
+                                        <Spinners
+                                            loading={this.state.spinner}
+                                        />
+
                                     </form>
                                 )}
                             </Mutation>

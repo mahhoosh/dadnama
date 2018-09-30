@@ -6,6 +6,10 @@ import {Mutation} from "react-apollo";
 import {NETWORKS} from 'Graphql/NetworksQuery';
 import {NETWORK_TYPES} from 'Graphql/NetworkTypesQuery';
 import {CHANGE_SOCIAL} from 'Graphql/ChangeNetworkMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Skills,
     SeSelected,
@@ -16,7 +20,7 @@ import {
 } from 'dadComponents';
 import {
     Input,
-    Spinner
+    Spinners
 } from 'components';
 
 class SeNetworks extends Component {
@@ -27,7 +31,8 @@ class SeNetworks extends Component {
             closeModalEdit: true,
             name: '',
             index: 0,
-            networkTypeId: 1
+            networkTypeId: 1,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -64,19 +69,30 @@ class SeNetworks extends Component {
 
     onClickEdit(e, errorM, data, change_social, id) {
         e.preventDefault();
+
+        this.setState({
+            spinner: true
+        });
+
         change_social({
             variables: {
                 id: this.state.networkTypeId,
                 name: this.state.name
             }
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
-                closeModalEdit: false
+                closeModalEdit: false,
+                spinner: false
             })
             console.log('data alesaadi', data)
-        }).catch((errorM) => {
-            console.log('res', errorM)
+        }).catch((err) => {
+            this.setState({
+                spinner: false
+            });
+            toast.error(Utils.gqlHandelError(err));
+            console.log('err', err)
         });
         console.log('id', id)
     }
@@ -170,6 +186,12 @@ class SeNetworks extends Component {
                                                         }
                                                     </ul>
                                                 </SeSelected>
+
+
+                                                <Spinners
+                                                    loading={this.state.spinner}
+                                                />
+
                                             </form>
                                         )}
                                     </Mutation>

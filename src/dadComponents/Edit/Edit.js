@@ -224,6 +224,7 @@ class Edit extends Component {
                     <Button
                         label={labelBtn}
                         primary
+                        icon={'paper-plane'}
                         onClick={onClickEdit}
                     />
                 </div>

@@ -20,7 +20,6 @@ import {
 import {
     Input,
     Spinner,
-    Alert,
     Spinners
 } from 'components';
 import profileImg from 'assets/images/hero.png';
@@ -85,7 +84,7 @@ class SeAbout extends Component {
         }).catch((err) => {
             this.setState({
                 spinner: false
-            })
+            });
             console.log('res', err)
             toast.error(Utils.gqlHandelError(err));
         });

@@ -5,6 +5,10 @@ import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_ABOUT} from 'Graphql/UserAboutQuery';
 import {EDIT_ABOUT_TEMPLATE} from 'Graphql/ChangeAboutMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Skills,
     SeSelected,
@@ -17,7 +21,7 @@ import {
 import {
     Input,
     Spinner,
-    Alert
+    Spinners
 } from 'components';
 import profileImg from 'assets/images/hero.png';
 import TrimatrixlabPage from "../TrimatrixlabPage";
@@ -27,7 +31,7 @@ class SeAbout extends Component {
         super(props);
         this.state = {
             closeModal: true,
-            isAlert: false,
+            spinner: false,
             title: '',
             first_name: '',
             last_name: '',
@@ -59,6 +63,10 @@ class SeAbout extends Component {
     onClickEdit(e, data, edit_about_template) {
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        });
+
         edit_about_template({
             variables: {
                 title: this.state.title,
@@ -69,21 +77,19 @@ class SeAbout extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             console.log('data', data)
             this.setState({
                 closeModal: false,
-                isAlert: true
+                spinner: false
             })
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((err) => {
+            toast.error(Utils.gqlHandelError(err));
+            this.setState({
+                spinner: false
+            })
+            console.log('err', err)
         });
-
-        let _this = this
-        setTimeout(function () {
-            _this.setState({
-                isAlert: false
-            });
-        }, 3000);
     }
 
     render() {
@@ -207,12 +213,11 @@ class SeAbout extends Component {
                                                 </div>
                                             </article>*/}
                                         </SeSelected>
-                                        {
-                                            this.state.isAlert && <Alert
 
-                                                alertText={'تغییرات شما با موفقیت اعمال شد'}
-                                            />
-                                        }
+                                        <Spinners
+                                            loading={this.state.spinner}
+                                        />
+
                                     </form>
                                 )}
                             </Mutation>

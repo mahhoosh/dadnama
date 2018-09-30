@@ -4,6 +4,10 @@ import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_STATISTIC} from 'Graphql/UserStatisticQuery';
 import {CHANGE_STSTISTIC} from 'Graphql/ChangeStatisticMutation';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
+
 import {
     Skills,
     SeSelected
@@ -12,7 +16,8 @@ import {
     Edit
 } from 'dadComponents';
 import {
-    Input
+    Input,
+    Spinners
 } from 'components';
 
 class SeStatistics extends Component {
@@ -23,6 +28,7 @@ class SeStatistics extends Component {
             count: '',
             closeModal: true,
             closeModalEdit: true,
+            spinner: false
         };
         this.onChangeTitle = this.onChangeTitle.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
@@ -55,6 +61,10 @@ class SeStatistics extends Component {
     onClickEdit(e, data, change_statistic, id) {
         e.preventDefault();
 
+        this.setState({
+            spinner: true
+        });
+
         change_statistic({
             variables: {
                 id: id,
@@ -63,13 +73,19 @@ class SeStatistics extends Component {
             }
 
         }).then((data) => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
-                closeModalEdit: false
+                closeModalEdit: false,
+                spinner: false
             });
             console.log('data', data)
-        }).catch((res) => {
-            console.log('res', res)
+        }).catch((err) => {
+            this.setState({
+                spinner: false
+            });
+            toast.error(Utils.gqlHandelError(err));
+            console.log('err', err)
         });
     }
 
@@ -156,6 +172,11 @@ class SeStatistics extends Component {
                                                 </div>
                                             </div>
                                         </SeSelected>
+
+                                        <Spinners
+                                            loading={this.state.spinner}
+                                        />
+
                                     </form>
                                 )}
                             </Mutation>

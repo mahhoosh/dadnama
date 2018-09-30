@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import {Query} from "react-apollo";
 import {Link} from 'react-router-dom';
 import {USER_PHOTO} from 'Graphql/UserPhotoQuery';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
 
 import {
     Selected,
@@ -14,13 +17,17 @@ import {
 import {
     Edit
 } from 'dadComponents';
+import {
+    Spinners
+} from 'components';
 
 class SeProfile extends Component {
     constructor(props) {
         super(props);
         this.state = {
             closeModal: true,
-            dataFile: {}
+            dataFile: {},
+            spinner: false
         };
         this.onOpenModal = this.onOpenModal.bind(this);
         this.onCropComplete = this.onCropComplete.bind(this);
@@ -45,19 +52,29 @@ class SeProfile extends Component {
 
     onClickEdit(e) {
         e.preventDefault();
+
+        this.setState({
+            spinner: true
+        });
+
         axios.post(`${window.base_axios}upload/image/${this.props.photo}`, this.state.dataFile
             , {
                 headers: {
                     Apigkey: localStorage.getItem('token')
                 }
             }).then(res => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
-                closeModal: false
-            })
+                closeModal: false,
+                spinner: false
+            });
             console.log(res.data);
         })
             .catch((error) => {
-
+                this.setState({
+                    spinner: false
+                });
+                toast.error(Utils.gqlHandelError(error));
                 console.log('error', error);
             });
 
@@ -155,6 +172,11 @@ class SeProfile extends Component {
                                 }
                             />
                         </div>
+
+                        <Spinners
+                            loading={this.state.spinner}
+                        />
+
                     </div>
                 )}
 
