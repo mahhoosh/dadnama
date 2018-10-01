@@ -9,6 +9,16 @@
   line-height: 40px;
   padding: 20px;
   //overflow-y: auto;
+  .em_mb {
+    input {
+      direction: ltr !important;
+    }
+  }
+  .password {
+    input {
+      direction: ltr !important;
+    }
+  }
   .usernameWrapper {
     ._label {
       font-size: 13px;
@@ -20,9 +30,13 @@
       opacity: 1;
       transition: all .4s ease;
     }
+
     ._labelWWW {
-      width: 73px;
+      width: 50px;
       display: inline-block;
+      font-family: sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
     }
     ._labelDadnama {
       width: 95px;

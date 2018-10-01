@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as routes from "routes/const";
-import { Mutation } from "react-apollo";
+import {Mutation} from "react-apollo";
 import {
     Tab,
     LinkBtn,
@@ -12,8 +12,8 @@ import {
     ThemePoster
 } from 'dadComponents';
 
-import { USER_SIGNUP } from 'Graphql/UserSignupMutation';
-import { VrifyUserMutation } from 'Graphql/VrifyUserMutation';
+import {USER_SIGNUP} from 'Graphql/UserSignupMutation';
+import {VrifyUserMutation} from 'Graphql/VrifyUserMutation';
 
 class Signup extends React.Component {
 
@@ -62,7 +62,7 @@ class Signup extends React.Component {
     }
 
     onClose() {
-        const { router } = this.context;
+        const {router} = this.context;
         router.history.push(routes.APP_ROOT);
         this.props.onClose && this.props.onClose();
     }
@@ -172,24 +172,30 @@ class Signup extends React.Component {
             {
                 id: 1,
                 name: 'name',
-                label: 'نام'
+                label: 'نام',
+                type: 'text'
             },
             {
                 id: 2,
                 name: 'username',
-                label: 'نام کاربری'
+                label: 'نام کاربری',
+                type: 'text'
             }
             ,
             {
                 id: 3,
                 name: 'em_mb',
-                label: ' ایمیل یا موبایل'
+                label: ' ایمیل یا موبایل',
+                type: 'text',
+                className: 'em_mb'
             }
             ,
             {
                 id: 5,
                 name: 'password',
-                label: 'رمز ورود'
+                label: 'رمز ورود',
+                type: 'password',
+                className: 'password'
             }
         ]
 
@@ -219,7 +225,7 @@ class Signup extends React.Component {
         if (level === 2) {
             return (
                 <Mutation mutation={VrifyUserMutation}>
-                    {(VrifyUserMutation, { data }) => (
+                    {(VrifyUserMutation, {data}) => (
                         <div className={'signUp'}>
                             <form>
                                 <div className={'loginContainer'}>
@@ -230,12 +236,16 @@ class Signup extends React.Component {
                                         <div className={'col-lg-12'}>
                                             <div className={'leftCol'}>
                                                 <div>
-                                                    <Input
+                                                    <label>
+                                                        {this.state['mobile']}
+                                                    </label>
+                                                    {/*  <Input
                                                         value={this.state['mobile']}
                                                         label={'موبایل'}
                                                         name={'mobile'}
                                                         onChange={(e) => this.onChangeInput(e)}
-                                                    />
+                                                    />*/}
+
                                                     {/* <LinkBtn
                                                         title={'تغییر موبایل'}
                                                         rounded
@@ -254,7 +264,7 @@ class Signup extends React.Component {
                                                 <div>
 
                                                     <LinkBtn
-                                                        title={'ارسال کد'}
+                                                        title={'تایید'}
                                                         rounded
                                                         src={'#'}
                                                         primary
@@ -269,7 +279,9 @@ class Signup extends React.Component {
                                                             className={'errorText'}
 
                                                         >
-                                                            <div dangerouslySetInnerHTML={{ __html: this.state.errorText }} /></p>
+                                                            <div
+                                                                dangerouslySetInnerHTML={{__html: this.state.errorText}}/>
+                                                        </p>
                                                     }
                                                 </div>
                                                 <Spinners
@@ -314,12 +326,11 @@ class Signup extends React.Component {
 
         return (
             <Mutation mutation={USER_SIGNUP}>
-                {(UserSigninMutation, { data }) => (
+                {(UserSigninMutation, {data}) => (
                     <div className={'signUp'}>
                         <form>
                             <div className={'loginContainer'}>
                                 <h5 className="login-overlay-title">ثبت نام</h5>
-                                <span className="quick-switch">اطلاعات خود رو به صورت کامل وارد کنید</span>
 
                                 <div className={'row'}>
                                     <div className={'col-lg-12'}>
@@ -343,7 +354,7 @@ class Signup extends React.Component {
                                                                         <label
                                                                             className={'_labelWWW'}
                                                                         >
-                                                                            WWW.
+                                                                            www.
                                                                         </label>
                                                                         <Input
                                                                             name={data.name}
@@ -352,14 +363,17 @@ class Signup extends React.Component {
                                                                         <label
                                                                             className={'_labelDadnama'}
                                                                         >
-                                                                            dadnama.ir
+                                                                            .dadnama.ir
                                                                         </label>
                                                                     </div>
                                                                 </div>
                                                                 :
                                                                 <Input
                                                                     label={data.label}
+                                                                    type={data.type}
+                                                                    className={data.className}
                                                                     name={data.name}
+                                                                    important
                                                                     onChange={(e) => this.onChangeInput(e)}
                                                                 />
                                                         }
@@ -386,7 +400,8 @@ class Signup extends React.Component {
                                                         className={'errorText'}
 
                                                     >
-                                                        <div dangerouslySetInnerHTML={{ __html: this.state.errorText }} /></p>
+                                                        <div dangerouslySetInnerHTML={{__html: this.state.errorText}}/>
+                                                    </p>
                                                 }
                                             </div>
                                         </div>
