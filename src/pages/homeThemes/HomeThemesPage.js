@@ -36,7 +36,7 @@ class HomeThemesPage extends React.Component {
                         } else if (data) {
                             return <div className={'homeThemesPage'}>
 
-                                {!(this.props.header) && <h2 className={'title'}>انتخاب تم</h2>}
+                                {!(this.props.header) && <h2 className={'title'}>انتخاب قالب</h2>}
                                 <section
                                     className={'homeThemes'}
                                 >

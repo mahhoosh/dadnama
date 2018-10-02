@@ -41,14 +41,18 @@
   .login-overlay-title {
     text-align: center;
     font-size: 25px;
-    padding-bottom: 35px;
+    padding-bottom: 0;
   }
   .loginContainer {
     width: 500px;
     height: 340px;
   }
   .leftWrapper {
-    border-left: 2px solid $gray-3;
+    //border-left: 2px solid $gray-3;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
     .leftRight {
       height: 205px;
       .am-link {
@@ -63,9 +67,10 @@
 
   .leftCol {
     .RH-input-wrapper {
-      width: 230px;
+      width: 300px;
       display: block;
       margin: 0 0 15px 0;
+      background-color: #F6F6F6;
       ._textContainer {
         margin: 0;
       }

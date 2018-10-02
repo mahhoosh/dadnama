@@ -49,7 +49,7 @@ class ThemePoster extends Component {
             }
         }).then((data) => {
             debugger
-            window.theme=data.data.choice_template.template.name
+            window.theme = data.data.choice_template.template.name
             const {router} = this.context;
             router.history.push(routes.EDITOR);
         }).catch((res) => {
@@ -99,7 +99,6 @@ class ThemePoster extends Component {
                                         <Button
                                             className={'editThemeBtn'}
                                             label={'انتخاب قالب وب سایت'}
-                                            onClick={(e) => this.onClickEditTheme(e, data, ChoiceTemplate, id)}
                                         />
                                     </div>
                                     <div>
@@ -117,11 +116,26 @@ class ThemePoster extends Component {
                                     </div>
                                 </div>
                             }
-                            <div className="home-themes_theme-container"
-                                 onClick={this.showIframe}
-                            >
+                            <div className="home-themes_theme-container">
+
                                 <div className={`theme-poster`}>
                                     <div className="theme-poster_screenShot">
+                                        <div
+                                            className={'hoverThemePoster'}
+                                        >
+                                            <button
+                                                className={'btnHoverTheme'}
+                                                onClick={(e) => this.onClickEditTheme(e, data, ChoiceTemplate, id)}
+                                            >
+                                                انتخاب
+                                            </button>
+                                            <button
+                                                className={'btnHoverTheme'}
+                                                onClick={this.showIframe}
+                                            >
+                                                پیش نمایش
+                                            </button>
+                                        </div>
                                         <img className="theme-poster_screenShot-img" src={src}
                                              alt={alt}/>
                                         <div>

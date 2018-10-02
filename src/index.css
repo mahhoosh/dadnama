@@ -2320,7 +2320,7 @@ ul {
     transition: color 0.1s, border-color 0.1s, background-color 0.1s; }
 
 .themeContent:hover .theme-poster {
-  opacity: 0.5; }
+  opacity: 1; }
 
 .am-themePoster .iframeWrapper {
   position: fixed;
@@ -2393,6 +2393,43 @@ ul {
     opacity: 1; }
     .am-themePoster .home-themes_theme-container .theme-poster:hover .theme-poster_screenShot-img {
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.25); }
+    .am-themePoster .home-themes_theme-container .theme-poster:hover .hoverThemePoster {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      visibility: visible; }
+      .am-themePoster .home-themes_theme-container .theme-poster:hover .hoverThemePoster .btnHoverTheme {
+        visibility: visible;
+        opacity: 1; }
+  .am-themePoster .home-themes_theme-container .theme-poster .hoverThemePoster {
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    transition: all 0.2s ease-out; }
+    .am-themePoster .home-themes_theme-container .theme-poster .hoverThemePoster .btnHoverTheme {
+      background: transparent;
+      border: 3px solid #ffffff;
+      width: 150px;
+      height: 40px;
+      color: #ffffff;
+      font-family: yekan;
+      cursor: pointer;
+      margin: 0 8px;
+      transition: all 0.2s ease-out; }
+      .am-themePoster .home-themes_theme-container .theme-poster .hoverThemePoster .btnHoverTheme:hover {
+        color: #2990EA;
+        background-color: #ffffff; }
   .am-themePoster .home-themes_theme-container .theme-poster .theme-poster_screenShot {
     position: relative;
     width: 100%;
@@ -2404,6 +2441,7 @@ ul {
       top: 0;
       width: 100%;
       max-width: 525px;
+      height: 100%;
       left: 0;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
       transition: opacity 1.25s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.75s cubic-bezier(0.19, 1, 0.22, 1); }
@@ -2930,12 +2968,14 @@ body {
   .loginPage .login-overlay-title {
     text-align: center;
     font-size: 25px;
-    padding-bottom: 35px; }
+    padding-bottom: 0; }
   .loginPage .loginContainer {
     width: 500px;
     height: 340px; }
   .loginPage .leftWrapper {
-    border-left: 2px solid #E3E4E4; }
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
     .loginPage .leftWrapper .leftRight {
       height: 205px; }
       .loginPage .leftWrapper .leftRight .am-link {
@@ -2944,9 +2984,10 @@ body {
       .loginPage .leftWrapper .leftRight .googleLogin {
         background-color: #dd4b39; }
   .loginPage .leftCol .RH-input-wrapper {
-    width: 230px;
+    width: 300px;
     display: block;
-    margin: 0 0 15px 0; }
+    margin: 0 0 15px 0;
+    background-color: #F6F6F6; }
     .loginPage .leftCol .RH-input-wrapper ._textContainer {
       margin: 0; }
     .loginPage .leftCol .RH-input-wrapper input {

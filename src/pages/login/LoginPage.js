@@ -168,24 +168,25 @@ class LoginPage extends React.Component {
                                     className={'row'}
                                 >
                                     <div
-                                        className={'col-lg-6 leftWrapper'}
+                                        className={'col-lg-12 leftWrapper'}
                                     >
                                         <div
                                             className={'leftRight'}
                                         >
                                             <div className={'leftCol'}>
                                                 <span
-                                                    className="quick-switch">ورود با ایمیل و موبایل</span>
+                                                    className="quick-switch"> ورود با ایمیل و موبایل ونام کاربری</span>
                                                 <Input
                                                     value={this.state.username}
                                                     //TODO
                                                     onChange={this.onChangeValueUsername}
-                                                    placeholder={'ایمیل یا موبایل'}
+                                                    placeholder={'ایمیل یا موبایل یا نام کاربری'}
                                                 />
                                                 <Input
                                                     value={this.state.password}
                                                     onChange={this.onChangeValuePassword}
                                                     placeholder={'رمز عبور'}
+                                                    type={'password'}
                                                 />
                                                 {/* <span
                                                 className="quick-switch">Don't have an account? Click here to sign up.</span> */}
@@ -204,13 +205,12 @@ class LoginPage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className={'col-lg-6'}>
+                                    {/*   <div className={'col-lg-6'}>
                                         <div className={'leftCol'}>
                                             <span
                                                 className="quick-switch"> ورود با نام کاربری </span>
                                             <Input
                                                 value={this.state.username}
-                                                //TODO
                                                 onChange={this.onChangeValueUsername}
                                                 placeholder={'نام کاربری'}
                                             />
@@ -219,8 +219,8 @@ class LoginPage extends React.Component {
                                                 onChange={this.onChangeValuePassword}
                                                 placeholder={'رمز عبور'}
                                             />
-                                            {/* <span
-                                                className="quick-switch">Don't have an account? Click here to sign up.</span> */}
+                                             <span
+                                                className="quick-switch">Don't have an account? Click here to sign up.</span>
                                             <div>
                                                 <LinkBtn
                                                     title={'ورود'}
@@ -236,7 +236,7 @@ class LoginPage extends React.Component {
                                             </div>
 
                                         </div>
-                                    </div>
+                                    </div>*/}
                                     <div className={'col-lg-12'}>
                                         <p
                                             className={'errorText'}
@@ -246,11 +246,12 @@ class LoginPage extends React.Component {
                                             }
                                         </p>
                                         {
-                                            this.state.errorText &&  <p
-                                            className={'errorText'}
+                                            this.state.errorText && <p
+                                                className={'errorText'}
 
-                                        >
-                                            <div dangerouslySetInnerHTML={{ __html: this.state.errorText }} /></p>
+                                            >
+                                                <div dangerouslySetInnerHTML={{__html: this.state.errorText}}/>
+                                            </p>
                                         }
                                     </div>
                                 </div>
