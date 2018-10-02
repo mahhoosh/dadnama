@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Mutation} from "react-apollo";
+import {DeleteModelMutation} from 'Graphql/DeleteModelMutation';
 import Switch from "react-switch";
 
 import {
@@ -62,7 +64,36 @@ class SelectedEdit extends Component {
         this.props.onOpenModal && this.props.onOpenModal();
     }
 
-    onClickDelete() {
+
+    onClickDelete(e, data, DeleteModelMutation, id) {
+        e.preventDefault();
+
+        /* this.setState({
+             spinner: true
+         });*/
+
+        DeleteModelMutation({
+            variables: {
+                id: id,
+                name: 'educationales',
+            }
+
+        }).then((data) => {
+            /*toast.success("تغییرات شما با موفقیت اعمال شد");
+            this.setState({
+                closeModal: false,
+                closeModalEdit: false,
+                spinner: false
+            });*/
+            console.log('data', data)
+        }).catch((err) => {
+            /*this.setState({
+                spinner: false
+            });
+            toast.error(Utils.gqlHandelError(err));*/
+            console.log('err', err)
+        });
+
         this.props.onClickDelete && this.props.onClickDelete();
     }
 
@@ -71,26 +102,31 @@ class SelectedEdit extends Component {
             modalChildren, editIcon,
             children, deleteIcon, plusIcon,
             isHover,
-            closeModal
+            closeModal,
+            id
         } = this.props;
 
         return (
-            <div className={`am-selected-trimatrixlab ${this.state.selected ? 'active' : ''} ${isHover ? 'hover' : ''}`}
-                 onClick={this.onSelected}
-                 onMouseLeave={this.onMouseLeave}
-                 onMouseEnter={this.onMouseEnter}
-            >
-                {
-                    editIcon && <i className="icon fa fa-edit"
-                                   onClick={this.onOpenModal}
-                    />
-                }
-                {
-                    <i className="icon delete fa fa-trash"
-                       onClick={this.onClickDelete}
-                    />
-                }
-                {/* {deleteIcon && <label htmlFor="normal-switch" className={'switch'}>
+            <Mutation mutation={DeleteModelMutation}>
+                {(DeleteModelMutation, {data}) => (
+                    <form>
+                        <div
+                            className={`am-selected-trimatrixlab ${this.state.selected ? 'active' : ''} ${isHover ? 'hover' : ''}`}
+                            onClick={this.onSelected}
+                            onMouseLeave={this.onMouseLeave}
+                            onMouseEnter={this.onMouseEnter}
+                        >
+                            {
+                                editIcon && <i className="icon fa fa-edit"
+                                               onClick={this.onOpenModal}
+                                />
+                            }
+                            {
+                                <i className="icon delete fa fa-trash"
+                                   onClick={(e) => this.onClickDelete(e, data, DeleteModelMutation, id)}
+                                />
+                            }
+                            {/* {deleteIcon && <label htmlFor="normal-switch" className={'switch'}>
                     <span>Switch with default style</span>
                     <Switch
                         onChange={this.handleChange}
@@ -101,15 +137,18 @@ class SelectedEdit extends Component {
                 {plusIcon && <i className="icon fa fa-plus-square"
                                 onClick={this.onOpenModal}
                 />}*/}
-                {children}
-                <Modal
-                    open={this.state.isModalOpen && closeModal}
-                    onClose={this.onCloseModal}
-                    maxWidth={'500px'}
-                >
-                    {modalChildren}
-                </Modal>
-            </div>
+                            {children}
+                            <Modal
+                                open={this.state.isModalOpen && closeModal}
+                                onClose={this.onCloseModal}
+                                maxWidth={'500px'}
+                            >
+                                {modalChildren}
+                            </Modal>
+                        </div>
+                    </form>
+                )}
+            </Mutation>
         )
     }
 }
@@ -120,6 +159,7 @@ SelectedEdit.propTypes = {
     editIcon: PropTypes.bool,
     deleteIcon: PropTypes.bool,
     closeModal: PropTypes.bool,
+    id: PropTypes.number,
     plusIcon: PropTypes.bool,
     isHover: PropTypes.bool,
     onMouseLeave: PropTypes.func,

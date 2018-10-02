@@ -26,7 +26,8 @@ class Timeline extends Component {
             reference,
             startedAt,
             stoppedAt,
-            closeModal
+            closeModal,
+            id
         } = this.props;
 
         return (
@@ -40,6 +41,7 @@ class Timeline extends Component {
                     onMouseEnter={onMouseEnter}
                     closeModal={closeModal}
                     onOpenModal={this.onOpenModal}
+                    id={id}
                 >
                     <div className="timeline-content">
                         <span
@@ -67,6 +69,7 @@ Timeline.propTypes = {
     direction: PropTypes.string,
     reference: PropTypes.string,
     title: PropTypes.string,
+    id: PropTypes.number,
     style: PropTypes.object,
     modalChildren: PropTypes.node,
     isHover: PropTypes.bool,
