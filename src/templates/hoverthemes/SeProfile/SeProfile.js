@@ -29,7 +29,7 @@ class SeProfile extends Component {
             spinner: false
         };
         this.onOpenModal = this.onOpenModal.bind(this);
-        this.showCroppedImage = this.showCroppedImage.bind(this);
+        this.onCropComplete = this.onCropComplete.bind(this);
         this.onClickEdit = this.onClickEdit.bind(this);
         this.dataFile = '';
     }
@@ -40,42 +40,42 @@ class SeProfile extends Component {
         });
     }
 
-    showCroppedImage(croppedAreaPixels) {
-        /* let dataFile = new FormData();
-         dataFile.append('file', croppedAreaPixels);*/
-        /* this.dataFile = dataFile;*/
+    onCropComplete(croppedAreaPixels) {
+        let dataFile = new FormData();
+        dataFile.append('photo', croppedAreaPixels);
         console.log('croppedArea=====999 profile', croppedAreaPixels)
         this.setState({
-            dataFile: this.croppedAreaPixels
+            dataFile: dataFile
         });
     }
 
-    onClickEdit() {
+    onClickEdit(e) {
+        e.preventDefault();
 
         this.setState({
             spinner: true
         });
 
-        //e.preventDefault();
-        axios.post(`http://api.dadnama.ir/api/upload/image/${this.props.photo}`, this.state.dataFile
+        axios.post(`${window.base_axios}upload/image/${this.props.photo}`, this.state.dataFile
             , {
                 headers: {
-                    Authorization: 'Bearer ' + localStorage.getItem('token')
+                    Apigkey: localStorage.getItem('token')
                 }
             }).then(res => {
+            toast.success("تغییرات شما با موفقیت اعمال شد");
             this.setState({
                 closeModal: false,
                 spinner: false
             });
-            toast.success("تغییرات شما با موفقیت اعمال شد");
             console.log(res.data);
-        }).catch((error) => {
-            this.setState({
-                spinner: false
+        })
+            .catch((error) => {
+                this.setState({
+                    spinner: false
+                });
+                toast.error(Utils.gqlHandelError(error));
+                console.log('error', error);
             });
-            console.log('error', error);
-            toast.error(Utils.gqlHandelError(error));
-        });
 
     }
 
@@ -136,7 +136,7 @@ class SeProfile extends Component {
                                         labelBtn={'ویرایش'}
                                         cropper
                                         fileUpload
-                                        showCroppedImage={this.showCroppedImage}
+                                        onCropComplete={this.onCropComplete}
                                         onClickEdit={this.onClickEdit}
                                     />
                                 }
