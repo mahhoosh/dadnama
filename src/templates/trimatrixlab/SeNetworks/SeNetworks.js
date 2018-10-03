@@ -152,6 +152,8 @@ class SeNetworks extends Component {
                                                                 >
                                                                     <SelectedEdit
                                                                         editIcon
+                                                                        seClass={'networks'}
+                                                                        id={net.network_type.id}
                                                                         closeModal={this.state.closeModalEdit}
                                                                         onOpenModal={() => this.onOpenModalEdit(net)}
                                                                         modalChildren={

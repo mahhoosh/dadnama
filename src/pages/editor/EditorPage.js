@@ -114,8 +114,8 @@ class EditorPage extends React.Component {
                 >
                     {/*{window.theme === "trimatrixlab" && <TrimatrixlabPage />}
                     {window.theme != "trimatrixlab" && <HoverthemesPage />}*/}
-                   {/*  <HoverthemesPage/>*/}
-                     <TrimatrixlabPage/>
+                     <HoverthemesPage/>
+                     {/*<TrimatrixlabPage/>*/}
                 </div>
                 {/* <footer
                     className={'editorFooter'}

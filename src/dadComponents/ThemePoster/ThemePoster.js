@@ -42,18 +42,18 @@ class ThemePoster extends Component {
 
     onClickEditTheme(e, data, ChoiceTemplate, id) {
         e.preventDefault();
-        debugger
+
         ChoiceTemplate({
             variables: {
                 template: id
             }
         }).then((data) => {
-            debugger
+
             window.theme = data.data.choice_template.template.name
             const {router} = this.context;
             router.history.push(routes.EDITOR);
         }).catch((res) => {
-            debugger
+
             console.log('res', res)
         });
     }

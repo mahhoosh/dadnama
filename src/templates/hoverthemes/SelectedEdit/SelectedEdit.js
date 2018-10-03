@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Mutation} from "react-apollo";
+import {DeleteModelMutation} from 'Graphql/DeleteModelMutation';
 import Switch from "react-switch";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
 
 import {
-    Modal
+    Modal,
+    Spinners
 } from 'components';
 
 class SelectedEdit extends Component {
@@ -13,7 +19,8 @@ class SelectedEdit extends Component {
             selected: false,
             isModalOpen: false,
             isHover: false,
-            checked: false
+            checked: false,
+            spinner: false
         };
         this.onSelected = this.onSelected.bind(this);
         this.onOpenModal = this.onOpenModal.bind(this);
@@ -62,35 +69,70 @@ class SelectedEdit extends Component {
         this.props.onOpenModal && this.props.onOpenModal();
     }
 
-    onClickDelete() {
+    onClickDelete(e, data, DeleteModelMutation, id, seClass) {
+        //alert(seClass)
+        //alert(id)
+        e.preventDefault();
+
+        this.setState({
+            spinner: true
+        });
+
+        DeleteModelMutation({
+            variables: {
+                id: id,
+                name: seClass,
+            }
+
+        }).then((data) => {
+            toast.success("حذف با موفقیت انجام شد");
+            this.setState({
+                spinner: false
+            });
+            console.log('data', data)
+        }).catch((err) => {
+            this.setState({
+                spinner: false
+            });
+            toast.error(Utils.gqlHandelError(err));
+            console.log('err', err)
+        });
+
         this.props.onClickDelete && this.props.onClickDelete();
     }
 
     render() {
+
         const {
             modalChildren, editIcon,
             children, deleteIcon, plusIcon,
             isHover,
-            closeModal
+            closeModal,
+            id,
+            seClass
         } = this.props;
 
         return (
-            <div className={`am-selected ${this.state.selected ? 'active' : ''} ${isHover ? 'hover' : ''}`}
-                 onClick={this.onSelected}
-                 onMouseLeave={this.onMouseLeave}
-                 onMouseEnter={this.onMouseEnter}
-            >
-                {
-                    editIcon && <i className="icon fa fa-edit"
-                                   onClick={this.onOpenModal}
-                    />
-                }
-                {
-                    <i className="icon delete fa fa-trash"
-                       onClick={this.onClickDelete}
-                    />
-                }
-                {/* {deleteIcon && <label htmlFor="normal-switch" className={'switch'}>
+            <Mutation mutation={DeleteModelMutation}>
+                {(DeleteModelMutation, {data}) => (
+                    <form>
+                        <div
+                            className={`am-selected ${this.state.selected ? 'active' : ''} ${isHover ? 'hover' : ''}`}
+                            onClick={this.onSelected}
+                            onMouseLeave={this.onMouseLeave}
+                            onMouseEnter={this.onMouseEnter}
+                        >
+                            {
+                                editIcon && <i className="icon fa fa-edit"
+                                               onClick={this.onOpenModal}
+                                />
+                            }
+                            {
+                                <i className="icon delete fa fa-trash"
+                                   onClick={(e) => this.onClickDelete(e, data, DeleteModelMutation, id, seClass)}
+                                />
+                            }
+                            {/* {deleteIcon && <label htmlFor="normal-switch" className={'switch'}>
                     <span>Switch with default style</span>
                     <Switch
                         onChange={this.handleChange}
@@ -101,15 +143,25 @@ class SelectedEdit extends Component {
                 {plusIcon && <i className="icon fa fa-plus-square"
                                 onClick={this.onOpenModal}
                 />}*/}
-                {children}
-                <Modal
-                    open={this.state.isModalOpen && closeModal}
-                    onClose={this.onCloseModal}
-                    maxWidth={'500px'}
-                >
-                    {modalChildren}
-                </Modal>
-            </div>
+                            {children}
+                            <Modal
+                                open={this.state.isModalOpen && closeModal}
+                                onClose={this.onCloseModal}
+                                maxWidth={'500px'}
+                            >
+                                {modalChildren}
+                            </Modal>
+                            {
+
+                                this.state.spinner && <Spinners
+                                    loading={this.state.spinner}
+                                />
+                            }
+
+                        </div>
+                    </form>
+                )}
+            </Mutation>
         )
     }
 }
@@ -120,6 +172,8 @@ SelectedEdit.propTypes = {
     editIcon: PropTypes.bool,
     deleteIcon: PropTypes.bool,
     closeModal: PropTypes.bool,
+    id: PropTypes.number,
+    seClass: PropTypes.string,
     plusIcon: PropTypes.bool,
     isHover: PropTypes.bool,
     onMouseLeave: PropTypes.func,

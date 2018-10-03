@@ -36,7 +36,7 @@ class OnboardingPage extends React.Component {
                             </div>)
                         } else if (data) {
                             if (data.splash.user_template) {
-                                debugger
+
                                 window.theme=data.splash.user_template.template.name
                                 window.location = window.site + routes.EDITOR
                                 // router.history.push(routes.EDITOR)

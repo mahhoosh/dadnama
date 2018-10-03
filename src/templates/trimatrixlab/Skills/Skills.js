@@ -32,7 +32,9 @@ class Skill extends Component {
             badge,
             count,
             icon,
-            className
+            className,
+            seClass,
+            id
         } = this.props;
 
         return (
@@ -40,6 +42,8 @@ class Skill extends Component {
             <div className={`skill-trimatrixlab ${direction} ${className}`}>
                 <SelectedEdit
                     editIcon
+                    seClass={seClass}
+                    id={id}
                     modalChildren={modalChildren}
                     isHover={isHover}
                     onMouseLeave={onMouseLeave}
@@ -91,6 +95,8 @@ Skill.propTypes = {
     percent: PropTypes.number,
     count: PropTypes.number,
     name: PropTypes.string,
+    seClass: PropTypes.string,
+    id: PropTypes.number,
     src: PropTypes.string,
     linkTo: PropTypes.string,
     style: PropTypes.object,

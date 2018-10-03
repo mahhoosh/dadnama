@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import {Mutation} from "react-apollo";
 import {DeleteModelMutation} from 'Graphql/DeleteModelMutation';
 import Switch from "react-switch";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Utils from 'utils/Utils';
 
 import {
-    Modal
+    Modal,
+    Spinners
 } from 'components';
 
 class SelectedEdit extends Component {
@@ -15,7 +19,8 @@ class SelectedEdit extends Component {
             selected: false,
             isModalOpen: false,
             isHover: false,
-            checked: false
+            checked: false,
+            spinner: false
         };
         this.onSelected = this.onSelected.bind(this);
         this.onOpenModal = this.onOpenModal.bind(this);
@@ -64,33 +69,32 @@ class SelectedEdit extends Component {
         this.props.onOpenModal && this.props.onOpenModal();
     }
 
-
-    onClickDelete(e, data, DeleteModelMutation, id) {
+    onClickDelete(e, data, DeleteModelMutation, id, seClass) {
+        //alert(seClass)
+        //alert(id)
         e.preventDefault();
 
-        /* this.setState({
-             spinner: true
-         });*/
+        this.setState({
+            spinner: true
+        });
 
         DeleteModelMutation({
             variables: {
                 id: id,
-                name: 'educationales',
+                name: seClass,
             }
 
         }).then((data) => {
-            /*toast.success("تغییرات شما با موفقیت اعمال شد");
+            toast.success("حذف با موفقیت انجام شد");
             this.setState({
-                closeModal: false,
-                closeModalEdit: false,
-                spinner: false
-            });*/
-            console.log('data', data)
-        }).catch((err) => {
-            /*this.setState({
                 spinner: false
             });
-            toast.error(Utils.gqlHandelError(err));*/
+            console.log('data', data)
+        }).catch((err) => {
+            this.setState({
+                spinner: false
+            });
+            toast.error(Utils.gqlHandelError(err));
             console.log('err', err)
         });
 
@@ -98,12 +102,14 @@ class SelectedEdit extends Component {
     }
 
     render() {
+
         const {
             modalChildren, editIcon,
             children, deleteIcon, plusIcon,
             isHover,
             closeModal,
-            id
+            id,
+            seClass
         } = this.props;
 
         return (
@@ -123,7 +129,7 @@ class SelectedEdit extends Component {
                             }
                             {
                                 <i className="icon delete fa fa-trash"
-                                   onClick={(e) => this.onClickDelete(e, data, DeleteModelMutation, id)}
+                                   onClick={(e) => this.onClickDelete(e, data, DeleteModelMutation, id, seClass)}
                                 />
                             }
                             {/* {deleteIcon && <label htmlFor="normal-switch" className={'switch'}>
@@ -145,6 +151,13 @@ class SelectedEdit extends Component {
                             >
                                 {modalChildren}
                             </Modal>
+                            {
+
+                                this.state.spinner && <Spinners
+                                    loading={this.state.spinner}
+                                />
+                            }
+
                         </div>
                     </form>
                 )}
@@ -160,6 +173,7 @@ SelectedEdit.propTypes = {
     deleteIcon: PropTypes.bool,
     closeModal: PropTypes.bool,
     id: PropTypes.number,
+    seClass: PropTypes.string,
     plusIcon: PropTypes.bool,
     isHover: PropTypes.bool,
     onMouseLeave: PropTypes.func,
