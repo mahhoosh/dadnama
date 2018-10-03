@@ -4492,6 +4492,9 @@ body {
   .SeProfile-wrapper-trimatrixlab .networks .switch {
     right: auto;
     left: 50px !important; }
+  .SeProfile-wrapper-trimatrixlab .networks .fa-plus-square {
+    right: auto;
+    left: 15px; }
   .SeProfile-wrapper-trimatrixlab .imgProfileWrapper {
     width: 400px;
     position: relative; }

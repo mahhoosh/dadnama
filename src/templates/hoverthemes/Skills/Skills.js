@@ -32,7 +32,9 @@ class Skill extends Component {
             badge,
             count,
             icon,
-            className
+            className,
+            seClass,
+            id
         } = this.props;
 
         return (
@@ -40,6 +42,8 @@ class Skill extends Component {
             <div className={`skill-hoverthemes ${direction} ${className}`}>
                 <SelectedEdit
                     editIcon
+                    seClass={seClass}
+                    id={id}
                     modalChildren={modalChildren}
                     isHover={isHover}
                     onMouseLeave={onMouseLeave}
@@ -87,6 +91,8 @@ Skill.propTypes = {
     description: PropTypes.string,
     icon: PropTypes.string,
     className: PropTypes.string,
+    seClass: PropTypes.string,
+    id: PropTypes.number,
     title: PropTypes.string,
     percent: PropTypes.number,
     count: PropTypes.number,

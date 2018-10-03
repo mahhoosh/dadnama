@@ -4,6 +4,8 @@ import {Query} from "react-apollo";
 import {Mutation} from "react-apollo";
 import {USER_COURT_CASES} from 'Graphql/UserCourtCasesQuery';
 import {CHANGE_COURT_CASES} from 'Graphql/ChangeCourtCasesMutation';
+import momentJ from 'moment'
+import moment from 'moment-jalaali';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Utils from 'utils/Utils';
@@ -26,8 +28,9 @@ class SeResume extends Component {
         this.state = {
             title: '',
             reference: '',
-            started_at: '',
-            stopped_at: '',
+            started_at: moment(),
+            started_atDate: moment(),
+            stopped_at: moment(),
             closeModal: true,
             closeModalEdit: true,
             spinner: false
@@ -36,6 +39,17 @@ class SeResume extends Component {
         this.onClickEdit = this.onClickEdit.bind(this);
         this.onOpenModal = this.onOpenModal.bind(this);
         this.onOpenModalEdit = this.onOpenModalEdit.bind(this);
+        this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
+        this.handleChangeStopDate = this.handleChangeStopDate.bind(this);
+        this.started_atDate = moment();
+    }
+
+    handleChangeStartDate(date) {
+        this.started_atDate = date;
+    }
+
+    handleChangeStopDate(date) {
+        this.stop_atDate = date;
     }
 
     onChangeTitle(event) {
@@ -45,16 +59,19 @@ class SeResume extends Component {
     }
 
     onOpenModal() {
+        //--افزودن--
+        let _this = this;
         this.setState({
             closeModal: true,
             title: '',
             reference: '',
-            started_at: '',
-            stopped_at: '',
+            started_at: '1395/7/2',
+            stopped_at: '1395/7/2',
         })
     }
 
     onOpenModalEdit(data) {
+        //----ویرایش--
         this.setState({
             closeModalEdit: true,
             title: data.title,
@@ -66,7 +83,7 @@ class SeResume extends Component {
 
     onClickEdit(e, data, Change_court_cases, id) {
         e.preventDefault();
-
+        debugger
         this.setState({
             spinner: true
         })
@@ -76,8 +93,8 @@ class SeResume extends Component {
                 id: id,
                 title: this.state.title,
                 reference: this.state.reference,
-                started_at: this.state.started_at,
-                stopped_at: this.state.stopped_at
+                started_at: this.started_atDate,
+                stopped_at: this.stop_atDate
             }
 
         }).then((data) => {
@@ -112,19 +129,20 @@ class SeResume extends Component {
                 label: 'منابع',
                 value: this.state.reference
             }
-            ,
+        ];
+        let datePickerData = [
             {
-                id: 3,
+                id: 1,
                 name: 'started_at',
                 label: 'تاریخ شروع',
-                value: this.state.started_at
+                value: moment(`${this.state.started_at}`, 'jYYYY/jMM/jDD')
             }
             ,
             {
-                id: 4,
+                id: 2,
                 name: 'stopped_at',
                 label: 'تاریخ پایان',
-                value: this.state.stopped_at
+                value: moment(`${this.state.stopped_at}`, 'jYYYY/jMM/jDD')
             }
         ]
 
@@ -147,8 +165,12 @@ class SeResume extends Component {
                                             modalChildren={
                                                 <Edit
                                                     labelBtn={'افزودن'}
+                                                    title={'افزودن'}
                                                     inputData={inputData}
+                                                    datePickerData={datePickerData}
                                                     onChange={this.onChangeTitle}
+                                                    handleChangeStartDate={this.handleChangeStartDate}
+                                                    handleChangeStopDate={this.handleChangeStopDate}
                                                     onClickEdit={(e) => this.onClickEdit(e, dataM, Change_court_cases)}
                                                 />
                                             }
@@ -165,17 +187,22 @@ class SeResume extends Component {
                                                             return <Timeline
                                                                 key={index}
                                                                 modalChildren={
-                                                                    < Edit
+                                                                    <Edit
                                                                         labelBtn={'ویرایش'}
+                                                                        title={'ویرایش'}
                                                                         inputData={inputData}
+                                                                        datePickerData={datePickerData}
                                                                         onChange={this.onChangeTitle}
                                                                         onClickEdit={(e) => this.onClickEdit(e, data, Change_court_cases, item.id)}
+                                                                        handleChangeStartDate={this.handleChangeStartDate}
+                                                                        handleChangeStopDate={this.handleChangeStopDate}
                                                                     />
                                                                 }
                                                                 title={item.title}
                                                                 startedAt={item.started_at}
                                                                 stoppedAt={item.stopped_at}
                                                                 id={item.id}
+                                                                seClass={'court_cases'}
                                                                 closeModal={this.state.closeModalEdit}
                                                                 onOpenModal={() => this.onOpenModalEdit(item)}
                                                             />

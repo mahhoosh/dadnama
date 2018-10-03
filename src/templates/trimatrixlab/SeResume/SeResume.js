@@ -19,6 +19,7 @@ import {
     Input,
     Spinners
 } from 'components';
+import moment from "moment-jalaali";
 
 class SeResume extends Component {
     constructor(props) {
@@ -49,8 +50,8 @@ class SeResume extends Component {
             closeModal: true,
             title: '',
             reference: '',
-            started_at: '',
-            stopped_at: '',
+            started_at: '1395/7/2',
+            stopped_at: '1395/7/2',
         })
     }
 
@@ -112,19 +113,20 @@ class SeResume extends Component {
                 label: 'منابع',
                 value: this.state.reference
             }
-            ,
+        ];
+        let datePickerData = [
             {
-                id: 3,
+                id: 1,
                 name: 'started_at',
                 label: 'تاریخ شروع',
-                value: this.state.started_at
+                value: moment(`${this.state.started_at}`, 'jYYYY/jMM/jDD')
             }
             ,
             {
-                id: 4,
+                id: 2,
                 name: 'stopped_at',
                 label: 'تاریخ پایان',
-                value: this.state.stopped_at
+                value: moment(`${this.state.stopped_at}`, 'jYYYY/jMM/jDD')
             }
         ]
 
@@ -147,8 +149,12 @@ class SeResume extends Component {
                                             modalChildren={
                                                 <Edit
                                                     labelBtn={'افزودن'}
+                                                    title={'افزودن'}
                                                     inputData={inputData}
+                                                    datePickerData={datePickerData}
                                                     onChange={this.onChangeTitle}
+                                                    handleChangeStartDate={this.handleChangeStartDate}
+                                                    handleChangeStopDate={this.handleChangeStopDate}
                                                     onClickEdit={(e) => this.onClickEdit(e, dataM, Change_court_cases)}
                                                 />
                                             }
@@ -165,11 +171,15 @@ class SeResume extends Component {
                                                             return <Timeline
                                                                 key={index}
                                                                 modalChildren={
-                                                                    < Edit
+                                                                    <Edit
                                                                         labelBtn={'ویرایش'}
+                                                                        title={'ویرایش'}
                                                                         inputData={inputData}
+                                                                        datePickerData={datePickerData}
                                                                         onChange={this.onChangeTitle}
                                                                         onClickEdit={(e) => this.onClickEdit(e, data, Change_court_cases, item.id)}
+                                                                        handleChangeStartDate={this.handleChangeStartDate}
+                                                                        handleChangeStopDate={this.handleChangeStopDate}
                                                                     />
                                                                 }
                                                                 title={item.title}

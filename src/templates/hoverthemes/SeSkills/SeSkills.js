@@ -173,6 +173,7 @@ class SeSkills extends Component {
                                                                             percent={item.percentage}
                                                                             title={item.skill.title}
                                                                             id={item.id}
+                                                                            seClass={'skill'}
                                                                             closeModal={this.state.closeModalEdit}
                                                                             onOpenModal={() => this.onOpenModalEdit(item)}
                                                                             icon

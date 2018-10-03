@@ -161,6 +161,7 @@ class SeStatistics extends Component {
                                                                     title={item.title}
                                                                     count={item.count}
                                                                     id={item.id}
+                                                                    seClass={'statistic'}
                                                                     closeModal={this.state.closeModalEdit}
                                                                     onOpenModal={() => this.onOpenModalEdit(item)}
                                                                     badge

@@ -47,7 +47,11 @@ class Timeline extends Component {
                 >
                     <div className="timeline-content">
                         <h3>{title}</h3>
-                        <h5>{`${reference} ${startedAt} ${stoppedAt}`}</h5>
+                        <h5>
+                            {reference && <span>
+                              {reference}
+                            </span>}
+                            {`${startedAt} ${stoppedAt}`}</h5>
                         <p>
                             {direction}
                         </p>

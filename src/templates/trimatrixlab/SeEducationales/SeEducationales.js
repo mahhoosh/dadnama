@@ -44,7 +44,6 @@ class SeEducationales extends Component {
         this.handleChangeStartDate = this.handleChangeStartDate.bind(this);
         this.handleChangeStopDate = this.handleChangeStopDate.bind(this);
         this.started_atDate = moment();
-        this.started_atDate = moment();
     }
 
     handleChangeStartDate(date) {
@@ -72,8 +71,8 @@ class SeEducationales extends Component {
             closeModal: true,
             title: '',
             city_id: '',
-            started_at: '',
-            stopped_at: '',
+            started_at: '1395/7/2',
+            stopped_at: '1395/7/2',
         });
     }
 
@@ -176,6 +175,9 @@ class SeEducationales extends Component {
                                                             title={'افزودن'}
                                                             labelBtn={'افزودن'}
                                                             inputData={inputData}
+                                                            datePickerData={datePickerData}
+                                                            handleChangeStartDate={this.handleChangeStartDate}
+                                                            handleChangeStopDate={this.handleChangeStopDate}
                                                             onChange={this.onChangeTitle}
                                                             onClickEdit={(e) => this.onClickEdit(e, dataM, change_educationales)}
                                                         />
@@ -210,6 +212,7 @@ class SeEducationales extends Component {
                                                                         }
                                                                         title={item.title}
                                                                         //reference={item.city.title}
+                                                                        reference={'شیراز'}
                                                                         startedAt={item.started_at}
                                                                         stoppedAt={item.stopped_at}
                                                                         id={item.id}

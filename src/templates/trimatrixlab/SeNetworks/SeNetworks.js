@@ -152,7 +152,7 @@ class SeNetworks extends Component {
                                                                 >
                                                                     <SelectedEdit
                                                                         editIcon
-                                                                        seClass={'networks'}
+                                                                        seClass={'network'}
                                                                         id={net.network_type.id}
                                                                         closeModal={this.state.closeModalEdit}
                                                                         onOpenModal={() => this.onOpenModalEdit(net)}
@@ -188,7 +188,6 @@ class SeNetworks extends Component {
                                                         }
                                                     </ul>
                                                 </SeSelected>
-
 
                                                 <Spinners
                                                     loading={this.state.spinner}
