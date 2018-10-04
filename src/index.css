@@ -4311,6 +4311,8 @@ body {
       background-color: #00ACC1; }
     .theme-secondary .timeline-trimatrixlab:before {
       background-color: #06A763; }
+  .timeline-trimatrixlab .dateWrapper .reference {
+    margin-left: 10px; }
   .timeline-trimatrixlab .timeline-wrapper {
     width: 50%;
     clear: both;

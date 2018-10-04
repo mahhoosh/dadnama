@@ -50,8 +50,8 @@ class SeResume extends Component {
             closeModal: true,
             title: '',
             reference: '',
-            started_at: '1395/7/2',
-            stopped_at: '1395/7/2',
+            started_at: moment().format('jYYYY/jM/jD'),
+            stopped_at: moment().format('jYYYY/jM/jD'),
         })
     }
 

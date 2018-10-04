@@ -29,7 +29,7 @@ class SeEducationales extends Component {
         this.state = {
             valueTitle: '',
             title: '',
-            city_id: '',
+            city_id: 1,
             started_at: moment(),
             started_atDate: moment(),
             stopped_at: moment(),
@@ -72,9 +72,9 @@ class SeEducationales extends Component {
         this.setState({
             closeModal: true,
             title: '',
-            city_id: '',
-            started_at: '1395/7/2',
-            stopped_at: '1395/7/2',
+            city_id: 1,
+            started_at: moment().format('jYYYY/jM/jD'),
+            stopped_at: moment().format('jYYYY/jM/jD'),
         });
     }
 
@@ -213,8 +213,7 @@ class SeEducationales extends Component {
                                                                             />
                                                                         }
                                                                         title={item.title}
-                                                                        //reference={item.city.title}
-                                                                        reference={'شیراز'}
+                                                                        reference={item.city.title}
                                                                         startedAt={item.started_at}
                                                                         stoppedAt={item.stopped_at}
                                                                         id={item.id}

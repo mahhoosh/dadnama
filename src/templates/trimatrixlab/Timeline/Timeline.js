@@ -54,10 +54,16 @@ class Timeline extends Component {
                         <div
                             className={'timelineBox'}
                         >
-                            <h3>{title}</h3>
-                            <h5>
-                                {reference && <span>{reference}</span>}
-                                {`${startedAt} ${stoppedAt}`}</h5>
+                            {title && <h3>{title}</h3>}
+                            <label
+                                className={'dateWrapper'}
+                            >
+                                {reference && <span
+                                    className={'reference'}
+                                >{reference}</span>}
+                                <span
+                                    className={'date'}
+                                >{`${startedAt}  ${stoppedAt}`}</span></label>
                             <p>
                                 {direction}
                             </p>
