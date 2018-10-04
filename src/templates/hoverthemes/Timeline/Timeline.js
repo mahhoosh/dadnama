@@ -47,11 +47,15 @@ class Timeline extends Component {
                 >
                     <div className="timeline-content">
                         <h3>{title}</h3>
-                        <h5>
-                            {reference && <span>
-                              {reference}
-                            </span>}
-                            {`${startedAt} ${stoppedAt}`}</h5>
+                        <label
+                            className={'dateWrapper'}
+                        >
+                            {reference && <span
+                                className={'reference'}
+                            >{reference}</span>}
+                            <span
+                                className={'date'}
+                            >{`از ${startedAt} تا ${stoppedAt}`}</span></label>
                         <p>
                             {direction}
                         </p>

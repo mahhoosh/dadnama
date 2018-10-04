@@ -3553,6 +3553,8 @@ body {
     background: #ECEFF1;
     z-index: 1;
     display: block; }
+  .timeline .dateWrapper .reference {
+    margin-left: 10px; }
   .timeline .timeline-wrapper {
     width: 50%;
     clear: both;

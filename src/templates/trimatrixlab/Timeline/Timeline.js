@@ -63,7 +63,7 @@ class Timeline extends Component {
                                 >{reference}</span>}
                                 <span
                                     className={'date'}
-                                >{`${startedAt}  ${stoppedAt}`}</span></label>
+                                >{`از ${startedAt} تا ${stoppedAt}`}</span></label>
                             <p>
                                 {direction}
                             </p>

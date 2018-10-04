@@ -201,6 +201,7 @@ class SeResume extends Component {
                                                                 title={item.title}
                                                                 startedAt={item.started_at}
                                                                 stoppedAt={item.stopped_at}
+                                                                reference={item.reference}
                                                                 id={item.id}
                                                                 seClass={'court_cases'}
                                                                 closeModal={this.state.closeModalEdit}
