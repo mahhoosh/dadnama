@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as routes from "routes/const";
-import {Mutation} from "react-apollo";
+import { Mutation } from "react-apollo";
 import {
     Tab,
     LinkBtn,
@@ -16,7 +16,7 @@ import {
 //import ThemePosterImg from 'assets/images/img.jpg'
 //import Header from "../../common/header/Header";
 
-import {USER_SIGNIN} from 'Graphql/UserSigninMutation';
+import { USER_SIGNIN } from 'Graphql/UserSigninMutation';
 
 class LoginPage extends React.Component {
 
@@ -75,7 +75,7 @@ class LoginPage extends React.Component {
     }
 
     onClose() {
-        const {router} = this.context;
+        const { router } = this.context;
         router.history.push(routes.APP_ROOT)
     }
 
@@ -137,7 +137,7 @@ class LoginPage extends React.Component {
 
         return (
             <Mutation mutation={USER_SIGNIN}>
-                {(UserSigninMutation, {data}) => (
+                {(UserSigninMutation, { data }) => (
                     <div className={'loginPage'}>
                         <form>
                             <div
@@ -148,8 +148,8 @@ class LoginPage extends React.Component {
                                     onClick={this.onClose}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                                         viewBox="0 0 212.982 212.982" width="512px" height="512px"
-                                         aria-labelledby="title">
+                                        viewBox="0 0 212.982 212.982" width="512px" height="512px"
+                                        aria-labelledby="title">
                                         <path
                                             d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"
                                             id="path-1"
@@ -175,7 +175,7 @@ class LoginPage extends React.Component {
                                         >
                                             <div className={'leftCol'}>
                                                 <span
-                                                    className="quick-switch"> ورود با ایمیل و موبایل ونام کاربری</span>
+                                                    className="quick-switch"> ورود با ایمیل یا موبایل یانام کاربری</span>
                                                 <Input
                                                     value={this.state.username}
                                                     //TODO
@@ -188,8 +188,10 @@ class LoginPage extends React.Component {
                                                     placeholder={'رمز عبور'}
                                                     type={'password'}
                                                 />
-                                                {/* <span
-                                                className="quick-switch">Don't have an account? Click here to sign up.</span> */}
+                                                <span onClick={() => {
+                                                    this.props.history.push("/forget/password")
+                                                }}
+                                                    className="quick-switch">رمز عبور خود را فراموش کرده ام.</span>
                                                 <div>
                                                     <LinkBtn
                                                         title={'ورود'}
@@ -250,7 +252,7 @@ class LoginPage extends React.Component {
                                                 className={'errorText'}
 
                                             >
-                                                <div dangerouslySetInnerHTML={{__html: this.state.errorText}}/>
+                                                <div dangerouslySetInnerHTML={{ __html: this.state.errorText }} />
                                             </p>
                                         }
                                     </div>

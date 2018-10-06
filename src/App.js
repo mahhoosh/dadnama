@@ -11,6 +11,7 @@ import {
     FeedPage,
     OnboardingPage,
     HomeThemes,
+    ForgetPage,
     EditorPage
 } from 'pages';
 import {
@@ -66,6 +67,7 @@ class App extends Component {
                 <main className={'theme-secondary'}>
                     <Switch>
                         <Route path={routes.LOGIN} component={LoginPage}/>
+                        <Route path={routes.Forget} component={ForgetPage}/>
                         <Route path={routes.ON_BOARDING} component={OnboardingPage}/>
                         <Route path={routes.HOME_tHEME} component={HomeThemes}/>
                         <Route path={routes.HOVER_THEMES} component={HoverthemesPage}/>

@@ -3,6 +3,7 @@ import TrimatrixlabPage from "../templates/trimatrixlab/TrimatrixlabPage";
 
 export const APP_ROOT = "/";
 export const LOGIN = "/login";
+export const Forget = "/forget/password";
 export const HOME = "/home";
 export const ON_BOARDING = "/onboarding";
 export const HOME_tHEME = "/home-themes";

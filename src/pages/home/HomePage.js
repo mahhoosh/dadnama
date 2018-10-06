@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import src from 'assets/video/Weebly Website Builder- Create a Free Website, Store or Blog.mp4'
 import {
     Tab,
-    LinkBtn
+    LinkBtn,
+    Modal
 } from 'components';
 import {
-    ThemePoster
+    ThemePoster,
+    Signup
 } from 'dadComponents';
+
 
 import ThemePosterImg from 'assets/images/img.jpg'
 import ScrollableAnchor from 'react-scrollable-anchor'
@@ -18,7 +21,19 @@ class HomePage extends React.Component {
         super(props);
         this.state = {};
     }
+    onCloseModal = () => {
+        this.setState({
+            isModalOpen: false
+        });
 
+    }
+
+    onOpenModal = () => {
+        this.setState({
+            isModalOpen: true
+        })
+
+    }
     render() {
         let tabsData = [
             {
@@ -133,7 +148,7 @@ class HomePage extends React.Component {
                                     </div>
                                     <div
                                         className="commerce-brand-message">
-                                        <button className="masthead-dual-cta_button">
+                                        <button onClick={this.onOpenModal} style={{cursor:"pointer"}} className=" masthead-dual-cta_button">
                                             <span className={'span'}>ساخت وب سایت</span>
                                         </button>
                                         {/* <button className="masthead-dual-cta_button website">
@@ -178,7 +193,7 @@ class HomePage extends React.Component {
                             </h2>
                             </ScrollableAnchor>
                         </div>
-                        <HomeThemesPage header  />
+                        <HomeThemesPage header />
                         <div
                             className={'more'}
                         >
@@ -191,7 +206,15 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </section>
-
+                <Modal
+                    open={this.state.isModalOpen}
+                    onClose={this.onCloseModal}
+                    className={'signupModal'}
+                >
+                    <Signup
+                        onClose={this.onCloseModal}
+                    />
+                </Modal>
             </div>
         );
     }
