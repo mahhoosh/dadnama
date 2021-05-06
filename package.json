@@ -24,7 +24,7 @@
     "react-apollo": "^2.1.11",
     "react-cropper": "^1.0.1",
     "react-dom": "^16.4.2",
-    "react-draft-wysiwyg": "^1.12.13",
+    "react-draft-wysiwyg": "^1.14.6",
     "react-easy-crop": "^1.4.0",
     "react-helmet": "^5.2.0",
     "react-iframe": "^1.2.0",
